@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Veronica Kopanicak – Engineering Physics Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f4f0; --surface:#ffffff; --ink:#18262b; --muted:#56666b;
+  --line:#cdd6d0; --accent:#0f5c4d; --grid:rgba(15,92,77,.07);
+  --head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1a1d; --surface:#16252a; --ink:#e6eeea; --muted:#9bb0aa;
+    --line:#2a3d43; --accent:#5fd0b0; --grid:rgba(95,208,176,.07); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1a1d; --surface:#16252a; --ink:#e6eeea; --muted:#9bb0aa;
+  --line:#2a3d43; --accent:#5fd0b0; --grid:rgba(95,208,176,.07); color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:18px/1.65 var(--body);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+main{max-width:860px;margin:0 auto;padding:0 24px 72px}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+header{padding:72px 0 48px}
+h1{font-size:clamp(2.6rem,8vw,4.6rem);font-weight:700;letter-spacing:-.02em;max-width:14ch}
+.lede{font-size:1.25rem;max-width:34em;margin:24px 0 28px}
+.trace{display:block;width:100%;max-width:520px;height:auto;margin:0 0 28px}
+.trace path{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.2s ease-out .2s forwards}
+.trace circle{fill:var(--bg);stroke:var(--accent);stroke-width:2.5}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.trace path{animation:none;stroke-dashoffset:0}}
+.cta{display:inline-block;background:var(--accent);color:var(--bg);font:700 1rem var(--head);
+  padding:12px 22px;border-radius:6px;text-decoration:none}
+.cta.alt{background:transparent;color:var(--accent);border:2px solid var(--accent);margin-left:8px}
+section{padding:40px 0;border-top:1px solid var(--line)}
+h2{font-size:1.9rem;margin-bottom:24px}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px;margin-bottom:20px}
+.project h3{font-size:1.4rem;margin-bottom:6px}
+.project .meta{color:var(--muted);font-size:.95rem;margin:0 0 14px}
+.project dl{margin:0;display:grid;grid-template-columns:7.5rem 1fr;gap:8px 16px}
+.project dt{font:700 .95rem var(--head);color:var(--accent)}
+.project dd{margin:0}
+.todo{border-style:dashed}
+.role{display:grid;grid-template-columns:1fr;gap:2px;padding:14px 0;border-bottom:1px solid var(--line)}
+.role:last-child{border-bottom:0}
+.role b{font-family:var(--head);font-size:1.1rem}
+.role span{color:var(--muted);font-size:.98rem}
+.skills{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.skills li{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:4px 12px;font-size:.95rem}
+footer{color:var(--muted);font-size:.95rem;padding-top:24px}
+@media (max-width:560px){.project dl{grid-template-columns:1fr}.cta.alt{margin:10px 0 0}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Veronica Kopanicak</h1>
+  <p class="lede">Third-year Engineering Physics student at McMaster University, with a minor in Nuclear Studies and Society. I build circuits and hardware, and I’m looking for a 12-month co-op starting [month, year].</p>
+  <svg class="trace" viewBox="0 0 520 60" role="img" aria-label="Decorative circuit trace">
+    <path d="M6 30 H120 L140 10 L170 50 L200 10 L230 50 L250 30 H340 M340 30 V12 H400 M340 30 V48 H400 M400 12 H460 M400 48 H460 M460 12 V48 M460 30 H514"/>
+    <circle cx="6" cy="30" r="5"/><circle cx="340" cy="30" r="5"/><circle cx="514" cy="30" r="5"/>
+  </svg>
+  <a class="cta" href="mailto:your.email@mcmaster.ca">Email me</a>
+  <a class="cta alt" href="#projects">See projects</a>
+</header>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <article class="project todo">
+    <h3>[Project name]</h3>
+    <p class="meta">[Course, club, or personal] · [Month, year] · [Tools used]</p>
+    <dl>
+      <dt>Problem</dt><dd>[What needed solving, in one or two sentences.]</dd>
+      <dt>What I built</dt><dd>[The design or system, and the part you owned.]</dd>
+      <dt>Result</dt><dd>[A number, test outcome, or what it made possible.]</dd>
+    </dl>
+  </article>
+  <article class="project todo">
+    <h3>[Project name]</h3>
+    <p class="meta">[Course, club, or personal] · [Month, year] · [Tools used]</p>
+    <dl>
+      <dt>Problem</dt><dd>[…]</dd>
+      <dt>What I built</dt><dd>[…]</dd>
+      <dt>Result</dt><dd>[…]</dd>
+    </dl>
+  </article>
+  <article class="project todo">
+    <h3>[Project name]</h3>
+    <p class="meta">[Course, club, or personal] · [Month, year] · [Tools used]</p>
+    <dl>
+      <dt>Problem</dt><dd>[…]</dd>
+      <dt>What I built</dt><dd>[…]</dd>
+      <dt>Result</dt><dd>[…]</dd>
+    </dl>
+  </article>
+</section>
+
+<section>
+  <h2>Experience and leadership</h2>
+  <div class="role"><b>Co-op Educational Research Assistant</b><span>FUSE Department, McMaster University</span></div>
+  <div class="role"><b>Co-VP Projects</b><span>Engineers Without Borders, McMaster</span></div>
+  <div class="role"><b>Workshop Coordinator</b><span>AIAA Student Branch, McMaster</span></div>
+  <div class="role"><b>VP Communications</b><span>Engineering Physics Society</span></div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <ul class="skills">
+    <li>[Circuit design]</li><li>[Soldering and prototyping]</li><li>[Python]</li><li>[CAD]</li><li>[Add yours]</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email <a href="mailto:your.email@mcmaster.ca">your.email@mcmaster.ca</a> · <a href="https://www.linkedin.com/in/your-handle">LinkedIn</a> · <a href="https://github.com/your-handle">GitHub</a></p>
+  <footer>Hamilton, Ontario. Available for a 12-month co-op from [month, year].</footer>
+</section>
+</main>
+</body>
+</html>
