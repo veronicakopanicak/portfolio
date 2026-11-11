@@ -674,6 +674,27 @@ section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid
 @media (max-width: 700px) {
   section#projects { grid-template-columns: minmax(0, 1fr); }
 }
+</style><style>
+/* Navigation visibility and robust project layout — November refinements */
+.site-nav-links {gap: clamp(5px, .8vw, 13px);}
+.site-nav-links a {font-size: clamp(.93rem, 1.05vw, 1.05rem);font-weight: 750;padding: 11px clamp(11px, 1.15vw, 18px);line-height:1.3;}
+.site-nav {min-height:76px;}
+:root {--nav-height:76px;}
+/* A dedicated inner grid prevents the section heading or other CSS from
+   taking up a project column and pushing the cards diagonally. */
+section#projects {display:block;}
+section#projects > .editorial-heading {margin-bottom:26px;}
+section#projects .projects-cards-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch;width:100%;}
+section#projects .projects-cards-grid > .project {grid-column:auto;grid-row:auto;min-width:0;width:100%;height:100%;box-sizing:border-box;}
+@media (max-width:900px) {
+ .site-nav {padding-top:10px;padding-bottom:10px;}
+ .site-nav-links a {font-size:.91rem;padding:9px 11px;}
+ section#projects .projects-cards-grid {gap:16px;}
+}
+@media (max-width:700px) {
+ section#projects .projects-cards-grid {grid-template-columns:minmax(0,1fr);}
+ .site-nav-links a {font-size:.88rem;padding:9px 11px;}
+}
 </style></head>
 <body>
 <main>
@@ -727,31 +748,27 @@ section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid
 </section>
 <section id="projects">
 <div class="editorial-heading"><span class="section-index">03 / SELECTED WORK</span><h2>Projects</h2></div>
-<article aria-label="Open project: Sequential Logic Circuit Design" class="project editorial-project" data-project-href="fsm-project.html" role="link" tabindex="0">
+<div class="projects-cards-grid"><article aria-label="Open project: Sequential Logic Circuit Design" class="project editorial-project" data-project-href="fsm-project.html" role="link" tabindex="0">
 <a class="project-media" href="fsm-project.html"><img alt="Multisim schematic of the sequential logic circuit" src="fsm-project/fsm-circuit.png"/></a>
 <span class="project-kicker">PROJECT 01  /  DIGITAL ELECTRONICS</span><h3>Sequential Logic Circuit Design</h3>
 <p class="meta">Digital Electronics / Circuit Design · NI Multisim · Digital Logic · FSM · Hardware Design</p>
 <p>Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p>
 <p class="project-highlight"><strong>Project highlight</strong> Designed and tested a J-K flip-flop sequential circuit that drives a seven-segment display.</p>
 <p style="margin:16px 0 0"><a href="fsm-project.html"><b>View full project →</b></a></p>
-</article>
-<article aria-label="Open project: Electrical Impedance Tomography Sensor Simulation" class="project editorial-project" data-project-href="eit-project.html" role="link" tabindex="0">
+</article><article aria-label="Open project: Electrical Impedance Tomography Sensor Simulation" class="project editorial-project" data-project-href="eit-project.html" role="link" tabindex="0">
 <a class="project-media" href="eit-project.html"><img alt="COMSOL electric potential distribution for the handheld EIT probe model" src="eit-project/eit-potential-probe.jpg"/></a>
 <span class="project-kicker">PROJECT 02  /  COMPUTATIONAL MODELLING</span><h3>Electrical Impedance Tomography Sensor Simulation</h3>
 <p class="meta">Biomedical Engineering | Computational Modelling · COMSOL Multiphysics · EIT · Simulation · Data Analysis</p>
 <p>A team project simulating two electrical impedance tomography sensor configurations in COMSOL Multiphysics to investigate non-invasive tumour detection through electrical property variations in biological tissue. I built the cylindrical wearable sensor model.</p>
 <p class="project-highlight"><strong>Project highlight</strong> Modelled four-electrode and eight-electrode EIT sensor configurations in COMSOL to investigate electrical potential distributions.</p>
 <p style="margin:16px 0 0"><a href="eit-project.html"><b>View full project →</b></a></p>
-</article>
+</article></div>
+
 </section>
 <section aria-labelledby="experience-heading" id="experience">
 <div class="editorial-heading"><span class="section-index">04 / EXPERIENCE &amp; LEADERSHIP</span><h2 id="experience-heading">Experience &amp; Leadership</h2></div>
 <p class="experience-intro">From supporting first-year engineering teams to analysing research data and leading student projects, I enjoy combining technical problem-solving with collaboration.</p>
 <div class="timeline">
-
-
-
-
 <article class="timeline-item reveal">
 <div class="timeline-top"><h3>Design Studio Teaching Assistant</h3><span class="timeline-date">Sep 2026 – Present</span></div>
 <p class="timeline-org">ENGINEER 1P13 · McMaster University</p>
@@ -769,7 +786,6 @@ section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid
 <p class="timeline-org">Engineers Without Borders · McMaster University</p>
 <div class="timeline-hover-preview"><p>Contributed to research and early-stage design for a recycling process intended to convert PET bottles into filament for 3D printing.</p></div><button aria-controls="experience-detail-4" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-4"><div class="timeline-reveal-inner"><p class="timeline-desc">Contributed to research and early-stage design for a recycling process intended to convert PET bottles into filament for 3D printing.</p><p class="timeline-skills-label">Relevant skills &amp; tools</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Design Research</li><li>Sustainability</li><li>Teamwork</li></ul></div></div>
 </article><article class="timeline-item reveal"><div class="timeline-top"><h3>Social Media Coordinator</h3><span class="timeline-date">Sep 2025 – Present</span></div><p class="timeline-org">Engineering Physics Society · Hamilton, ON</p><div class="timeline-hover-preview"><p>Manage the society’s Instagram and LinkedIn presence, creating graphics and promoting events.</p></div><button aria-controls="experience-detail-6" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-6"><div class="timeline-reveal-inner"><p class="timeline-desc">Manage the society’s Instagram and LinkedIn presence by designing graphics and publishing event content. Launched and continue to grow the society’s LinkedIn page, collaborating with the executive team on promotional materials.</p><p class="timeline-skills-label">Relevant skills &amp; tools</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Social Media</li><li>Graphic Design</li><li>Communications</li><li>Event Promotion</li></ul></div></div></article></div>
-
 </section>
 <section aria-labelledby="skills-heading" class="skills-ledger-section" id="skills">
 <div class="editorial-heading"><span class="section-index">05 / TOOLS &amp; METHODS</span><h2 id="skills-heading">Technical Skills</h2></div>
