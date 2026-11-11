@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Electrical Impedance Tomography Sensor Simulation – Veronica Kopanicak</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f4f0; --surface:#ffffff; --ink:#18262b; --muted:#56666b;
+  --line:#cdd6d0; --accent:#0f5c4d; --grid:rgba(15,92,77,.07);
+  --head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1a1d; --surface:#16252a; --ink:#e6eeea; --muted:#9bb0aa;
+    --line:#2a3d43; --accent:#5fd0b0; --grid:rgba(95,208,176,.07); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1a1d; --surface:#16252a; --ink:#e6eeea; --muted:#9bb0aa;
+  --line:#2a3d43; --accent:#5fd0b0; --grid:rgba(95,208,176,.07); color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink); font:18px/1.65 var(--body);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+main{max-width:860px;margin:0 auto;padding:0 24px 72px}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0}
+.back{display:inline-block;margin-top:28px;font:700 .95rem var(--head)}
+header{padding:28px 0 32px}
+h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:700;letter-spacing:-.02em}
+.cat{font:700 .9rem var(--head);color:var(--accent);margin:0 0 10px;text-transform:uppercase;letter-spacing:.06em}
+.lede{font-size:1.2rem;margin:16px 0 14px}
+.meta{color:var(--muted);font-size:.95rem;margin:0 0 14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.tags li{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:3px 12px;font-size:.92rem}
+section{padding:36px 0;border-top:1px solid var(--line)}
+h2{font-size:1.7rem;margin-bottom:16px}
+h3{font-size:1.15rem;margin:22px 0 6px;color:var(--accent)}
+p{margin:0 0 14px}
+ul{margin:0 0 14px;padding-left:1.2em}
+figure{margin:24px 0 0}
+figure button{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:10px;background:var(--surface);cursor:zoom-in;overflow:hidden}
+figure img{display:block;width:100%;height:auto}
+figcaption{color:var(--muted);font-size:.95rem;margin-top:8px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.pair{grid-template-columns:1fr}}
+.ph{border:2px dashed var(--line);border-radius:10px;padding:16px 20px;color:var(--muted);background:var(--surface);margin:0 0 14px}
+.video{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#000;margin-top:16px}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+dialog{border:0;background:transparent;padding:0;max-width:96vw;max-height:96vh}
+dialog::backdrop{background:rgba(0,0,0,.8)}
+dialog img{display:block;max-width:96vw;max-height:92vh;background:#fff;border-radius:6px}
+dialog button{display:block;margin:0 0 8px auto;font:700 1rem var(--head);padding:6px 16px;border-radius:6px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}
+.cta{display:inline-block;background:var(--accent);color:var(--bg);font:700 1rem var(--head);padding:12px 22px;border-radius:6px;text-decoration:none}
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="index.html#projects">&larr; Back to projects</a>
+<header>
+  <p class="cat">Biomedical Engineering | Computational Modelling</p>
+  <h1>Electrical Impedance Tomography Sensor Simulation</h1>
+  <p class="meta">Engineering Physics design project · McMaster University · 2025</p>
+  <p class="lede">A team project simulating two electrical impedance tomography sensor configurations in COMSOL Multiphysics to investigate non-invasive tumour detection through electrical property variations in biological tissue.</p>
+  <ul class="tags"><li>COMSOL Multiphysics</li><li>EIT</li><li>Finite Element Modelling</li><li>Parametric Simulation</li><li>Data Analysis</li></ul>
+  <p style="margin-top:18px"><b>Team project.</b> I developed and analyzed the wearable cylindrical sensor (Model 2). My teammate [teammate’s name] developed and analyzed the handheld probe (Model 1).</p>
+  <figure>
+    <button type="button" data-zoom><img src="eit-project/eit-potential-probe.jpg" width="564" height="477" alt="COMSOL electric potential slices through the tissue block beneath the four-electrode probe"></button>
+    <figcaption>Electric potential distribution in the handheld probe model (COMSOL). Click to enlarge.</figcaption>
+  </figure>
+  <p style="margin-top:20px"><a class="cta" href="https://www.youtube.com/watch?v=eyO1KX_RQZk" target="_blank" rel="noopener">Watch Project Video</a></p>
+</header>
+
+<section>
+  <h2>Project overview</h2>
+  <p>Electrical Impedance Tomography (EIT) is a non-invasive imaging technique that uses surface electrical measurements to infer variations in the conductivity and permittivity of tissue beneath the surface.</p>
+  <p>This project explored whether a simulated abnormality could be detected by modelling how electrical signals travel through healthy tissue and tissue containing a tumour. Two sensor configurations were investigated:</p>
+  <ul>
+    <li>A four-electrode handheld probe for localized measurements.</li>
+    <li>An eight-electrode cylindrical wearable sensor for measurements across multilayer tissue.</li>
+  </ul>
+  <p>The work involved building computational models, assigning electrical material properties, running parametric simulations, and analyzing voltage responses to compare sensitivity.</p>
+</section>
+
+<section>
+  <h2>Model 1: Handheld EIT probe</h2>
+  <p class="meta">Developed by my teammate [teammate’s name], included here for context.</p>
+  <h3>Design</h3>
+  <p>The first model places four circular surface electrodes on a block of tissue. A 1 V AC signal is applied between two diagonal electrodes, and the other two electrodes passively measure the resulting voltage. The model was adapted from a COMSOL base model (Electric Sensor #211).</p>
+  <ul>
+    <li>Tissue block: 0.2 m × 0.2 m × 0.2 m</li>
+    <li>Electrodes: four circular surface patches, 2 cm radius</li>
+    <li>Baseline frequency: 100 kHz</li>
+    <li>Healthy tissue: conductivity 0.2 S/m, relative permittivity 10,000</li>
+    <li>Tumour inclusion: conductivity 0.6 S/m, relative permittivity 20,000</li>
+  </ul>
+  <figure>
+    <button type="button" data-zoom><img src="eit-project/eit-probe-geometry.jpg" width="509" height="477" alt="COMSOL geometry of the tissue block with four cylindrical surface electrodes and a flower-shaped tumour inclusion"></button>
+    <figcaption>Model 1 geometry: four surface electrodes and a flower-shaped tumour inclusion. Click to enlarge.</figcaption>
+  </figure>
+  <h3>Simulation and analysis</h3>
+  <p>My teammate ran frequency-domain simulations with COMSOL’s Electric Currents interface, with and without the tumour. Detection was measured as the percentage change in the differential voltage between the two sensing electrodes. They then varied tumour depth, tumour size, and electrode placement to see how each affected the signal.</p>
+  <h3>Results</h3>
+  <div class="ph">[Optional: add Model 1 results here once your teammate has confirmed the numbers.]</div>
+  <p>The simulations showed a measurable change in the differential electrode voltage when the tumour was introduced, and that change depended on tumour depth, tumour size, and electrode placement.</p>
+</section>
+
+<section>
+  <h2>Model 2: Wearable EIT sensor (my work)</h2>
+  <h3>Design</h3>
+  <p>The second model arranges eight electrodes around a cylindrical, multilayer tissue domain to see how a more complex geometry changes the electrical measurements.</p>
+  <ul>
+    <li>Cylinder: 10 cm radius, 5 cm height</li>
+    <li>Eight electrodes spaced 45° apart; one injects current, one is ground, the rest measure voltage</li>
+    <li>Layers: outer fat, a muscle ring, and a central bone, with muscle and bone properties from COMSOL’s material library</li>
+    <li>Spherical tumour inclusion, 2 cm radius (conductivity 0.4 S/m, relative permittivity 60)</li>
+    <li>Applied current: 1 mA AC at 100 kHz</li>
+  </ul>
+  <div class="pair">
+    <figure>
+      <button type="button" data-zoom><img src="eit-project/eit-cylinder-geometry.png" width="621" height="415" alt="COMSOL geometry of the cylindrical tissue domain divided into layers with a spherical tumour"></button>
+      <figcaption>Model 2 geometry. Click to enlarge.</figcaption>
+    </figure>
+    <figure>
+      <button type="button" data-zoom><img src="eit-project/eit-cylinder-potential.png" width="662" height="544" alt="COMSOL electric potential plot on the cylindrical model with the tumour at x equals minus 0.07 metres"></button>
+      <figcaption>Electric potential with the tumour at x = −0.07 m. Click to enlarge.</figcaption>
+    </figure>
+  </div>
+  <h3>Simulation and analysis</h3>
+  <p>A parametric sweep moved the tumour across eight positions from x = −0.07 m to x = +0.07 m. I compared each electrode’s voltage with the healthy-tissue baseline to calculate the relative signal deviation caused by the tumour.</p>
+  <h3>Results</h3>
+  <p>Tumour position clearly changed the voltage response across the electrode array. At the closest position (x = +0.07 m), the deviation at the measuring electrodes ranged from about 10% to 22%, and the largest values were around 22%. Electrode placement, tissue geometry, and the location of the conductivity change all shaped the measured signal.</p>
+  <figure>
+    <button type="button" data-zoom><img src="eit-project/eit-deviation-chart.png" width="646" height="393" alt="Bar chart of signal deviation percentage for each electrode at each tumour x-position"></button>
+    <figcaption>Signal deviation by electrode and tumour position. Click to enlarge.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Engineering challenges and design decisions</h2>
+  <h3>Sensor configuration</h3>
+  <p>We compared two electrode arrangements to see how sensor geometry affects measurement. The handheld probe targets localized measurements, while the cylindrical array covers a larger tissue cross-section.</p>
+  <h3>Tissue modelling</h3>
+  <p>We assigned different conductivity and permittivity values to each tissue region so the simulations could show how fields and voltages change when an abnormal region appears.</p>
+  <h3>Parametric analysis</h3>
+  <p>We used parametric sweeps to study how tumour depth (Model 1) and position (Model 2) influenced the response, and compared results to identify trends in sensitivity.</p>
+</section>
+
+<section>
+  <h2>Limitations</h2>
+  <p>This project was computational only. It involved no clinical testing and no fabricated sensor. The models use simplified tissue geometries and material properties, the tumour shape in Model 1 is inherited from the base model, and measurement noise and real electrode contact conditions were not evaluated. The results show simulated sensitivity to tissue-property changes, not validated clinical tumour detection.</p>
+</section>
+
+<section>
+  <h2>Key takeaways</h2>
+  <p>This project gave me practical experience in:</p>
+  <ul>
+    <li>Multiphysics simulation with COMSOL</li>
+    <li>Electric field and current distribution modelling</li>
+    <li>Parametric simulation and sensitivity analysis</li>
+    <li>Numerical data interpretation</li>
+    <li>Biomedical sensor design and engineering evaluation</li>
+    <li>Technical communication and visualization</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Project video</h2>
+  <div class="video"><iframe src="https://www.youtube.com/embed/eyO1KX_RQZk" title="EIT sensor simulation project video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  <p style="margin-top:16px"><a class="cta" href="https://www.youtube.com/watch?v=eyO1KX_RQZk" target="_blank" rel="noopener">Watch Project Video</a></p>
+</section>
+</main>
+
+<dialog id="zoom" aria-label="Enlarged image"><button type="button" id="close">Close</button><img id="big" alt=""></dialog>
+<script>
+(function(){
+  var d=document.getElementById('zoom'),big=document.getElementById('big');
+  document.querySelectorAll('[data-zoom]').forEach(function(b){
+    b.addEventListener('click',function(){var i=b.querySelector('img');big.src=i.src;big.alt=i.alt;d.showModal();});
+  });
+  document.getElementById('close').addEventListener('click',function(){d.close();});
+  d.addEventListener('click',function(e){if(e.target===d)d.close();});
+})();
+</script>
+</body>
+</html>
