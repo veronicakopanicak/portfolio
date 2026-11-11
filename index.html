@@ -195,6 +195,13 @@ section#about,section#projects,section#experience,section#skills,section#contact
 #about .ab-beyond-text{max-width:570px;}
 #about .ab-beyond-grid .photo-stack{justify-self:start;max-width:275px;}
 @media(max-width:700px){#about .ab-beyond-grid{grid-template-columns:1fr;max-width:580px;gap:20px;}#about .ab-beyond-grid .photo-stack{justify-self:center;max-width:260px;}#about .ab-beyond-text{max-width:none;}}
+
+/* About Me: right-align the copy opposite the left-hand portrait. */
+@media (min-width:701px) {
+  #about .ab-grid .ab-text { text-align: right; }
+  #about .ab-grid .ab-text p { margin-left: auto; margin-right: 0; }
+  #about .ab-grid .ab-text .editorial-heading { text-align: right; }
+}
 </style>
 <style>
 /* Resume & contact */
@@ -544,6 +551,23 @@ section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid
   section#skills.skills-ledger-section{padding-bottom:45px}
 }
 @media(prefers-reduced-motion:reduce){.contact-editorial-link{transition:none}}
+
+/* November refinements: edge-to-edge sticky navigation and right-aligned Beyond photo. */
+.site-nav{
+  width:100vw;
+  width:100dvw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  padding-left:max(40px, env(safe-area-inset-left));
+  padding-right:max(40px, env(safe-area-inset-right));
+  border-radius:0;
+}
+/* Keep the left portrait left and place the Beyond Engineering portrait at the right edge. */
+#about .ab-beyond-grid{max-width:none;margin-inline:0;grid-template-columns:minmax(0,1fr) 275px;}
+#about .ab-beyond-grid .photo-stack{justify-self:end;width:100%;}
+@media(max-width:980px){.site-nav{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding-left:22px;padding-right:22px}}
+@media(max-width:650px){.site-nav{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding-left:20px;padding-right:20px}}
+@media(max-width:700px){#about .ab-beyond-grid{grid-template-columns:1fr}#about .ab-beyond-grid .photo-stack{justify-self:end;max-width:275px}}
 </style></head>
 <body>
 <main>
