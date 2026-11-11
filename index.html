@@ -33,7 +33,7 @@ body{
   background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
   background-size:32px 32px;
 }
-main{max-width:860px;margin:0 auto;padding:0 24px 72px}
+main{max-width:1100px;margin:0 auto;padding:0 24px 72px}
 a{color:var(--accent)}
 a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
@@ -95,13 +95,21 @@ footer{color:var(--muted);font-size:.95rem;padding-top:24px}
 @media (max-width:760px){.ab-grid{grid-template-columns:1fr}.ab-photo{max-width:300px}.ab-cards{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:380px){.ab-cards{grid-template-columns:1fr}.ab-hike{grid-column:auto}}
 @media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.ab-card,.ab-hike svg{transition:none}.ab-card:hover,.ab-hike:hover svg{transform:none}}
+
+/* Projects in two columns */
+#projects{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+#projects h2{grid-column:1/-1;margin-bottom:4px}
+#projects .project{display:flex;flex-direction:column;margin-bottom:0}
+#projects .project img{width:100%;aspect-ratio:3/2;object-fit:cover}
+#projects .project > p:last-child{margin-top:auto!important;padding-top:16px}
+@media (max-width:760px){#projects{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <main>
 <header>
   <h1>Veronica Kopanicak</h1>
-  <p class="lede">Third-year Engineering Physics student at McMaster University, with a minor in Nuclear Studies and Society. I build circuits and hardware, and I’m looking for a 12-month co-op starting [month, year].</p>
+  <p class="lede">I like figuring out how things work, then building them.</p>
   <svg class="trace" viewBox="0 0 520 60" role="img" aria-label="Decorative circuit trace">
     <path d="M6 30 H120 L140 10 L170 50 L200 10 L230 50 L250 30 H340 M340 30 V12 H400 M340 30 V48 H400 M400 12 H460 M400 48 H460 M460 12 V48 M460 30 H514"/>
     <circle cx="6" cy="30" r="5"/><circle cx="340" cy="30" r="5"/><circle cx="514" cy="30" r="5"/>
