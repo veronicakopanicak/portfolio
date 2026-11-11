@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Veronica Kopanicak – Engineering Physics Portfolio</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f2f4f0; --surface:#ffffff; --ink:#18262b; --muted:#56666b;
@@ -34,14 +33,14 @@ body{
   background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
   background-size:32px 32px;
 }
-main{max-width:1400px;margin:0 auto;padding:0 40px 72px}
+main{max-width:860px;margin:0 auto;padding:0 24px 72px}
 a{color:var(--accent)}
 a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
 header{padding:72px 0 48px}
-h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:700;letter-spacing:-.02em;max-width:none}
+h1{font-size:clamp(2.6rem,8vw,4.6rem);font-weight:700;letter-spacing:-.02em;max-width:14ch}
 .lede{font-size:1.25rem;max-width:34em;margin:24px 0 28px}
-.trace{display:block;width:100%;max-width:none;height:auto;margin:0 0 28px}
+.trace{display:block;width:100%;max-width:520px;height:auto;margin:0 0 28px}
 .trace path{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;
   stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.2s ease-out .2s forwards}
 .trace circle{fill:var(--bg);stroke:var(--accent);stroke-width:2.5}
@@ -96,610 +95,102 @@ footer{color:var(--muted);font-size:.95rem;padding-top:24px}
 @media (max-width:760px){.ab-grid{grid-template-columns:1fr}.ab-photo{max-width:300px}.ab-cards{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:380px){.ab-cards{grid-template-columns:1fr}.ab-hike{grid-column:auto}}
 @media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.ab-card,.ab-hike svg{transition:none}.ab-card:hover,.ab-hike:hover svg{transform:none}}
-
-/* Centre the About Me introduction and Beyond Engineering content */
-.ab-grid{align-items:center}
-.ab-photo{justify-self:center;width:100%}
-.ab-text{text-align:center}
-.ab-text p{margin-left:auto;margin-right:auto}
-.ab-more{text-align:center}
-.ab-more p{margin-left:auto;margin-right:auto}
-.ab-cards{text-align:left}
-@media (max-width:760px){.ab-photo{width:100%}}
-
-/* Beyond Engineering: mirror the About Me layout with a photo on the right */
-.ab-beyond-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,300px);gap:40px;align-items:center}
-.ab-beyond-text{text-align:center}
-.ab-beyond-photo{justify-self:center;width:100%}
-@media (max-width:760px){
-  .ab-beyond-grid{grid-template-columns:1fr;gap:24px}
-  .ab-beyond-photo{max-width:300px}
-}
-
-/* Projects in two columns */
-#projects{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
-#projects h2{grid-column:1/-1;margin-bottom:4px}
-#projects .project{display:flex;flex-direction:column;margin-bottom:0}
-#projects .project img{width:100%;aspect-ratio:3/2;object-fit:cover}
-#projects .project > p:last-child{margin-top:auto!important;padding-top:16px}
-@media (max-width:760px){#projects{grid-template-columns:1fr}}
-@media (max-width:600px){main{padding:0 20px 60px}h1{font-size:clamp(2rem,8vw,3.2rem);overflow-wrap:normal}}
-
-/* Experience & leadership timeline */
-.experience-intro{color:var(--muted);max-width:64ch;margin:-8px 0 28px}
-.timeline{position:relative;display:grid;gap:18px;margin-left:10px;padding-left:30px;border-left:2px solid var(--line)}
-.timeline-item{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px 24px}
-.timeline-item::before{content:"";position:absolute;left:-39px;top:28px;width:14px;height:14px;border:3px solid var(--accent);background:var(--bg);border-radius:50%}
-.timeline-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 18px;margin-bottom:5px}
-.timeline-top h3{font-size:1.25rem;line-height:1.25}
-.timeline-date{font:700 .84rem var(--head);color:var(--accent)}
-.timeline-org{color:var(--muted);font-size:.98rem;margin:0 0 12px}
-.timeline-item p.timeline-desc{margin:0 0 14px;max-width:75ch}
-.timeline-tags{display:flex;flex-wrap:wrap;gap:7px;list-style:none;margin:0;padding:0}
-.timeline-tags li{border:1px solid var(--line);border-radius:5px;padding:3px 9px;font:500 .78rem var(--head);color:var(--accent)}
-.timeline-extra{margin-top:24px}
-.timeline-extra h3{font-size:1.15rem;margin-bottom:12px}
-.timeline-extra-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.timeline-extra-list article{border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--surface)}
-.timeline-extra-list b{font:700 1rem var(--head);display:block}
-.timeline-extra-list span{color:var(--muted);font-size:.92rem}
-@media(max-width:700px){.timeline{padding-left:23px;margin-left:7px}.timeline-item{padding:18px}.timeline-item::before{left:-32px}.timeline-extra-list{grid-template-columns:1fr}}
-/* Hero section navigation */
-.hero-nav{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:4px}
-.hero-nav .cta{margin:0;white-space:nowrap;text-align:center;font-size:.95rem;padding:11px 18px}
-.hero-nav .cta.alt{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
-.hero-nav .cta.alt:hover{border-color:var(--accent);color:var(--accent)}
-.hero-nav .cta:not(.alt):hover{filter:brightness(1.1)}
-#beyond-engineering{scroll-margin-top:24px}
-@media(max-width:560px){.hero-nav{gap:8px}.hero-nav .cta{font-size:.85rem;padding:10px 12px}}
-
-/* Compact introduction: preserve all content, bring Projects closer */
-header{padding:52px 0 34px}
-.lede{margin:16px 0 18px}
-.trace{margin-bottom:18px}
-#about{padding-top:30px;padding-bottom:28px}
-#about .ab-grid{grid-template-columns:minmax(200px,260px) minmax(0,1fr);gap:28px}
-#about .ab-text h2{margin-bottom:12px}
-#about .ab-text p,#about .ab-more p{margin-bottom:10px;line-height:1.5}
-#about .ab-more{margin-top:26px}
-#about .ab-more h3{margin-bottom:10px}
-#about .ab-more h3.sub{margin-top:22px}
-#about .ab-beyond-grid{grid-template-columns:minmax(0,1fr) minmax(200px,260px);gap:28px}
-#about .ab-cards{margin-top:12px;gap:12px}
-#about .ab-card{padding:14px}
-#about .ab-card .ic{margin-bottom:5px}
-#projects{padding-top:30px}
-@media(max-width:760px){
-  #about .ab-grid,#about .ab-beyond-grid{grid-template-columns:1fr;gap:18px}
-  #about .ab-photo{max-width:230px}
-  #about .ab-beyond-photo{max-width:230px}
-}
-
-/* Technical skills */
-.skills-intro{color:var(--muted);margin:-8px 0 24px;max-width:62ch}
-.skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.skill-group{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;min-width:0;transition:border-color .2s ease,transform .2s ease}
-.skill-group:hover{border-color:var(--accent);transform:translateY(-2px)}
-.skill-group-heading{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.skill-group h3{font-size:1.2rem;line-height:1.25}
-.skill-symbol{width:38px;height:38px;border:1px solid var(--line);border-radius:9px;display:grid;place-items:center;color:var(--accent);font:700 1rem var(--head);flex-shrink:0}
-.skill-group .skills li{color:var(--ink);font-size:.9rem;padding:6px 11px;background:var(--bg)}
-@media(max-width:680px){.skills-grid{grid-template-columns:1fr}.skill-group{padding:20px}}
-
-/* Circuit-board visual theme: low-contrast decorative traces */
-:root{--circuit-art:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22460%22%20height%3D%22300%22%20viewBox%3D%220%200%20460%20300%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23245a4b%22%20stroke-width%3D%221.25%22%20opacity%3D%22.14%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M0%2060H68L92%2084H162V126H215L242%20153H305%22%2F%3E%3Cpath%20d%3D%22M460%2038H392L364%2066H314V102H260%22%2F%3E%3Cpath%20d%3D%22M460%20232H388L355%20199H300V173H246%22%2F%3E%3Cpath%20d%3D%22M0%20250H72L103%20219H157V188H195%22%2F%3E%3Cpath%20d%3D%22M125%200V34H173L199%2060%22%2F%3E%3Cpath%20d%3D%22M342%20300V262H291L270%20241%22%2F%3E%3Cpath%20d%3D%22M162%20126V160H124%22%2F%3E%3Cpath%20d%3D%22M314%20102H342V138H401%22%2F%3E%3Cpath%20d%3D%22M103%20219V179H64%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23245a4b%22%20opacity%3D%22.18%22%3E%3Ccircle%20cx%3D%2268%22%20cy%3D%2260%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22162%22%20cy%3D%22126%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%22305%22%20cy%3D%22153%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22314%22%20cy%3D%22102%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%22260%22%20cy%3D%22102%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22246%22%20cy%3D%22173%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%22157%22%20cy%3D%22219%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22195%22%20cy%3D%22188%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22173%22%20cy%3D%2234%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22291%22%20cy%3D%22262%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22401%22%20cy%3D%22138%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%22179%22%20r%3D%223%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");}
-body{background-image:var(--circuit-art);background-size:460px 300px;background-repeat:repeat;}
-section#about,section#projects,section#experience,section#skills,section#contact{background-image:var(--circuit-art);background-size:460px 300px;background-repeat:repeat;}
-/* Pull the Beyond Engineering portrait into the same visual grouping as the copy. */
-#about .ab-beyond-grid{width:100%;max-width:920px;margin-inline:auto;grid-template-columns:minmax(0,1fr) 275px;gap:24px;align-items:center;}
-#about .ab-beyond-text{max-width:570px;}
-#about .ab-beyond-grid .photo-stack{justify-self:start;max-width:275px;}
-@media(max-width:700px){#about .ab-beyond-grid{grid-template-columns:1fr;max-width:580px;gap:20px;}#about .ab-beyond-grid .photo-stack{justify-self:center;max-width:260px;}#about .ab-beyond-text{max-width:none;}}
-
-/* About Me: right-align the copy opposite the left-hand portrait. */
-@media (min-width:701px) {
-  #about .ab-grid .ab-text { text-align: right; }
-  #about .ab-grid .ab-text p { margin-left: auto; margin-right: 0; }
-  #about .ab-grid .ab-text .editorial-heading { text-align: right; }
-}
 </style>
-<style>
-/* Resume & contact */
-#contact .contact-links{margin-top:20px}
-#contact .contact-links a{color:var(--accent);font-weight:600}
-#contact .cta{margin-top:10px}
-</style><style>
-/* Editorial engineering redesign — visual changes only */
-:root{
- --bg:#f7f5ee;--surface:#fffefa;--ink:#252d29;--muted:#596760;
- --line:#d8ded5;--accent:#245a4b;--grid:rgba(36,90,75,.045);
- --sage:#e9efe7;--warm:#f0eee5;--hl:rgba(194,215,191,.72);
-}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
- --bg:#111d1a;--surface:#1c2b26;--ink:#edf0e8;--muted:#adbbb2;
- --line:#374a40;--accent:#9bd4b6;--grid:rgba(155,212,182,.045);
- --sage:#1c3128;--warm:#242e27;--hl:rgba(117,174,138,.32);
-}}
-:root[data-theme="dark"]{
- --bg:#111d1a;--surface:#1c2b26;--ink:#edf0e8;--muted:#adbbb2;
- --line:#374a40;--accent:#9bd4b6;--grid:rgba(155,212,182,.045);
- --sage:#1c3128;--warm:#242e27;--hl:rgba(117,174,138,.32);
-}
-body{font-size:17px;line-height:1.68;background-size:38px 38px}
-main{max-width:1300px;padding:0 42px 80px}
-header{padding:84px 0 62px;position:relative}
-.hero-eyebrow,.section-index,.project-kicker{font:700 .74rem/1.4 var(--head);letter-spacing:.17em;color:var(--accent)}
-.hero-eyebrow{margin:0 0 18px;display:flex;align-items:center;gap:12px}
-.hero-eyebrow:before{content:"";width:27px;height:2px;background:var(--accent)}
-h1{font-size:clamp(3rem,7.4vw,6.7rem);line-height:.99;letter-spacing:-.055em;max-width:100%;text-wrap:balance}
-.lede{font-size:clamp(1.22rem,2.2vw,1.6rem);line-height:1.5;margin:24px 0 25px;max-width:36em;color:var(--muted)}
-.trace{margin:0 0 30px;max-height:92px;opacity:.9}
-.hero-nav{gap:10px}
-.hero-nav .cta{font-size:.85rem;padding:12px 17px;border-radius:100px;transition:transform .2s ease,background .2s ease,border-color .2s ease}
-.hero-nav .cta:hover{transform:translateY(-2px)}
-.hero-nav .cta.alt{background:transparent;border:1px solid var(--line)}
-.hero-nav .cta:not(.alt){color:var(--bg)}
-section{padding:58px 42px;margin:0 -42px;border-top:1px solid var(--line);scroll-margin-top:18px}
-section#about{background:var(--surface);border-radius:22px 22px 0 0;padding:54px 42px 42px}
-section#projects{background:var(--sage);padding:62px 42px 68px}
-section#experience{background:var(--surface);padding:62px 42px}
-section#skills{background:var(--warm);padding:62px 42px}
-section#contact{background:var(--surface);padding:62px 42px;border-radius:0 0 22px 22px}
-.editorial-heading{margin:0 0 26px}
-.editorial-heading h2,.editorial-heading h3{margin:8px 0 0;font-size:clamp(2rem,3.4vw,3.1rem);letter-spacing:-.035em;line-height:1.1}
-.editorial-heading.beyond-heading h3{font-size:clamp(1.8rem,3vw,2.5rem)}
-#about .ab-grid{grid-template-columns:minmax(210px,285px) minmax(0,1fr);gap:48px}
-#about .ab-text{text-align:left}
-#about .ab-text p{margin-left:0;margin-right:0;max-width:65ch}
-#about .ab-text .editorial-heading{margin-bottom:20px}
-#about .ab-beyond-grid{grid-template-columns:minmax(0,1fr) minmax(210px,285px);gap:48px}
-#about .ab-beyond-text{text-align:left}
-#about .ab-beyond-text p{margin-left:0;margin-right:0}
-#about .ab-more{margin-top:52px;padding-top:42px;border-top:1px solid var(--line)}
-#about .ab-more h3.sub{font-size:1.18rem;margin:34px 0 16px;text-align:left}
-.photo-stack{width:100%;max-width:285px;justify-self:center;min-width:0}
-.photo-stack .ab-photo{max-width:none!important;aspect-ratio:4/5;width:100%;padding:0;overflow:hidden;border:0;border-radius:12px;box-shadow:12px 12px 0 var(--sage);background:var(--sage)}
-.photo-stack .ab-photo img{object-fit:cover}
-.photo-stack figcaption{font:600 .76rem var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:19px}
-#about .ab-cards{gap:12px;margin-top:0}
-#about .ab-card{border-radius:9px;background:var(--bg);padding:17px 19px}
-#about .ab-hike{background:var(--sage)}
-#projects{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-#projects .editorial-heading{grid-column:1/-1;margin-bottom:0}
-#projects .project{padding:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(18,46,34,.045);transition:transform .25s ease,box-shadow .25s ease;background:var(--surface)}
-#projects .project:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(18,46,34,.11)}
-#projects .project-media{display:block;overflow:hidden;background:var(--warm)}
-#projects .project-media img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .35s ease}
-#projects .project:hover .project-media img{transform:scale(1.035)}
-#projects .project-kicker{display:block;margin:24px 25px 8px;font-size:.69rem}
-#projects .project h3{margin:0 25px 12px;font-size:clamp(1.32rem,2.2vw,1.7rem);line-height:1.16}
-#projects .project .meta{margin:0 25px 15px;font:600 .78rem/1.6 var(--head);color:var(--accent)}
-#projects .project>p:not(.meta){margin:0 25px 20px;line-height:1.58;font-size:.98rem}
-#projects .project>p:last-child{margin-top:auto!important;padding:0 0 6px!important}
-#projects .project>p:last-child a{text-decoration:none;border-bottom:1px solid currentColor;font-family:var(--head);font-size:.88rem}
-.timeline-item,.skill-group,.timeline-extra-list article{border-radius:11px;box-shadow:0 7px 24px rgba(19,45,34,.025)}
-.timeline-item::before{background:var(--surface)}
-#skills .skill-group{background:var(--surface)}
-#skills .skill-group .skills li{background:var(--warm)}
-#contact .cta{border-radius:100px;padding:13px 24px}
-@media(max-width:900px){
- main{padding:0 24px 60px}
- section,section#about,section#projects,section#experience,section#skills,section#contact{margin-left:-24px;margin-right:-24px;padding-left:24px;padding-right:24px}
- #about .ab-grid,#about .ab-beyond-grid{gap:28px}
-}
-@media(max-width:700px){
- header{padding:55px 0 43px}
- h1{font-size:clamp(2.7rem,10vw,4.5rem)}
- section#about,section#projects,section#experience,section#skills,section#contact{padding-top:42px;padding-bottom:46px}
- #about .ab-grid,#about .ab-beyond-grid{grid-template-columns:1fr;gap:26px}
- #about .ab-text,#about .ab-beyond-text{text-align:center}
- #about .ab-text p,#about .ab-beyond-text p{margin-left:auto;margin-right:auto}
- #about .ab-more{margin-top:36px;padding-top:34px}
- #about .ab-more h3.sub{text-align:center}
- .photo-stack{max-width:260px}
- #projects{grid-template-columns:1fr}
- #projects .project h3{font-size:1.45rem}
-}
-@media(max-width:440px){
- main{padding:0 18px 44px}
- section,section#about,section#projects,section#experience,section#skills,section#contact{margin-left:-18px;margin-right:-18px;padding-left:18px;padding-right:18px}
- .hero-eyebrow,.section-index{font-size:.64rem;letter-spacing:.12em}
- .hero-nav .cta{font-size:.79rem;padding:10px 13px}
- #about .ab-cards{grid-template-columns:1fr 1fr}
- #about .ab-hike{grid-column:1/-1}
-}
-@media(prefers-reduced-motion:reduce){#projects .project,#projects .project-media img,.hero-nav .cta{transition:none}#projects .project:hover,#projects .project:hover .project-media img,.hero-nav .cta:hover{transform:none}}
-</style>
-<style>
-/* Readability-first circuit theme: traces stay in the margins and away from text. */
-body {
-  background-image: var(--circuit-art);
-  background-repeat: repeat;
-  background-size: 460px 300px;
-}
-/* Solid, high-contrast reading surfaces: no pattern behind paragraphs. */
-section#about, section#experience, section#contact {
-  background: var(--surface);
-  background-image: none;
-}
-section#projects { background: var(--sage); background-image: none; }
-section#skills { background: var(--warm); background-image: none; }
-/* A very faint technical flourish at the far right of the hero. */
-header {
-  background-image: linear-gradient(90deg, var(--bg) 0%, var(--bg) 48%, transparent 100%), var(--circuit-art);
-  background-position: center, right center;
-  background-repeat: no-repeat, repeat;
-  background-size: 100% 100%, 460px 300px;
-}
-@media(max-width:700px){header{background-image:none;}}
-</style>
-<style>
-/* Circuit details throughout the page, deliberately outside reading areas. */
-:root{
-  --trace-detail:rgba(36,90,75,.35);
-  --trace-soft:rgba(36,90,75,.16);
-}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --trace-detail:rgba(155,212,182,.44);
-  --trace-soft:rgba(155,212,182,.2);
-}}
-:root[data-theme="dark"]{
-  --trace-detail:rgba(155,212,182,.44);
-  --trace-soft:rgba(155,212,182,.2);
-}
-/* Section titles get a short PCB-style underline and contact points. */
-.editorial-heading{position:relative;padding-bottom:19px;}
-.editorial-heading::after{
-  content:"";position:absolute;bottom:0;left:0;width:clamp(125px,23vw,240px);height:13px;
-  background:linear-gradient(var(--trace-detail),var(--trace-detail)) left 6px/65% 1.5px no-repeat,
-             radial-gradient(circle,var(--accent) 0 3px,transparent 3.5px) 65% center/13px 13px no-repeat,
-             linear-gradient(135deg,transparent 47%,var(--trace-detail) 48% 53%,transparent 54%) 73% center/25px 13px no-repeat,
-             linear-gradient(var(--trace-detail),var(--trace-detail)) right 0 top 0/1.5px 7px no-repeat;
-  opacity:.78;pointer-events:none;
-}
-/* Centered headings retain a centered trace. */
-#about .editorial-heading::after{left:50%;transform:translateX(-50%)}
-/* Circuit ornaments along section edges, well away from text. */
-section#about,section#projects,section#experience,section#skills,section#contact{position:relative;isolation:isolate;overflow:hidden;}
-section#about::before,section#experience::before,section#contact::before,
-section#projects::before,section#skills::before{
-  content:"";position:absolute;right:0;top:22px;width:112px;height:100px;
-  border-right:2px solid var(--trace-soft);border-top:2px solid var(--trace-soft);
-  border-top-left-radius:34px;opacity:.9;pointer-events:none;z-index:-1;
-  background:radial-gradient(circle,var(--trace-detail) 0 3px,transparent 4px) 28px 18px/14px 14px no-repeat,
-    linear-gradient(90deg,transparent 0 30px,var(--trace-soft) 30px 32px,transparent 32px) 0 18px/100% 50px no-repeat;
-}
-section#projects::before,section#skills::before{left:0;right:auto;transform:scaleX(-1)}
-/* Photos: tiny connected corner detail outside the picture itself. */
-.photo-stack{position:relative;}
-.photo-stack::after{
-  content:"";position:absolute;right:-17px;top:-13px;width:44px;height:44px;
-  border-top:2px solid var(--trace-detail);border-right:2px solid var(--trace-detail);
-  border-radius:0 8px 0 0;
-  background:radial-gradient(circle,var(--accent) 0 3px,transparent 3.6px) right -7px top 18px/12px 12px no-repeat;
-  pointer-events:none;
-}
-/* Project and skill cards: an understated circuit connection at the top edge. */
-#projects .project,#skills .skill-group{position:relative;}
-#projects .project::after,#skills .skill-group::after{
-  content:"";position:absolute;top:0;right:22px;width:70px;height:14px;
-  background:linear-gradient(var(--trace-detail),var(--trace-detail)) left top/54px 2px no-repeat,
-    radial-gradient(circle,var(--accent) 0 3px,transparent 3.5px) right top/14px 14px no-repeat;
-  opacity:.8;pointer-events:none;
-}
-/* Hobbies get a small visual link to the technical theme. */
-#about .ab-card{border-top:2px solid var(--trace-soft)}
-@media(max-width:700px){
-  section#about::before,section#experience::before,section#contact::before,
-  section#projects::before,section#skills::before{width:50px;height:58px;opacity:.4}
-  .photo-stack::after{right:-9px;top:-8px;width:28px;height:28px}
-}
-</style>
-<style>
-/* Refined hero navigation: larger, clearer, higher-contrast outlined buttons. */
-.hero-nav{gap:12px;}
-.hero-nav .cta{font-size:1rem;padding:15px 24px;border:2px solid var(--accent);font-weight:700;line-height:1.25;}
-.hero-nav .cta.alt{border:2px solid var(--accent);color:var(--ink);background:var(--surface);}
-.hero-nav .cta.alt:hover{background:var(--sage);border-color:var(--accent);color:var(--ink);}
-.hero-nav .cta:not(.alt){border:2px solid var(--accent);}
-@media(max-width:560px){.hero-nav{gap:9px}.hero-nav .cta{font-size:.9rem;padding:12px 17px;}}
-</style>
-<style>
-/* 2026 portfolio refinements — all accents remain outside readable text. */
-:root{--nav-height:64px}
-html{scroll-padding-top:calc(var(--nav-height) + 22px)}
-.site-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:var(--nav-height);margin:0 -40px;padding:10px 40px;background:var(--surface);border-bottom:2px solid var(--accent);box-shadow:0 7px 24px rgba(18,49,40,.08);isolation:isolate}
-.site-nav::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:2px;background:linear-gradient(90deg,var(--accent) 0 20%,transparent 20% 22%,var(--accent) 22% 45%,transparent 45% 47%,var(--accent) 47% 100%);opacity:.55;pointer-events:none}
-.site-nav .brand{font:700 .96rem var(--head);color:var(--ink);text-decoration:none;white-space:nowrap;letter-spacing:-.02em}
-.site-nav .brand::before{content:"";display:inline-block;width:9px;height:9px;border:2px solid var(--accent);border-radius:50%;margin-right:9px;vertical-align:middle}
-.site-nav-links{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end}
-.site-nav-links a{font:700 .76rem var(--head);color:var(--ink);text-decoration:none;border-radius:999px;padding:8px 10px;transition:background .2s,color .2s}
-.site-nav-links a:hover,.site-nav-links a:focus-visible,.site-nav-links a[aria-current="location"]{background:var(--accent);color:var(--bg)}
-/* Project card is clickable through a delegated handler; original links are untouched. */
-#projects .project{position:relative;cursor:pointer;overflow:hidden;transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease}
-#projects .project:hover,#projects .project:focus-within{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 16px 34px rgba(18,49,40,.13)}
-#projects .project:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
-#projects .project .project-media{display:block;overflow:hidden}
-#projects .project .project-media img{transition:transform .45s ease;display:block}
-#projects .project:hover .project-media img{transform:scale(1.045)}
-#projects .project::after{content:"";position:absolute;right:18px;bottom:17px;width:44px;height:24px;opacity:.65;pointer-events:none;background:linear-gradient(var(--accent),var(--accent)) left 50% / 30px 2px no-repeat,linear-gradient(45deg,transparent 43%,var(--accent) 44% 55%,transparent 56%) right 6px / 12px 12px no-repeat}
-/* Connected circuit motif: one quiet rail along the section edges, not behind prose. */
-main{position:relative}
-section#about,section#projects,section#experience,section#skills,section#contact{border-left:2px solid color-mix(in srgb,var(--accent) 28%,transparent);position:relative}
-section#about::after,section#projects::after,section#experience::after,section#skills::after,section#contact::after{content:"";position:absolute;left:-7px;top:48px;width:10px;height:10px;border-radius:50%;background:var(--surface);border:2px solid var(--accent);pointer-events:none;z-index:2}
-section#about .editorial-heading,section#projects .editorial-heading,section#experience .editorial-heading,section#skills .editorial-heading,section#contact .editorial-heading{position:relative}
-/* A clear closing section with circuit corners and generous action targets. */
-section#contact.contact-finale{background:var(--surface);border:2px solid var(--line);border-top:4px solid var(--accent);border-radius:20px;padding:54px clamp(24px,5vw,64px);margin-top:28px;overflow:hidden}
-.contact-finale .contact-inner{position:relative;z-index:1;max-width:820px}
-.contact-finale .contact-lead{font-size:clamp(1.1rem,2.5vw,1.45rem);max-width:38ch;margin:8px 0 24px}
-.contact-finale .contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 24px}
-.contact-finale .contact-actions .cta{margin:0;border:2px solid var(--accent);border-radius:999px;padding:14px 22px;text-decoration:none}
-.contact-finale .contact-actions .cta.alt{background:transparent;color:var(--accent)}
-.contact-finale .contact-actions .cta:hover{transform:translateY(-2px);filter:brightness(1.04)}
-.contact-finale .contact-note{color:var(--muted);font-size:.92rem;margin:0}
-.contact-finale footer{border-top:1px solid var(--line);margin-top:26px;padding-top:16px}
-.contact-finale::before{content:"";position:absolute;right:0;top:0;width:150px;height:130px;background:var(--circuit-art) top right/300px 195px no-repeat;opacity:.65;pointer-events:none}
-@media(max-width:980px){.site-nav{align-items:flex-start;flex-direction:column;gap:5px;padding:10px 22px;margin:0 -22px}.site-nav-links{justify-content:flex-start}.site-nav-links a{padding:7px 9px}}
-@media(max-width:650px){:root{--nav-height:96px}.site-nav{margin:0 -20px;padding:9px 20px}.site-nav .brand{font-size:.84rem}.site-nav-links{flex-wrap:nowrap;overflow-x:auto;max-width:100%;width:100%;justify-content:flex-start;scrollbar-width:thin}.site-nav-links a{white-space:nowrap;font-size:.72rem}.contact-finale .contact-actions .cta{width:100%;text-align:center}section#contact.contact-finale{padding:34px 24px}}
-@media(prefers-reduced-motion:reduce){#projects .project,#projects .project .project-media img,.contact-finale .cta{transition:none}#projects .project:hover,#projects .project:hover .project-media img{transform:none}}
-/* Navigation now leads the page; the hero stays clean and uncluttered. */
-.site-nav{top:0}
-header#top{padding-top:64px}
-@media(max-width:650px){header#top{padding-top:42px}}
-
-/* Custom circuit logo and editorial skills redesign */
-.site-nav .circuit-brand{display:inline-flex;align-items:center;justify-content:center;min-width:76px;min-height:40px;color:var(--accent);transition:color .2s ease,transform .2s ease}
-.site-nav .circuit-brand::before{display:none}
-.site-nav .circuit-brand:hover{color:var(--ink);transform:translateY(-1px)}
-.site-nav .circuit-brand svg{display:block;width:76px;height:38px}
-#skills .skills-intro{max-width:58ch;margin-bottom:30px}
-#skills .skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;counter-reset:skill-category}
-#skills .skill-group{counter-increment:skill-category;display:flex;flex-direction:column;gap:19px;padding:26px 27px 28px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);box-shadow:none;overflow:hidden;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
-#skills .skill-group:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 10px 26px rgba(18,49,35,.07)}
-#skills .skill-group::after{display:none}
-#skills .skill-group::before{content:"0" counter(skill-category);position:absolute;right:25px;top:20px;font:700 1.65rem/1 var(--head);letter-spacing:.025em;color:var(--accent);opacity:.9}
-#skills .skill-group-heading{display:flex;align-items:center;gap:14px;margin:0;padding-right:68px}
-#skills .skill-group h3{font-size:clamp(1.08rem,1.5vw,1.34rem);line-height:1.25;letter-spacing:-.015em}
-#skills .skill-symbol{border:1.5px solid var(--accent);border-radius:12px;width:62px;height:62px;background:var(--sage);font-size:1.8rem;line-height:1;font-weight:700}
-#skills .skill-group .skills{display:flex;flex-wrap:wrap;align-content:start;gap:9px;margin:0;padding:17px 0 0;border-top:1px solid var(--line);list-style:none}
-#skills .skill-group .skills li{margin:0;padding:7px 12px;border:1px solid var(--line);border-radius:5px;background:transparent;color:var(--ink);font:500 .84rem/1.35 var(--head);letter-spacing:.005em;transition:border-color .2s ease,background .2s ease}
-#skills .skill-group .skills li:hover{border-color:var(--accent);background:var(--sage)}
-@media(max-width:760px){#skills .skills-grid{grid-template-columns:1fr}#skills .skill-group{padding:22px}}
-@media(max-width:420px){#skills .skill-symbol{width:54px;height:54px;font-size:1.55rem}#skills .skill-group::before{font-size:1.4rem;right:18px}#skills .skill-group-heading{padding-right:52px}}
-@media(max-width:650px){.site-nav .circuit-brand{min-height:32px}.site-nav .circuit-brand svg{height:30px;width:60px}}
-
-/* Skills 2.0 — editorial technical ledger, replacing the old card layout */
-#skills.skills-ledger-section{background:var(--warm);background-image:none}
-#skills .skills-ledger-intro{display:flex;justify-content:space-between;align-items:end;gap:24px;margin:0 0 32px}
-#skills .skills-ledger-intro p{margin:0;max-width:58ch}
-#skills .skills-ledger-label{flex-shrink:0;font:700 .7rem/1.5 var(--head);letter-spacing:.15em;color:var(--accent)}
-#skills .skills-ledger-label span{font-size:1.3rem;vertical-align:middle;margin-left:8px}
-#skills .skills-ledger{border-top:2px solid var(--accent);border-bottom:2px solid var(--accent)}
-#skills .ledger-row{display:grid;grid-template-columns:minmax(270px, .94fr) minmax(0,1.06fr);gap:32px;align-items:center;padding:32px 18px 32px 4px;border-bottom:1px solid var(--line);position:relative;transition:background .25s ease,padding-left .25s ease}
-#skills .ledger-row:last-child{border-bottom:0}
-#skills .ledger-row:hover{background:var(--surface);padding-left:17px}
-#skills .ledger-heading{display:flex;align-items:center;gap:26px;min-width:0}
-#skills .ledger-number{font:600 clamp(3rem,5.6vw,5.1rem)/.95 var(--head);letter-spacing:-.09em;color:var(--accent);opacity:.72;min-width:105px}
-#skills .ledger-kicker{display:block;font:700 .67rem/1.4 var(--head);letter-spacing:.2em;color:var(--accent);margin-bottom:8px}
-#skills .ledger-heading h3{font:600 clamp(1.25rem,2vw,1.7rem)/1.16 var(--head);letter-spacing:-.035em;margin:0;color:var(--ink)}
-#skills .ledger-heading h3 span{font-weight:400}
-#skills .ledger-skills{display:flex;flex-wrap:wrap;align-items:center;gap:10px 0;list-style:none;margin:0;padding:0}
-#skills .ledger-skills li{font:500 .93rem/1.5 var(--head);color:var(--ink);margin:0;padding:0}
-#skills .ledger-skills li:not(:last-child)::after{content:'·';display:inline-block;margin:0 12px;color:var(--accent);font-weight:700}
-#skills .skills-ledger-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:25px;color:var(--accent)}
-#skills .skills-ledger-footer svg{width:min(44%,360px);height:26px}
-#skills .skills-ledger-footer span{font:600 .65rem var(--head);letter-spacing:.13em}
-@media(max-width:850px){#skills .ledger-row{grid-template-columns:1fr;gap:18px;padding:27px 8px}#skills .ledger-row:hover{padding-left:12px}#skills .ledger-number{min-width:84px;font-size:3.7rem}#skills .skills-ledger-intro{align-items:start}}
-@media(max-width:520px){#skills .skills-ledger-intro{display:block}#skills .skills-ledger-label{display:none}#skills .ledger-heading{gap:18px}#skills .ledger-number{min-width:67px;font-size:3rem}#skills .ledger-skills li{font-size:.85rem}#skills .ledger-skills li:not(:last-child)::after{margin:0 8px}#skills .skills-ledger-footer span{font-size:.55rem}}
-@media(prefers-reduced-motion:reduce){#skills .ledger-row{transition:none}}
-
-/* Skills → Contact: deliberate breathing room with a quiet editorial transition. */
-section#skills.skills-ledger-section{padding-bottom:58px;border-radius:0}
-section#contact.contact-finale{
-  margin-top:64px;
-  padding-top:42px;
-  background:var(--warm);
-  background-image:none;
-  border-top:0;
-  border-left:2px solid color-mix(in srgb,var(--accent) 28%,transparent);
-  border-right:0;
-  border-bottom:0;
-  border-radius:0 0 22px 22px;
-  box-shadow:none;
-}
-/* A quiet divider connects the skills ledger to the invitation below. */
-section#contact.contact-finale .contact-inner{border-top:1px solid var(--line);padding-top:48px;max-width:none}
-section#contact.contact-finale::before{top:68px;opacity:.28}
-@media(max-width:650px){section#skills.skills-ledger-section{padding-bottom:36px}section#contact.contact-finale{margin-top:42px;padding-top:28px}section#contact.contact-finale .contact-inner{padding-top:34px}}
-
-
-/* Contact redesign: a quiet editorial closing chapter with a distinct inset surface. */
-section#skills.skills-ledger-section{padding-bottom:75px}
-section#contact.contact-finale.contact-editorial{
-  margin:85px 0 0;
-  padding:clamp(34px,5vw,72px);
-  background:var(--surface);
-  background-image:none;
-  border:1px solid var(--line);
-  border-radius:22px;
-  box-shadow:0 18px 50px rgba(24,57,42,.045);
-  overflow:hidden;
-}
-section#contact.contact-editorial::before{content:none}
-section#contact.contact-editorial .contact-inner{
-  display:grid;grid-template-columns:minmax(0,1.12fr) minmax(250px,.88fr);
-  gap:clamp(30px,6vw,90px);align-items:center;
-  border:0;padding:0;max-width:none;
-}
-section#contact.contact-editorial .contact-lead{max-width:40ch;margin:20px 0 34px;line-height:1.65}
-section#contact.contact-editorial .contact-note{margin:0}
-.contact-editorial-links{border-top:1px solid var(--line)}
-.contact-editorial-link{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 8px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;transition:padding .2s ease,background .2s ease}
-.contact-editorial-link span:first-child{display:flex;flex-direction:column;gap:5px}
-.contact-editorial-link small{font:700 .65rem/1.3 var(--head);letter-spacing:.15em;color:var(--accent)}
-.contact-editorial-link strong{font:600 clamp(1.1rem,1.8vw,1.4rem)/1.3 var(--head)}
-.contact-editorial-link span:last-child{font-size:1.5rem;color:var(--accent)}
-.contact-editorial-link:hover,.contact-editorial-link:focus-visible{padding-left:17px;background:var(--warm)}
-section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid var(--line);margin-top:55px;padding-top:20px;color:var(--muted)}
-/* The project action needs the same comfortable inset as the card copy. */
-#projects .project>p:last-child{margin:0 25px 0!important;padding:12px 0 29px!important}
-#projects .project>p:last-child a{display:inline-block;padding:4px 0}
-@media(max-width:750px){
-  section#contact.contact-finale.contact-editorial{margin-top:60px;padding:32px 25px;border-radius:16px}
-  section#contact.contact-editorial .contact-inner{grid-template-columns:1fr;gap:36px}
-  section#contact.contact-editorial .contact-editorial-footer{margin-top:35px}
-  section#skills.skills-ledger-section{padding-bottom:45px}
-}
-@media(prefers-reduced-motion:reduce){.contact-editorial-link{transition:none}}
-
-/* November refinements: edge-to-edge sticky navigation and right-aligned Beyond photo. */
-.site-nav{
-  width:100vw;
-  width:100dvw;
-  margin-left:calc(50% - 50vw);
-  margin-right:calc(50% - 50vw);
-  padding-left:max(40px, env(safe-area-inset-left));
-  padding-right:max(40px, env(safe-area-inset-right));
-  border-radius:0;
-}
-/* Keep the left portrait left and place the Beyond Engineering portrait at the right edge. */
-#about .ab-beyond-grid{max-width:none;margin-inline:0;grid-template-columns:minmax(0,1fr) 275px;}
-#about .ab-beyond-grid .photo-stack{justify-self:end;width:100%;}
-@media(max-width:980px){.site-nav{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding-left:22px;padding-right:22px}}
-@media(max-width:650px){.site-nav{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding-left:20px;padding-right:20px}}
-@media(max-width:700px){#about .ab-beyond-grid{grid-template-columns:1fr}#about .ab-beyond-grid .photo-stack{justify-self:end;max-width:275px}}
-</style></head>
+</head>
 <body>
 <main>
-<nav aria-label="Sticky section navigation" class="site-nav"><a class="brand circuit-brand" href="#top" aria-label="Back to top" title="Back to top"><svg aria-hidden="true" viewBox="0 0 76 38" width="76" height="38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19H19L29 9H45L53 19H72M29 9V3M29 29V19H45L53 29H72" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="19" r="3.4" fill="currentColor"/><circle cx="29" cy="3" r="3" fill="currentColor"/><circle cx="72" cy="19" r="3.4" fill="currentColor"/><circle cx="72" cy="29" r="3" fill="currentColor"/></svg></a><div class="site-nav-links"><a href="#about">About</a><a href="#beyond-engineering">Beyond Engineering</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
-<header id="top">
-<p class="hero-eyebrow">ENGINEERING PHYSICS  /  MCMASTER UNIVERSITY</p><h1>Veronica Kopanicak</h1>
-<p class="lede">Curious by nature. Engineer by design.</p>
-<svg aria-label="Decorative circuit trace" class="trace" role="img" viewbox="0 0 1040 60">
-<path d="M6 30 H240 L260 10 L290 50 L320 10 L350 50 L370 30 H670 M670 30 V12 H770 M670 30 V48 H770 M770 12 H900 M770 48 H900 M900 12 V48 M900 30 H1034"></path>
-<circle cx="6" cy="30" r="5"></circle><circle cx="670" cy="30" r="5"></circle><circle cx="1034" cy="30" r="5"></circle>
-</svg>
+<header>
+  <h1>Veronica Kopanicak</h1>
+  <p class="lede">Third-year Engineering Physics student at McMaster University, with a minor in Nuclear Studies and Society. I build circuits and hardware, and I’m looking for a 12-month co-op starting [month, year].</p>
+  <svg class="trace" viewBox="0 0 520 60" role="img" aria-label="Decorative circuit trace">
+    <path d="M6 30 H120 L140 10 L170 50 L200 10 L230 50 L250 30 H340 M340 30 V12 H400 M340 30 V48 H400 M400 12 H460 M400 48 H460 M460 12 V48 M460 30 H514"/>
+    <circle cx="6" cy="30" r="5"/><circle cx="340" cy="30" r="5"/><circle cx="514" cy="30" r="5"/>
+  </svg>
+  <a class="cta" href="mailto:your.email@mcmaster.ca">Email me</a>
+  <a class="cta alt" href="#projects">See projects</a>
 </header>
+
 <section id="about">
-<div class="ab-grid">
-<div class="photo-stack"><figure class="ab-photo reveal editorial-photo">
-<span>Your photo here</span>
-<img alt="Photo of Veronica" onerror="this.remove()" src="about-photo.jpg"/>
-</figure><figcaption>A little introduction</figcaption></div>
-<div class="ab-text reveal">
-<div class="editorial-heading"><span class="section-index">01 / THE PERSON BEHIND THE PROJECTS</span><h2>Hi, I’m Veronica! 👋</h2></div>
-<p>I’m a third-year <span class="hl">Engineering Physics</span> student at McMaster University, also pursuing a minor in <span class="hl">Nuclear Studies and Society: Nuclear Engineering</span>.</p>
-<p>I’ve always been curious about how things work, and I love finding creative ways to solve problems. Whether I’m designing circuits, exploring computational models, or learning something completely new, I enjoy the challenge of figuring things out and turning ideas into something meaningful.</p>
-<p>One of my favourite things about engineering is that there’s always something new to discover. I love getting involved in projects, collaborating with others, and occasionally getting a little too invested in solving a problem!</p>
-</div>
-</div>
-<div class="ab-more reveal" id="beyond-engineering">
-<div class="ab-beyond-grid">
-<div class="ab-beyond-text">
-<div class="editorial-heading beyond-heading"><span class="section-index">02 / OUTSIDE THE LAB</span><h3>Beyond Engineering 🌿</h3></div>
-<p>When I’m not studying or working on engineering projects, you’ll probably find me with a book, out for a run, or planning my next adventure.</p>
-<p>I enjoy running half-marathons, journalling, and getting completely absorbed in whatever project has caught my attention (like building this portfolio and website, haha!).</p>
-<p>But one of my absolute favourite things is hiking, especially in the mountains. There’s something about being surrounded by mountains, exploring new trails, and spending time outdoors that I absolutely love.</p>
-</div>
-<div class="photo-stack"><figure class="ab-photo ab-beyond-photo editorial-photo">
-<span>Your hiking photo here</span>
-<img alt="Veronica enjoying the outdoors" loading="lazy" onerror="this.remove()" src="beyond-engineering.jpg"/>
-</figure><figcaption>Beyond the lab</figcaption></div>
-</div>
-<h3 class="sub">Hobbies and interests</h3>
-<ul class="ab-cards">
-<li class="ab-card"><span aria-hidden="true" class="ic">📚</span><b>Reading</b><span class="d">Always looking for my next good book.</span></li>
-<li class="ab-card"><span aria-hidden="true" class="ic">🏃‍♀️</span><b>Running</b><span class="d">Half-marathons and chasing new personal goals.</span></li>
-<li class="ab-card"><span aria-hidden="true" class="ic">💻</span><b>Creative Projects</b><span class="d">I have a habit of hyperfocusing on things I’m excited about (this website is a perfect example!).</span></li>
-<li class="ab-card"><span aria-hidden="true" class="ic">📓</span><b>Journalling</b><span class="d">A little time to reflect, organize my thoughts, and get creative.</span></li>
-<li class="ab-card ab-hike">
-<span aria-hidden="true" class="ic">🏔️</span><b>Hiking</b><span class="d">My favourite kind of adventure, especially when mountains are involved!</span>
-<svg aria-hidden="true" viewbox="0 0 130 70"><path d="M2 68 L38 24 L58 46 L92 6 L128 68" fill="none" stroke="var(--accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
-</li>
-</ul>
-</div>
-</section>
-<section id="projects">
-<div class="editorial-heading"><span class="section-index">03 / SELECTED WORK</span><h2>Projects</h2></div>
-<article aria-label="Open project: Sequential Logic Circuit Design" class="project editorial-project" data-project-href="fsm-project.html" role="link" tabindex="0">
-<a class="project-media" href="fsm-project.html"><img alt="Multisim schematic of the sequential logic circuit" src="fsm-project/fsm-circuit.png"/></a>
-<span class="project-kicker">PROJECT 01  /  DIGITAL ELECTRONICS</span><h3>Sequential Logic Circuit Design</h3>
-<p class="meta">Digital Electronics / Circuit Design · NI Multisim · Digital Logic · FSM · Hardware Design</p>
-<p>Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p>
-<p style="margin:16px 0 0"><a href="fsm-project.html"><b>View full project →</b></a></p>
-</article>
-<article aria-label="Open project: Electrical Impedance Tomography Sensor Simulation" class="project editorial-project" data-project-href="eit-project.html" role="link" tabindex="0">
-<a class="project-media" href="eit-project.html"><img alt="COMSOL electric potential distribution for the handheld EIT probe model" src="eit-project/eit-potential-probe.jpg"/></a>
-<span class="project-kicker">PROJECT 02  /  COMPUTATIONAL MODELLING</span><h3>Electrical Impedance Tomography Sensor Simulation</h3>
-<p class="meta">Biomedical Engineering | Computational Modelling · COMSOL Multiphysics · EIT · Simulation · Data Analysis</p>
-<p>A team project simulating two electrical impedance tomography sensor configurations in COMSOL Multiphysics to investigate non-invasive tumour detection through electrical property variations in biological tissue. I built the cylindrical wearable sensor model.</p>
-<p style="margin:16px 0 0"><a href="eit-project.html"><b>View full project →</b></a></p>
-</article>
-</section>
-<section aria-labelledby="experience-heading" id="experience">
-<div class="editorial-heading"><span class="section-index">04 / EXPERIENCE &amp; LEADERSHIP</span><h2 id="experience-heading">Experience &amp; Leadership</h2></div>
-<p class="experience-intro">From supporting first-year engineering teams to analysing research data and leading student projects, I enjoy combining technical problem-solving with collaboration.</p>
-<div class="timeline">
-<article class="timeline-item reveal">
-<div class="timeline-top"><h3>Design Studio Teaching Assistant</h3><span class="timeline-date">Sep 2026 – Present</span></div>
-<p class="timeline-org">ENGINEER 1P13 · McMaster University</p>
-<p class="timeline-desc">Guide first-year engineering teams through mechanical design and technical problem-solving. Help troubleshoot Autodesk Inventor models and Python code, and evaluate design submissions against project requirements.</p>
-<ul aria-label="Relevant skills" class="timeline-tags"><li>Python</li><li>Autodesk Inventor</li><li>Mentorship</li><li>Design Review</li></ul>
-</article>
-<article class="timeline-item reveal">
-<div class="timeline-top"><h3>Co-VP Projects</h3><span class="timeline-date">Jul 2026 – Present</span></div>
-<p class="timeline-org">Engineers Without Borders · McMaster University</p>
-<p class="timeline-desc">Oversee the Energy and Recycling project teams, helping define technical objectives, establish milestones and deliverables, and coordinate progress from early concepts toward implementation.</p>
-<ul aria-label="Relevant skills" class="timeline-tags"><li>Project Leadership</li><li>Planning</li><li>Team Coordination</li></ul>
-</article>
-<article class="timeline-item reveal">
-<div class="timeline-top"><h3>Educational Research Assistant (Co-op)</h3><span class="timeline-date">Apr – Aug 2026</span></div>
-<p class="timeline-org">FUSE Department · McMaster University</p>
-<p class="timeline-desc">Contributed to a Python/pandas workflow for cleaning and consolidating research data, analysed survey results in Excel, and synthesized literature and institutional policy findings into research reports.</p>
-<ul aria-label="Relevant skills" class="timeline-tags"><li>Python</li><li>pandas</li><li>Excel</li><li>Data Analysis</li><li>Research</li></ul>
-</article>
-<article class="timeline-item reveal">
-<div class="timeline-top"><h3>Recycling Project Team Member</h3><span class="timeline-date">Nov 2025 – Jun 2026</span></div>
-<p class="timeline-org">Engineers Without Borders · McMaster University</p>
-<p class="timeline-desc">Contributed to research and early-stage design for a recycling process intended to convert PET bottles into filament for 3D printing.</p>
-<ul aria-label="Relevant skills" class="timeline-tags"><li>Design Research</li><li>Sustainability</li><li>Teamwork</li></ul>
-</article>
-</div>
-<div class="timeline-extra reveal">
-<h3>Additional leadership</h3>
-<div class="timeline-extra-list">
-<article><b>Workshop Coordinator</b><span>AIAA Student Branch · McMaster University</span></article>
-<article><b>Social Media Coordinator</b><span>Engineering Physics Society · McMaster University</span></article>
-</div>
-</div>
-</section>
-<section aria-labelledby="skills-heading" id="skills" class="skills-ledger-section">
-<div class="editorial-heading"><span class="section-index">05 / TOOLS &amp; METHODS</span><h2 id="skills-heading">Technical Skills</h2></div>
-<div class="skills-ledger-intro"><p>The tools I use to model, build, test, and understand engineering systems.</p><span class="skills-ledger-label">MY TOOLKIT <span aria-hidden="true">↘</span></span></div>
-<div class="skills-ledger" aria-label="Technical skills by category">
-<article class="ledger-row"><div class="ledger-heading"><span class="ledger-number">01</span><div><span class="ledger-kicker">COMPUTE</span><h3>Programming <span>&amp;</span> Analysis</h3></div></div><ul class="ledger-skills"><li>Python</li><li>MATLAB</li><li>NumPy</li><li>SciPy</li><li>Jupyter / Colab</li><li>Excel</li><li>Statistical Analysis</li><li>Curve Fitting</li></ul></article>
-<article class="ledger-row"><div class="ledger-heading"><span class="ledger-number">02</span><div><span class="ledger-kicker">SIMULATE</span><h3>Simulation <span>&amp;</span> Modelling</h3></div></div><ul class="ledger-skills"><li>COMSOL Multiphysics</li><li>NI Multisim</li><li>Simulink</li><li>FlexPDE</li><li>Maple</li></ul></article>
-<article class="ledger-row"><div class="ledger-heading"><span class="ledger-number">03</span><div><span class="ledger-kicker">CREATE</span><h3>Engineering Design</h3></div></div><ul class="ledger-skills"><li>Autodesk Inventor</li><li>CAD</li><li>Circuit Design</li><li>Prototyping</li><li>Arduino IDE</li><li>Raspberry Pi (Linux)</li><li>Digital Logic Circuits</li></ul></article>
-<article class="ledger-row"><div class="ledger-heading"><span class="ledger-number">04</span><div><span class="ledger-kicker">VALIDATE</span><h3>Laboratory <span>&amp;</span> Testing</h3></div></div><ul class="ledger-skills"><li>Oscilloscope</li><li>Function Generator</li><li>Multimeter</li><li>Breadboarding</li><li>Soldering</li><li>Analog Circuits</li><li>Digital Circuits</li></ul></article>
-</div>
-<div class="skills-ledger-footer" aria-hidden="true"><svg viewBox="0 0 420 25" preserveAspectRatio="xMinYMid meet"><path d="M0 12H100l10-8h45l10 8h120l10 8h45l10-8h70" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="0" cy="12" r="3" fill="currentColor"/><circle cx="165" cy="12" r="3" fill="currentColor"/><circle cx="420" cy="12" r="3" fill="currentColor"/></svg><span>ENGINEERING / DESIGN / DISCOVERY</span></div>
-</section>
-<section class="contact-finale contact-editorial" id="contact" aria-labelledby="contact-title">
-  <div class="contact-inner">
-    <div class="contact-editorial-copy">
-      <div class="editorial-heading"><span class="section-index">06 / LET’S CONNECT</span><h2 id="contact-title">Let’s build something together.</h2></div>
-      <p class="contact-lead">Interested in collaborating, discussing engineering opportunities, or just saying hello? I’d love to hear from you.</p>
-      <p class="contact-note">Engineering Physics · McMaster University</p>
-    </div>
-    <div class="contact-editorial-links" aria-label="Contact links">
-      <a class="contact-editorial-link" href="mailto:vkopanicak24@gmail.com"><span><small>01 / GET IN TOUCH</small><strong>Email me</strong></span><span aria-hidden="true">↗</span></a>
-      <a class="contact-editorial-link" href="https://www.linkedin.com/in/veronica-kopanicak" rel="noopener noreferrer" target="_blank"><span><small>02 / CONNECT</small><strong>LinkedIn</strong></span><span aria-hidden="true">↗</span></a>
-      <a class="contact-editorial-link" download href="Veronica_Kopanicak_Resume.pdf"><span><small>03 / LEARN MORE</small><strong>Download resume</strong></span><span aria-hidden="true">↓</span></a>
+  <div class="ab-grid">
+    <figure class="ab-photo reveal">
+      <span>Your photo here</span>
+      <img src="about-photo.jpg" alt="Photo of Veronica" onerror="this.remove()">
+    </figure>
+    <div class="ab-text reveal">
+      <h2>Hi, I’m Veronica! 👋</h2>
+      <p>I’m a third-year <span class="hl">Engineering Physics</span> student at McMaster University, also pursuing a minor in <span class="hl">Nuclear Studies and Society: Nuclear Engineering</span>.</p>
+      <p>I’ve always been curious about how things work, and I love finding creative ways to solve problems. Whether I’m designing circuits, exploring computational models, or learning something completely new, I enjoy the challenge of figuring things out and turning ideas into something meaningful.</p>
+      <p>One of my favourite things about engineering is that there’s always something new to discover. I love getting involved in projects, collaborating with others, and occasionally getting a little too invested in solving a problem!</p>
     </div>
   </div>
-  <footer class="contact-editorial-footer">Hamilton, Ontario</footer>
+  <div class="ab-more reveal">
+    <h3>Beyond Engineering 🌿</h3>
+    <p>When I’m not studying or working on engineering projects, you’ll probably find me with a book, out for a run, or planning my next adventure.</p>
+    <p>I enjoy running half-marathons, journalling, and getting completely absorbed in whatever project has caught my attention (like building this portfolio and website, haha!).</p>
+    <p>But one of my absolute favourite things is hiking, especially in the mountains. There’s something about being surrounded by mountains, exploring new trails, and spending time outdoors that I absolutely love.</p>
+    <h3 class="sub">Hobbies and interests</h3>
+    <ul class="ab-cards">
+      <li class="ab-card"><span class="ic" aria-hidden="true">📚</span><b>Reading</b><span class="d">Always looking for my next good book.</span></li>
+      <li class="ab-card"><span class="ic" aria-hidden="true">🏃‍♀️</span><b>Running</b><span class="d">Half-marathons and chasing new personal goals.</span></li>
+      <li class="ab-card"><span class="ic" aria-hidden="true">💻</span><b>Creative Projects</b><span class="d">I have a habit of hyperfocusing on things I’m excited about (this website is a perfect example!).</span></li>
+      <li class="ab-card"><span class="ic" aria-hidden="true">📓</span><b>Journalling</b><span class="d">A little time to reflect, organize my thoughts, and get creative.</span></li>
+      <li class="ab-card ab-hike">
+        <span class="ic" aria-hidden="true">🏔️</span><b>Hiking</b><span class="d">My favourite kind of adventure, especially when mountains are involved!</span>
+        <svg viewBox="0 0 130 70" aria-hidden="true"><path d="M2 68 L38 24 L58 46 L92 6 L128 68" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <article class="project">
+    <a href="fsm-project.html"><img src="fsm-project/fsm-circuit.png" alt="Multisim schematic of the sequential logic circuit" style="max-width:100%;border-radius:6px;margin-bottom:14px"></a>
+    <h3>Sequential Logic Circuit Design</h3>
+    <p class="meta">Digital Electronics / Circuit Design · NI Multisim · Digital Logic · FSM · Hardware Design</p>
+    <p>Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p>
+    <p style="margin:16px 0 0"><a href="fsm-project.html"><b>View full project &rarr;</b></a></p>
+  </article>
+  <article class="project">
+    <a href="eit-project.html"><img src="eit-project/eit-potential-probe.jpg" alt="COMSOL electric potential distribution for the handheld EIT probe model" style="max-width:100%;border-radius:6px;margin-bottom:14px"></a>
+    <h3>Electrical Impedance Tomography Sensor Simulation</h3>
+    <p class="meta">Biomedical Engineering | Computational Modelling · COMSOL Multiphysics · EIT · Simulation · Data Analysis</p>
+    <p>A team project simulating two electrical impedance tomography sensor configurations in COMSOL Multiphysics to investigate non-invasive tumour detection through electrical property variations in biological tissue. I built the cylindrical wearable sensor model.</p>
+    <p style="margin:16px 0 0"><a href="eit-project.html"><b>View full project &rarr;</b></a></p>
+  </article>
+  <article class="project todo">
+    <h3>[Project name]</h3>
+    <p class="meta">[Course, club, or personal] · [Month, year] · [Tools used]</p>
+    <dl>
+      <dt>Problem</dt><dd>[…]</dd>
+      <dt>What I built</dt><dd>[…]</dd>
+      <dt>Result</dt><dd>[…]</dd>
+    </dl>
+  </article>
+</section>
+
+<section>
+  <h2>Experience and leadership</h2>
+  <div class="role"><b>Co-op Educational Research Assistant</b><span>FUSE Department, McMaster University</span></div>
+  <div class="role"><b>Co-VP Projects</b><span>Engineers Without Borders, McMaster</span></div>
+  <div class="role"><b>Workshop Coordinator</b><span>AIAA Student Branch, McMaster</span></div>
+  <div class="role"><b>VP Communications</b><span>Engineering Physics Society</span></div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <ul class="skills">
+    <li>[Circuit design]</li><li>[Soldering and prototyping]</li><li>[Python]</li><li>[CAD]</li><li>[Add yours]</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email <a href="mailto:your.email@mcmaster.ca">your.email@mcmaster.ca</a> · <a href="https://www.linkedin.com/in/your-handle">LinkedIn</a> · <a href="https://github.com/your-handle">GitHub</a></p>
+  <footer>Hamilton, Ontario. Available for a 12-month co-op from [month, year].</footer>
 </section>
 </main>
+
 <script>
 (function(){
   document.documentElement.classList.add('js');
@@ -709,47 +200,5 @@ section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
-<script>
-(function(){
-  var cards=document.querySelectorAll('#projects .project[data-project-href]');
-  cards.forEach(function(card){
-    function openCard(){window.location.href=card.getAttribute('data-project-href');}
-    card.addEventListener('click',function(event){if(event.target.closest('a,button'))return;openCard();});
-    card.addEventListener('keydown',function(event){if(event.target!==card)return;if(event.key==='Enter'||event.key===' '){event.preventDefault();openCard();}});
-  });
-  var nav=document.querySelector('.site-nav');
-  var navLinks=document.querySelectorAll('.site-nav-links a');
-  // Highlight only after a section heading reaches the bottom of the sticky bar.
-  // Unlike an IntersectionObserver with a large root margin, this cannot jump ahead.
-  var sections=Array.from(navLinks).map(function(link){
-    return {link:link,element:document.getElementById(link.getAttribute('href').slice(1))};
-  }).filter(function(item){return item.element;});
-  var ticking=false;
-  function updateActiveSection(){
-    ticking=false;
-    var navBottom=nav.getBoundingClientRect().bottom;
-    var trigger=navBottom+12;
-    // Keep About active through the hero and introduction, until Beyond Engineering begins.
-    var current=sections.length ? sections[0] : null;
-    sections.forEach(function(item){
-      if(item.element.getBoundingClientRect().top<=trigger){current=item;}
-    });
-    // At the very end, Contact should be selectable even on short screens.
-    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-3){
-      current=sections[sections.length-1];
-    }
-    navLinks.forEach(function(link){
-      if(current && link===current.link){link.setAttribute('aria-current','location');}
-      else{link.removeAttribute('aria-current');}
-    });
-  }
-  function scheduleUpdate(){
-    if(!ticking){ticking=true;window.requestAnimationFrame(updateActiveSection);}
-  }
-  window.addEventListener('scroll',scheduleUpdate,{passive:true});
-  window.addEventListener('resize',scheduleUpdate);
-  window.addEventListener('load',scheduleUpdate);
-  scheduleUpdate();
-})();
-</script></body>
+</body>
 </html>
