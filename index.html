@@ -202,6 +202,18 @@ section#about,section#projects,section#experience,section#skills,section#contact
   #about .ab-grid .ab-text p { margin-left: auto; margin-right: 0; }
   #about .ab-grid .ab-text .editorial-heading { text-align: right; }
 }
+
+/* Two-stage experience cards: hover previews, click reveals complete details. */
+.timeline-hover-preview{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .28s ease,opacity .25s ease}
+.timeline-hover-preview>p{min-height:0;overflow:hidden;margin:0;color:var(--muted);max-width:75ch}
+@media(hover:hover) and (pointer:fine){
+  .timeline-item:hover:not(.is-expanded) .timeline-hover-preview{grid-template-rows:1fr;opacity:1}
+  .timeline-item:hover:not(.is-expanded) .timeline-hover-preview>p{padding-bottom:12px}
+}
+.timeline-item.is-expanded .timeline-hover-preview{grid-template-rows:0fr;opacity:0}
+.timeline-skills-label{font:700 .8rem var(--head);color:var(--accent);margin:12px 0 8px}
+.timeline-item.is-expanded .timeline-reveal-inner{padding-top:12px}
+@media(prefers-reduced-motion:reduce){.timeline-hover-preview{transition:none}}
 </style>
 <style>
 /* Resume & contact */
@@ -610,9 +622,10 @@ section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid
 }
 </style><style>
 /* Portfolio enhancements: introduction, scroll progress and accessible timeline */
+/* Details expand only on click/tap, so Less details can always collapse them. */
 .hero-subtitle{max-width:48ch;margin:0 0 25px;color:var(--muted);font-size:clamp(1rem,1.45vw,1.14rem);line-height:1.65}
 .site-nav{position:sticky}
-.site-scroll-progress{position:absolute;bottom:-2px;left:0;height:3px;width:0;background:var(--accent);z-index:4;pointer-events:none;transition:width .08s linear}
+.site-scroll-progress{position:absolute;bottom:0;left:0;height:5px;width:0;background:linear-gradient(90deg,#397b58,var(--accent));box-shadow:0 0 9px rgba(45,113,78,.38);z-index:8;pointer-events:none;transition:width .08s linear;border-radius:0 5px 5px 0}
 .site-nav::after{opacity:.15}
 .timeline-item{transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
 .timeline-item:hover,.timeline-item:focus-within,.timeline-item.is-expanded{border-color:var(--accent);box-shadow:0 12px 32px rgba(19,45,34,.10);transform:translateY(-2px)}
@@ -620,13 +633,13 @@ section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid
 .timeline-item:hover::before,.timeline-item:focus-within::before,.timeline-item.is-expanded::before{box-shadow:0 0 0 7px rgba(55,111,80,.14);background:var(--accent)}
 .timeline-toggle{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:5px 0;border:0;background:transparent;color:var(--accent);font:700 .79rem var(--head);cursor:pointer}
 .timeline-toggle::after{content:'+';font-size:1.25rem;line-height:1;transition:transform .2s ease}
-.timeline-item:hover .timeline-toggle::after,.timeline-item:focus-within .timeline-toggle::after,.timeline-item.is-expanded .timeline-toggle::after{transform:rotate(45deg)}
+.timeline-item.is-expanded .timeline-toggle::after{transform:rotate(45deg)}
 .timeline-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 .timeline-reveal-content{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .35s ease,opacity .3s ease;overflow:hidden}
 .timeline-reveal-inner{min-height:0;overflow:hidden}
-.timeline-item:hover .timeline-reveal-content,.timeline-item:focus-within .timeline-reveal-content,.timeline-item.is-expanded .timeline-reveal-content{grid-template-rows:1fr;opacity:1}
+.timeline-item.is-expanded .timeline-reveal-content{grid-template-rows:1fr;opacity:1}
 .timeline-reveal-inner{padding-top:0}
-.timeline-item:hover .timeline-reveal-inner,.timeline-item:focus-within .timeline-reveal-inner,.timeline-item.is-expanded .timeline-reveal-inner{padding-top:12px}
+.timeline-item.is-expanded .timeline-reveal-inner{padding-top:12px}
 .back-to-top{position:fixed;right:clamp(16px,3vw,36px);bottom:clamp(16px,3vw,32px);z-index:90;width:52px;height:52px;border:1.5px solid var(--accent);border-radius:50%;background:var(--accent);color:var(--surface);box-shadow:0 7px 24px rgba(18,49,40,.19);display:grid;place-items:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .2s,transform .2s,visibility .2s,background .2s}
 .back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
 .back-to-top:hover,.back-to-top:focus-visible{background:var(--ink);transform:translateY(-3px)}
@@ -707,25 +720,25 @@ section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid
 <article class="timeline-item reveal">
 <div class="timeline-top"><h3>Design Studio Teaching Assistant</h3><span class="timeline-date">Sep 2026 – Present</span></div>
 <p class="timeline-org">ENGINEER 1P13 · McMaster University</p>
-<button aria-controls="experience-detail-1" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-1"><div class="timeline-reveal-inner"><p class="timeline-desc">Guide first-year engineering teams through mechanical design and technical problem-solving. Help troubleshoot Autodesk Inventor models and Python code, and evaluate design submissions against project requirements.</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Python</li><li>Autodesk Inventor</li><li>Mentorship</li><li>Design Review</li></ul></div></div>
+<div class="timeline-hover-preview"><p>Guide first-year engineering teams through mechanical design and technical problem-solving.</p></div><button aria-controls="experience-detail-1" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-1"><div class="timeline-reveal-inner"><p class="timeline-desc">Guide first-year engineering teams through mechanical design and technical problem-solving. Help troubleshoot Autodesk Inventor models and Python code, and evaluate design submissions against project requirements.</p><p class="timeline-skills-label">Relevant skills &amp; tools</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Python</li><li>Autodesk Inventor</li><li>Mentorship</li><li>Design Review</li></ul></div></div>
 
 </article>
 <article class="timeline-item reveal">
 <div class="timeline-top"><h3>Co-VP Projects</h3><span class="timeline-date">Jul 2026 – Present</span></div>
 <p class="timeline-org">Engineers Without Borders · McMaster University</p>
-<button aria-controls="experience-detail-2" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-2"><div class="timeline-reveal-inner"><p class="timeline-desc">Oversee the Energy and Recycling project teams, helping define technical objectives, establish milestones and deliverables, and coordinate progress from early concepts toward implementation.</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Project Leadership</li><li>Planning</li><li>Team Coordination</li></ul></div></div>
+<div class="timeline-hover-preview"><p>Oversee the Energy and Recycling project teams, helping define technical objectives, establish milestones and deliverables, and coordinate progress from early concepts toward implementation.</p></div><button aria-controls="experience-detail-2" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-2"><div class="timeline-reveal-inner"><p class="timeline-desc">Oversee the Energy and Recycling project teams, helping define technical objectives, establish milestones and deliverables, and coordinate progress from early concepts toward implementation.</p><p class="timeline-skills-label">Relevant skills &amp; tools</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Project Leadership</li><li>Planning</li><li>Team Coordination</li></ul></div></div>
 
 </article>
 <article class="timeline-item reveal">
 <div class="timeline-top"><h3>Educational Research Assistant (Co-op)</h3><span class="timeline-date">Apr – Aug 2026</span></div>
 <p class="timeline-org">FUSE Department · McMaster University</p>
-<button aria-controls="experience-detail-3" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-3"><div class="timeline-reveal-inner"><p class="timeline-desc">Contributed to a Python/pandas workflow for cleaning and consolidating research data, analysed survey results in Excel, and synthesized literature and institutional policy findings into research reports.</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Python</li><li>pandas</li><li>Excel</li><li>Data Analysis</li><li>Research</li></ul></div></div>
+<div class="timeline-hover-preview"><p>Contributed to a Python/pandas workflow for cleaning and consolidating research data, analysed survey results in Excel, and synthesized literature and institutional policy findings into research reports.</p></div><button aria-controls="experience-detail-3" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-3"><div class="timeline-reveal-inner"><p class="timeline-desc">Contributed to a Python/pandas workflow for cleaning and consolidating research data, analysed survey results in Excel, and synthesized literature and institutional policy findings into research reports.</p><p class="timeline-skills-label">Relevant skills &amp; tools</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Python</li><li>pandas</li><li>Excel</li><li>Data Analysis</li><li>Research</li></ul></div></div>
 
 </article>
 <article class="timeline-item reveal">
 <div class="timeline-top"><h3>Recycling Project Team Member</h3><span class="timeline-date">Nov 2025 – Jun 2026</span></div>
 <p class="timeline-org">Engineers Without Borders · McMaster University</p>
-<button aria-controls="experience-detail-4" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-4"><div class="timeline-reveal-inner"><p class="timeline-desc">Contributed to research and early-stage design for a recycling process intended to convert PET bottles into filament for 3D printing.</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Design Research</li><li>Sustainability</li><li>Teamwork</li></ul></div></div>
+<div class="timeline-hover-preview"><p>Contributed to research and early-stage design for a recycling process intended to convert PET bottles into filament for 3D printing.</p></div><button aria-controls="experience-detail-4" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-4"><div class="timeline-reveal-inner"><p class="timeline-desc">Contributed to research and early-stage design for a recycling process intended to convert PET bottles into filament for 3D printing.</p><p class="timeline-skills-label">Relevant skills &amp; tools</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Design Research</li><li>Sustainability</li><li>Teamwork</li></ul></div></div>
 
 </article>
 </div>
