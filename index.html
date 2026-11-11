@@ -95,21 +95,20 @@ footer{color:var(--muted);font-size:.95rem;padding-top:24px}
 @media (max-width:760px){.ab-grid{grid-template-columns:1fr}.ab-photo{max-width:300px}.ab-cards{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:380px){.ab-cards{grid-template-columns:1fr}.ab-hike{grid-column:auto}}
 @media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.ab-card,.ab-hike svg{transition:none}.ab-card:hover,.ab-hike:hover svg{transform:none}}
-
 </style>
 </head>
-  <script>
-(function(){
-  document.documentElement.classList.add('js');
-  var els=document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
-  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.1});
-  els.forEach(function(e){io.observe(e)});
-})();
-</script>
 <body>
 <main>
 <header>
+  <h1>Veronica Kopanicak</h1>
+  <p class="lede">Third-year Engineering Physics student at McMaster University, with a minor in Nuclear Studies and Society. I build circuits and hardware, and I’m looking for a 12-month co-op starting [month, year].</p>
+  <svg class="trace" viewBox="0 0 520 60" role="img" aria-label="Decorative circuit trace">
+    <path d="M6 30 H120 L140 10 L170 50 L200 10 L230 50 L250 30 H340 M340 30 V12 H400 M340 30 V48 H400 M400 12 H460 M400 48 H460 M460 12 V48 M460 30 H514"/>
+    <circle cx="6" cy="30" r="5"/><circle cx="340" cy="30" r="5"/><circle cx="514" cy="30" r="5"/>
+  </svg>
+  <a class="cta" href="mailto:your.email@mcmaster.ca">Email me</a>
+  <a class="cta alt" href="#projects">See projects</a>
+</header>
 
 <section id="about">
   <div class="ab-grid">
@@ -142,32 +141,23 @@ footer{color:var(--muted);font-size:.95rem;padding-top:24px}
     </ul>
   </div>
 </section>
-  <h1>Veronica Kopanicak</h1>
-  <p class="lede">Third-year Engineering Physics student at McMaster University, with a minor in Nuclear Studies and Society. I build circuits and hardware, and I’m looking for a 12-month co-op starting [month, year].</p>
-  <svg class="trace" viewBox="0 0 520 60" role="img" aria-label="Decorative circuit trace">
-    <path d="M6 30 H120 L140 10 L170 50 L200 10 L230 50 L250 30 H340 M340 30 V12 H400 M340 30 V48 H400 M400 12 H460 M400 48 H460 M460 12 V48 M460 30 H514"/>
-    <circle cx="6" cy="30" r="5"/><circle cx="340" cy="30" r="5"/><circle cx="514" cy="30" r="5"/>
-  </svg>
-  <a class="cta" href="mailto:your.email@mcmaster.ca">Email me</a>
-  <a class="cta alt" href="#projects">See projects</a>
-</header>
 
 <section id="projects">
   <h2>Projects</h2>
   <article class="project">
-  <a href="fsm-project.html"><img src="fsm-project/fsm-circuit.png" alt="Multisim schematic of the sequential logic circuit" style="max-width:100%;border-radius:6px;margin-bottom:14px"></a>
-  <h3>Sequential Logic Circuit Design</h3>
-  <p class="meta">Digital Electronics / Circuit Design · NI Multisim · Digital Logic · FSM · Hardware Design</p>
-  <p>Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p>
-  <p style="margin:16px 0 0"><a href="fsm-project.html"><b>View full project &rarr;</b></a></p>
-</article>
+    <a href="fsm-project.html"><img src="fsm-project/fsm-circuit.png" alt="Multisim schematic of the sequential logic circuit" style="max-width:100%;border-radius:6px;margin-bottom:14px"></a>
+    <h3>Sequential Logic Circuit Design</h3>
+    <p class="meta">Digital Electronics / Circuit Design · NI Multisim · Digital Logic · FSM · Hardware Design</p>
+    <p>Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p>
+    <p style="margin:16px 0 0"><a href="fsm-project.html"><b>View full project &rarr;</b></a></p>
+  </article>
   <article class="project">
-  <a href="eit-project.html"><img src="eit-project/eit-potential-probe.jpg" alt="COMSOL electric potential distribution for the handheld EIT probe model" style="max-width:100%;border-radius:6px;margin-bottom:14px"></a>
-  <h3>Electrical Impedance Tomography Sensor Simulation</h3>
-  <p class="meta">Biomedical Engineering | Computational Modelling · COMSOL Multiphysics · EIT · Simulation · Data Analysis</p>
-  <p>A team project simulating two electrical impedance tomography sensor configurations in COMSOL Multiphysics to investigate non-invasive tumour detection through electrical property variations in biological tissue. I built the cylindrical wearable sensor model.</p>
-  <p style="margin:16px 0 0"><a href="eit-project.html"><b>View full project &rarr;</b></a></p>
-</article>
+    <a href="eit-project.html"><img src="eit-project/eit-potential-probe.jpg" alt="COMSOL electric potential distribution for the handheld EIT probe model" style="max-width:100%;border-radius:6px;margin-bottom:14px"></a>
+    <h3>Electrical Impedance Tomography Sensor Simulation</h3>
+    <p class="meta">Biomedical Engineering | Computational Modelling · COMSOL Multiphysics · EIT · Simulation · Data Analysis</p>
+    <p>A team project simulating two electrical impedance tomography sensor configurations in COMSOL Multiphysics to investigate non-invasive tumour detection through electrical property variations in biological tissue. I built the cylindrical wearable sensor model.</p>
+    <p style="margin:16px 0 0"><a href="eit-project.html"><b>View full project &rarr;</b></a></p>
+  </article>
   <article class="project todo">
     <h3>[Project name]</h3>
     <p class="meta">[Course, club, or personal] · [Month, year] · [Tools used]</p>
@@ -200,5 +190,15 @@ footer{color:var(--muted);font-size:.95rem;padding-top:24px}
   <footer>Hamilton, Ontario. Available for a 12-month co-op from [month, year].</footer>
 </section>
 </main>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.1});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
 </body>
 </html>
