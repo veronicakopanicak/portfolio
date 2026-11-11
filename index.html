@@ -645,10 +645,45 @@ section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid
 .back-to-top:hover,.back-to-top:focus-visible{background:var(--ink);transform:translateY(-3px)}
 .back-to-top svg{width:23px;height:23px}
 @media(prefers-reduced-motion:reduce){.timeline-reveal-content,.timeline-item,.back-to-top,.site-scroll-progress{transition:none!important}}
+</style><style>\n/* Portfolio refinements — project previews, detailed experience, mobile navigation and footer */
+#projects .projects-intro{max-width:660px;margin:4px 0 32px;color:var(--muted, #53675b);line-height:1.7}
+#projects .editorial-project{position:relative;overflow:hidden;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+#projects .editorial-project:hover,#projects .editorial-project:focus-within{transform:translateY(-5px);box-shadow:0 18px 38px rgba(29,64,44,.12)}
+#projects .project-tool-tags{display:flex;flex-wrap:wrap;gap:8px;margin:17px 0 16px}
+#projects .project-tool-tags span{border:1px solid rgba(37,89,61,.35);border-radius:999px;padding:6px 11px;font-size:.79rem;font-weight:600;letter-spacing:.015em;color:var(--accent,#2a5a42)}
+#projects .project-outcome{padding:13px 16px;margin:18px 0 12px;background:rgba(75,119,84,.075);border-left:3px solid var(--accent,#376b4d);line-height:1.65}
+#projects .project-outcome strong{color:var(--accent,#2a5a42)}
+#projects .project-cta{margin:22px 0 0!important;padding:12px 0 14px!important}
+#projects .project-cta a{display:inline-flex;align-items:center;padding:6px 3px;text-underline-offset:4px}
+.timeline-detail-eyebrow{font-size:.72rem!important;letter-spacing:.12em;font-weight:800;color:var(--accent,#2d6247);margin:12px 0 8px!important}
+.timeline-expanded-description{line-height:1.75!important}
+.timeline-reveal-inner{padding-bottom:6px}
+.timeline-item.is-expanded .timeline-hover-preview{display:none!important}
+/* Nav: full-width desktop links; accessible menu on small screens */
+.mobile-nav-toggle{display:none}
+@media(max-width:780px){
+ .site-nav{display:flex!important;align-items:center!important;justify-content:space-between!important;flex-wrap:wrap!important;min-height:68px;padding:10px 20px!important;position:sticky!important;top:0!important;z-index:1000!important}
+ .site-nav .brand{position:relative;z-index:2}
+ .mobile-nav-toggle{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1.5px solid currentColor;border-radius:9px;background:transparent;color:var(--accent,#285b43);font:inherit;font-weight:700;cursor:pointer;z-index:2}
+ .mobile-nav-icon{font-size:1.25rem;line-height:1}
+ .site-nav .site-nav-links{display:none!important;position:static!important;order:3;width:100%;flex-basis:100%;padding:13px 0 8px!important;margin:8px 0 0!important;border-top:1px solid rgba(52,98,70,.22);flex-direction:column!important;align-items:stretch!important;gap:2px!important;max-height:calc(100dvh - 105px);overflow-y:auto}
+ .site-nav.menu-open .site-nav-links{display:flex!important}
+ .site-nav .site-nav-links a{display:block!important;padding:12px 14px!important;border-radius:8px;text-align:left!important;white-space:normal!important}
+ .site-nav .site-scroll-progress{position:absolute!important;bottom:0;left:0}
+ #projects .project-tool-tags{gap:6px}
+ .portfolio-footer{flex-direction:column;align-items:flex-start!important;gap:10px!important}
+}
+.portfolio-footer{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px max(6vw,24px) 30px;background:var(--surface,#f8f7ef);border-top:1px solid rgba(48,92,62,.2);color:var(--accent,#285b43);font-size:.85rem}
+.portfolio-footer-signature{font-family:inherit;font-weight:700}
+.portfolio-footer-meta{opacity:.75}
+/* Scroll entrance animations apply to headings, not every line of body text. */
+.js .section-enter{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
+.js .section-enter.in-view{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.js .section-enter{opacity:1!important;transform:none!important;transition:none!important}#projects .editorial-project{transition:none!important}}
 </style></head>
 <body>
 <main>
-<nav aria-label="Sticky section navigation" class="site-nav"><a aria-label="Back to top" class="brand circuit-brand" href="#top" title="Back to top"><svg aria-hidden="true" fill="none" height="38" viewbox="0 0 76 38" width="76" xmlns="http://www.w3.org/2000/svg"><path d="M4 19H19L29 9H45L53 19H72M29 9V3M29 29V19H45L53 29H72" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path><circle cx="4" cy="19" fill="currentColor" r="3.4"></circle><circle cx="29" cy="3" fill="currentColor" r="3"></circle><circle cx="72" cy="19" fill="currentColor" r="3.4"></circle><circle cx="72" cy="29" fill="currentColor" r="3"></circle></svg></a><div class="site-nav-links"><a href="#about">About</a><a href="#beyond-engineering">Beyond Engineering</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div><div aria-hidden="true" class="site-scroll-progress"></div></nav>
+<nav aria-label="Sticky section navigation" class="site-nav"><a aria-label="Back to top" class="brand circuit-brand" href="#top" title="Back to top"><svg aria-hidden="true" fill="none" height="38" viewbox="0 0 76 38" width="76" xmlns="http://www.w3.org/2000/svg"><path d="M4 19H19L29 9H45L53 19H72M29 9V3M29 29V19H45L53 29H72" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path><circle cx="4" cy="19" fill="currentColor" r="3.4"></circle><circle cx="29" cy="3" fill="currentColor" r="3"></circle><circle cx="72" cy="19" fill="currentColor" r="3.4"></circle><circle cx="72" cy="29" fill="currentColor" r="3"></circle></svg></a><button aria-controls="mobile-site-links" aria-expanded="false" aria-label="Open navigation menu" class="mobile-nav-toggle" type="button"><span aria-hidden="true" class="mobile-nav-icon">☰</span><span aria-hidden="false" class="mobile-nav-label">Menu</span></button><div class="site-nav-links" id="mobile-site-links"><a href="#about">About</a><a href="#beyond-engineering">Beyond Engineering</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div><div aria-hidden="true" class="site-scroll-progress"></div></nav>
 <header id="top">
 <p class="hero-eyebrow">ENGINEERING PHYSICS  /  MCMASTER UNIVERSITY</p><h1>Veronica Kopanicak</h1>
 <p class="lede">Curious by nature. Engineer by design.</p><p class="hero-subtitle">Exploring electronics, computational modelling, and creative engineering solutions.</p>
@@ -697,20 +732,20 @@ section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid
 </div>
 </section>
 <section id="projects">
-<div class="editorial-heading"><span class="section-index">03 / SELECTED WORK</span><h2>Projects</h2></div>
+<div class="editorial-heading"><span class="section-index">03 / SELECTED WORK</span><h2>Projects</h2></div><p class="projects-intro">Selected work in digital electronics and computational modelling, from circuit design to simulation.</p>
 <article aria-label="Open project: Sequential Logic Circuit Design" class="project editorial-project" data-project-href="fsm-project.html" role="link" tabindex="0">
 <a class="project-media" href="fsm-project.html"><img alt="Multisim schematic of the sequential logic circuit" src="fsm-project/fsm-circuit.png"/></a>
 <span class="project-kicker">PROJECT 01  /  DIGITAL ELECTRONICS</span><h3>Sequential Logic Circuit Design</h3>
-<p class="meta">Digital Electronics / Circuit Design · NI Multisim · Digital Logic · FSM · Hardware Design</p>
+<p class="meta">Digital Electronics / Circuit Design · NI Multisim · Digital Logic · FSM · Hardware Design</p><div aria-label="Project tools and methods" class="project-tool-tags"><span>NI Multisim</span><span>Digital logic</span><span>Breadboard testing</span></div><p class="project-outcome"><strong>Project highlight  </strong>Designed and tested a J-K flip-flop sequential circuit that drives a seven-segment display.</p>
 <p>Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p>
-<p style="margin:16px 0 0"><a href="fsm-project.html"><b>View full project →</b></a></p>
+<p class="project-cta"><a href="fsm-project.html"><b>View full project →</b></a></p>
 </article>
 <article aria-label="Open project: Electrical Impedance Tomography Sensor Simulation" class="project editorial-project" data-project-href="eit-project.html" role="link" tabindex="0">
 <a class="project-media" href="eit-project.html"><img alt="COMSOL electric potential distribution for the handheld EIT probe model" src="eit-project/eit-potential-probe.jpg"/></a>
 <span class="project-kicker">PROJECT 02  /  COMPUTATIONAL MODELLING</span><h3>Electrical Impedance Tomography Sensor Simulation</h3>
-<p class="meta">Biomedical Engineering | Computational Modelling · COMSOL Multiphysics · EIT · Simulation · Data Analysis</p>
+<p class="meta">Biomedical Engineering | Computational Modelling · COMSOL Multiphysics · EIT · Simulation · Data Analysis</p><div aria-label="Project tools and methods" class="project-tool-tags"><span>COMSOL Multiphysics</span><span>EIT</span><span>Parametric modelling</span></div><p class="project-outcome"><strong>Project highlight  </strong>Modelled a cylindrical wearable EIT sensor as part of a team investigation of electrode configurations.</p>
 <p>A team project simulating two electrical impedance tomography sensor configurations in COMSOL Multiphysics to investigate non-invasive tumour detection through electrical property variations in biological tissue. I built the cylindrical wearable sensor model.</p>
-<p style="margin:16px 0 0"><a href="eit-project.html"><b>View full project →</b></a></p>
+<p class="project-cta"><a href="eit-project.html"><b>View full project →</b></a></p>
 </article>
 </section>
 <section aria-labelledby="experience-heading" id="experience">
@@ -720,35 +755,20 @@ section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid
 <article class="timeline-item reveal">
 <div class="timeline-top"><h3>Design Studio Teaching Assistant</h3><span class="timeline-date">Sep 2026 – Present</span></div>
 <p class="timeline-org">ENGINEER 1P13 · McMaster University</p>
-<div class="timeline-hover-preview"><p>Guide first-year engineering teams through mechanical design and technical problem-solving.</p></div><button aria-controls="experience-detail-1" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-1"><div class="timeline-reveal-inner"><p class="timeline-desc">Guide first-year engineering teams through mechanical design and technical problem-solving. Help troubleshoot Autodesk Inventor models and Python code, and evaluate design submissions against project requirements.</p><p class="timeline-skills-label">Relevant skills &amp; tools</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Python</li><li>Autodesk Inventor</li><li>Mentorship</li><li>Design Review</li></ul></div></div>
-
-</article>
-<article class="timeline-item reveal">
+<div class="timeline-hover-preview"><p>Guide first-year engineering teams through mechanical design and technical problem-solving.</p></div><button aria-controls="experience-detail-1" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-1"><div class="timeline-reveal-inner"><p class="timeline-detail-eyebrow">ROLE &amp; CONTRIBUTIONS</p><p class="timeline-desc timeline-expanded-description">Guide first-year engineering teams through mechanical design and technical problem-solving. Help troubleshoot Autodesk Inventor models and Python code, and evaluate design submissions against project requirements.</p><p class="timeline-skills-label">TOOLS &amp; STRENGTHS</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Python</li><li>Autodesk Inventor</li><li>Mentorship</li><li>Design Review</li></ul></div></div>
+</article><article class="timeline-item reveal">
 <div class="timeline-top"><h3>Co-VP Projects</h3><span class="timeline-date">Jul 2026 – Present</span></div>
 <p class="timeline-org">Engineers Without Borders · McMaster University</p>
-<div class="timeline-hover-preview"><p>Oversee the Energy and Recycling project teams, helping define technical objectives, establish milestones and deliverables, and coordinate progress from early concepts toward implementation.</p></div><button aria-controls="experience-detail-2" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-2"><div class="timeline-reveal-inner"><p class="timeline-desc">Oversee the Energy and Recycling project teams, helping define technical objectives, establish milestones and deliverables, and coordinate progress from early concepts toward implementation.</p><p class="timeline-skills-label">Relevant skills &amp; tools</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Project Leadership</li><li>Planning</li><li>Team Coordination</li></ul></div></div>
-
-</article>
-<article class="timeline-item reveal">
+<div class="timeline-hover-preview"><p>Oversee the Energy and Recycling project teams, helping define technical objectives, establish milestones and deliverables, and coordinate progress from early concepts toward implementation.</p></div><button aria-controls="experience-detail-2" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-2"><div class="timeline-reveal-inner"><p class="timeline-detail-eyebrow">ROLE &amp; CONTRIBUTIONS</p><p class="timeline-desc timeline-expanded-description">Oversee the Energy and Recycling project teams, helping define technical objectives, establish milestones and deliverables, and coordinate progress from early concepts toward implementation.</p><p class="timeline-skills-label">TOOLS &amp; STRENGTHS</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Project Leadership</li><li>Planning</li><li>Team Coordination</li></ul></div></div>
+</article><article class="timeline-item reveal"><div class="timeline-top"><h3>Workshop Coordinator</h3><span class="timeline-date">Jun – Oct 2026</span></div><p class="timeline-org">McMaster AIAA Student Branch · Hamilton, ON</p><div class="timeline-hover-preview"><p>Coordinated technical and professional workshops for members of the AIAA student chapter.</p></div><button aria-controls="experience-detail-5" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-5"><div class="timeline-reveal-inner"><p class="timeline-detail-eyebrow">ROLE &amp; CONTRIBUTIONS</p><p class="timeline-desc timeline-expanded-description">Coordinated the planning and execution of technical and professional workshops. Collaborated with the executive team to organize educational events, manage logistics, and create opportunities for members to develop practical aerospace engineering skills.</p><p class="timeline-skills-label">TOOLS &amp; STRENGTHS</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Event Planning</li><li>Workshop Coordination</li><li>Team Collaboration</li><li>Aerospace Engineering</li></ul></div></div></article><article class="timeline-item reveal">
 <div class="timeline-top"><h3>Educational Research Assistant (Co-op)</h3><span class="timeline-date">Apr – Aug 2026</span></div>
 <p class="timeline-org">FUSE Department · McMaster University</p>
-<div class="timeline-hover-preview"><p>Contributed to a Python/pandas workflow for cleaning and consolidating research data, analysed survey results in Excel, and synthesized literature and institutional policy findings into research reports.</p></div><button aria-controls="experience-detail-3" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-3"><div class="timeline-reveal-inner"><p class="timeline-desc">Contributed to a Python/pandas workflow for cleaning and consolidating research data, analysed survey results in Excel, and synthesized literature and institutional policy findings into research reports.</p><p class="timeline-skills-label">Relevant skills &amp; tools</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Python</li><li>pandas</li><li>Excel</li><li>Data Analysis</li><li>Research</li></ul></div></div>
-
-</article>
-<article class="timeline-item reveal">
+<div class="timeline-hover-preview"><p>Contributed to a Python/pandas workflow for cleaning and consolidating research data, analysed survey results in Excel, and synthesized literature and institutional policy findings into research reports.</p></div><button aria-controls="experience-detail-3" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-3"><div class="timeline-reveal-inner"><p class="timeline-detail-eyebrow">ROLE &amp; CONTRIBUTIONS</p><p class="timeline-desc timeline-expanded-description">Contributed to a Python/pandas workflow for cleaning and consolidating research data, analysed survey results in Excel, and synthesized literature and institutional policy findings into research reports.</p><p class="timeline-skills-label">TOOLS &amp; STRENGTHS</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Python</li><li>pandas</li><li>Excel</li><li>Data Analysis</li><li>Research</li></ul></div></div>
+</article><article class="timeline-item reveal">
 <div class="timeline-top"><h3>Recycling Project Team Member</h3><span class="timeline-date">Nov 2025 – Jun 2026</span></div>
 <p class="timeline-org">Engineers Without Borders · McMaster University</p>
-<div class="timeline-hover-preview"><p>Contributed to research and early-stage design for a recycling process intended to convert PET bottles into filament for 3D printing.</p></div><button aria-controls="experience-detail-4" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-4"><div class="timeline-reveal-inner"><p class="timeline-desc">Contributed to research and early-stage design for a recycling process intended to convert PET bottles into filament for 3D printing.</p><p class="timeline-skills-label">Relevant skills &amp; tools</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Design Research</li><li>Sustainability</li><li>Teamwork</li></ul></div></div>
-
-</article>
-</div>
-<div class="timeline-extra reveal">
-<h3>Additional leadership</h3>
-<div class="timeline-extra-list">
-<article><b>Workshop Coordinator</b><span>AIAA Student Branch · McMaster University</span></article>
-<article><b>Social Media Coordinator</b><span>Engineering Physics Society · McMaster University</span></article>
-</div>
-</div>
+<div class="timeline-hover-preview"><p>Contributed to research and early-stage design for a recycling process intended to convert PET bottles into filament for 3D printing.</p></div><button aria-controls="experience-detail-4" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-4"><div class="timeline-reveal-inner"><p class="timeline-detail-eyebrow">ROLE &amp; CONTRIBUTIONS</p><p class="timeline-desc timeline-expanded-description">Contributed to research and early-stage design for a recycling process intended to convert PET bottles into filament for 3D printing.</p><p class="timeline-skills-label">TOOLS &amp; STRENGTHS</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Design Research</li><li>Sustainability</li><li>Teamwork</li></ul></div></div>
+</article><article class="timeline-item reveal"><div class="timeline-top"><h3>Social Media Coordinator</h3><span class="timeline-date">Sep 2025 – Present</span></div><p class="timeline-org">Engineering Physics Society · Hamilton, ON</p><div class="timeline-hover-preview"><p>Manage the society’s Instagram and LinkedIn presence, creating graphics and promoting events.</p></div><button aria-controls="experience-detail-6" aria-expanded="false" class="timeline-toggle" type="button">More details</button><div class="timeline-reveal-content" id="experience-detail-6"><div class="timeline-reveal-inner"><p class="timeline-detail-eyebrow">ROLE &amp; CONTRIBUTIONS</p><p class="timeline-desc timeline-expanded-description">Manage the society’s Instagram and LinkedIn presence by designing graphics and publishing event content. Launched and continue to grow the society’s LinkedIn page, collaborating with the executive team on promotional materials.</p><p class="timeline-skills-label">TOOLS &amp; STRENGTHS</p><ul aria-label="Relevant skills" class="timeline-tags"><li>Social Media</li><li>Graphic Design</li><li>Communications</li><li>Event Promotion</li></ul></div></div></article></div>
 </section>
 <section aria-labelledby="skills-heading" class="skills-ledger-section" id="skills">
 <div class="editorial-heading"><span class="section-index">05 / TOOLS &amp; METHODS</span><h2 id="skills-heading">Technical Skills</h2></div>
@@ -774,8 +794,8 @@ section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid
 <a class="contact-editorial-link" download="" href="Veronica_Kopanicak_Resume.pdf"><span><small>03 / LEARN MORE</small><strong>Download resume</strong></span><span aria-hidden="true">↓</span></a>
 </div>
 </div>
-<footer class="contact-editorial-footer">Hamilton, Ontario</footer>
-</section>
+
+</section><footer aria-label="Portfolio footer" class="portfolio-footer"><div class="portfolio-footer-signature">Curious by nature. Engineer by design.</div><div class="portfolio-footer-meta">© 2026 · Hamilton, Ontario</div></footer>
 </main>
 <script>
 (function(){
@@ -858,5 +878,22 @@ section#contact.contact-editorial .contact-editorial-footer{border-top:1px solid
     });
   });
 })();
-</script></body>
+</script><script>\n(function(){
+  var nav=document.querySelector('.site-nav');
+  var toggle=document.querySelector('.mobile-nav-toggle');
+  var links=document.querySelectorAll('.site-nav-links a');
+  function closeMenu(){nav.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation menu');toggle.querySelector('.mobile-nav-icon').textContent='☰';}
+  if(nav&&toggle){
+    toggle.addEventListener('click',function(){var open=nav.classList.toggle('menu-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');toggle.querySelector('.mobile-nav-icon').textContent=open?'×':'☰';});
+    links.forEach(function(link){link.addEventListener('click',closeMenu)});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
+    window.addEventListener('resize',function(){if(window.innerWidth>780)closeMenu()});
+    document.addEventListener('click',function(e){if(nav.classList.contains('menu-open')&&!nav.contains(e.target))closeMenu()});
+  }
+  var headings=document.querySelectorAll('#about .editorial-heading,#projects .editorial-heading,#experience .editorial-heading,#skills .editorial-heading,#contact .editorial-heading');
+  headings.forEach(function(el){el.classList.add('section-enter')});
+  if(!('IntersectionObserver' in window)){headings.forEach(function(el){el.classList.add('in-view')});return}
+  var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target)}})},{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+  headings.forEach(function(el){observer.observe(el)});
+})();\n</script></body>
 </html>
