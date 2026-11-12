@@ -15,7 +15,48 @@ dialog{border:0;background:transparent;padding:0;max-width:96vw;max-height:96vh}
 @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:35px}.project-hero h1{max-width:18ch}.hero-media{max-width:700px}.project-section{padding:36px 30px}.nav-inner{padding:10px 20px}main{padding:0 20px 50px}footer{padding:25px 20px}}
 @media(max-width:560px){.site-nav-links{gap:0}.site-nav-links a{font-size:.72rem;padding:6px 7px}.circuit-brand svg{width:52px;height:32px}.project-hero{padding:40px 0 50px}.back{margin-bottom:30px}.project-hero h1{font-size:clamp(2.6rem,11vw,4rem)}.project-section{padding:29px 20px}.hero-media:before{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style></head><body>
+
+/* Homepage's original SVG circuit pattern, reused without modification. */
+:root{--bg:#f2f4f0;--surface:#ffffff;--ink:#18262b;--muted:#56666b;--line:#cdd6d0;--accent:#0f5c4d;--sage:#e9efe7;--warm:#f2f3ed;--circuit-art:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22460%22%20height%3D%22300%22%20viewBox%3D%220%200%20460%20300%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23245a4b%22%20stroke-width%3D%221.25%22%20opacity%3D%22.14%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M0%2060H68L92%2084H162V126H215L242%20153H305%22%2F%3E%3Cpath%20d%3D%22M460%2038H392L364%2066H314V102H260%22%2F%3E%3Cpath%20d%3D%22M460%20232H388L355%20199H300V173H246%22%2F%3E%3Cpath%20d%3D%22M0%20250H72L103%20219H157V188H195%22%2F%3E%3Cpath%20d%3D%22M125%200V34H173L199%2060%22%2F%3E%3Cpath%20d%3D%22M342%20300V262H291L270%20241%22%2F%3E%3Cpath%20d%3D%22M162%20126V160H124%22%2F%3E%3Cpath%20d%3D%22M314%20102H342V138H401%22%2F%3E%3Cpath%20d%3D%22M103%20219V179H64%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23245a4b%22%20opacity%3D%22.18%22%3E%3Ccircle%20cx%3D%2268%22%20cy%3D%2260%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22162%22%20cy%3D%22126%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%22305%22%20cy%3D%22153%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22314%22%20cy%3D%22102%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%22260%22%20cy%3D%22102%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22246%22%20cy%3D%22173%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%22157%22%20cy%3D%22219%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22195%22%20cy%3D%22188%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22173%22%20cy%3D%2234%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22291%22%20cy%3D%22262%22%20r%3D%223%22%2F%3E%3Ccircle%20cx%3D%22401%22%20cy%3D%22138%22%20r%3D%223.5%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%22179%22%20r%3D%223%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");}
+body{background-color:var(--bg);background-image:var(--circuit-art);background-size:460px 300px;background-repeat:repeat;background-attachment:fixed}
+/* Editorial content panels float above the pattern, leaving visible circuit gutters. */
+main{max-width:1180px;padding:34px 36px 85px;position:relative}
+.project-hero{background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:55px 55px 48px;margin:0 0 28px;box-shadow:0 9px 32px rgba(21,52,42,.035)}
+.project-section{background:var(--surface);border:1px solid var(--line);border-radius:5px;margin:0 0 26px;padding:48px 55px;box-shadow:0 9px 32px rgba(21,52,42,.035)}
+.project-section:nth-of-type(even){background:#f2f4f0}
+.project-hero:after{display:none}
+.hero-media:before{display:none}
+.hero-grid{gap:42px}
+.project-section figure{max-width:100%}
+.project-highlight{background:var(--warm);border-left:3px solid var(--accent)}
+footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-bottom:45px;border:1px solid var(--line)}
+@media(max-width:850px){main{padding:20px 20px 50px}.project-hero{padding:36px 28px}.project-section{padding:34px 28px;margin-bottom:20px}}
+@media(max-width:560px){body{background-attachment:scroll}main{padding:12px 12px 30px}.project-hero{padding:30px 20px;margin-bottom:14px}.project-section{padding:28px 20px;margin-bottom:14px}footer{margin:0 12px 20px;padding:20px}}
+
+/* Project-specific masthead: deliberately distinct from the homepage's split hero. */
+.project-hero{padding:48px 56px 44px}
+.project-masthead{max-width:950px;padding:0 0 28px}
+.project-masthead .cat{margin-bottom:12px}
+.project-masthead h1{max-width:920px;font-size:clamp(2.8rem,6vw,5.4rem);margin-bottom:22px;line-height:1.04}
+.project-masthead .lede{max-width:850px;margin-bottom:22px}
+.project-masthead .tags{margin-bottom:0}
+.project-feature-image{border-top:1px solid var(--line);padding-top:28px}
+.project-feature-image figure{margin:0}
+.project-feature-image figure button{border:1px solid var(--line);border-radius:6px;box-shadow:none;background:#fff;padding:10px}
+.project-feature-image figure img{max-height:520px;object-fit:contain}
+.project-feature-image figcaption{margin-top:11px}
+.project-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);margin-top:28px;padding-top:22px;gap:18px}
+.project-facts>div{display:flex;flex-direction:column;gap:5px;border-left:2px solid var(--accent);padding-left:15px}
+.project-facts strong{font:700 clamp(1.25rem,2.4vw,1.8rem)/1.1 var(--head);color:var(--accent)}
+.project-facts span{font:500 .86rem/1.4 var(--head);color:var(--muted)}
+@media(max-width:850px){.project-hero{padding:36px 28px}.project-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.project-hero{padding:28px 20px}.project-facts{gap:20px 12px}.project-masthead h1{font-size:clamp(2.5rem,10vw,3.7rem)}}
+
+.back-to-top{position:fixed;right:clamp(16px,3vw,36px);bottom:clamp(16px,3vw,32px);z-index:90;width:52px;height:52px;border:1.5px solid var(--accent);border-radius:50%;background:var(--accent);color:var(--surface);box-shadow:0 7px 24px rgba(18,49,40,.19);display:grid;place-items:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .2s,transform .2s,visibility .2s,background .2s}
+.back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+.back-to-top:hover,.back-to-top:focus-visible{background:var(--ink);transform:translateY(-3px)}
+.back-to-top svg{width:23px;height:23px}
+@media(prefers-reduced-motion:reduce){.timeline-reveal-content,.timeline-item,.back-to-top,.site-scroll-progress{transition:none!important}</style></head><body>
 <nav aria-label="Project navigation" class="site-nav">
 <div class="nav-inner">
 <a aria-label="Return to portfolio homepage" class="circuit-brand" href="index.html" title="Portfolio homepage">
@@ -27,22 +68,14 @@ dialog{border:0;background:transparent;padding:0;max-width:96vw;max-height:96vh}
 </a>
 <div class="site-nav-links">
 <a href="#overview">Overview</a><a href="#design">Design</a><a href="#simulation">Simulation</a>
-<a href="#results">Results</a><a href="#implementation">Build</a><a href="index.html#projects">All Projects</a>
+<a href="#results">Results</a><a href="#implementation">Build</a>
 </div>
 </div><div class="site-scroll-track"><div class="site-scroll-progress" id="scroll-progress"></div></div>
 </nav><main><header class="project-hero"><a class="back" href="index.html#projects">← Back to projects</a>
-
-
-
-
-
-<div class="hero-grid"><div class="hero-copy"><p class="cat hero-eyebrow">Digital Electronics / Circuit Design</p><h1>Sequential Logic Circuit Design</h1><p class="lede">Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p><ul class="tags"><li>NI Multisim</li><li>Digital Logic</li><li>FSM</li><li>Hardware Design</li><li>Karnaugh Maps</li><li>Breadboarding</li></ul><svg aria-label="Decorative circuit trace" class="hero-trace" role="img" viewbox="0 0 1040 60">
-<path d="M6 30 H240 L260 10 L290 50 L320 10 L350 50 L370 30 H670 M670 30 V12 H770 M670 30 V48 H770 M770 12 H900 M770 48 H900 M900 12 V48 M900 30 H1034"></path>
-<circle cx="6" cy="30" r="5"></circle><circle cx="670" cy="30" r="5"></circle><circle cx="1034" cy="30" r="5"></circle>
-</svg><div class="project-highlight"><strong>Project highlight</strong>Designed and tested a J-K flip-flop sequential circuit that drives a seven-segment display.</div></div><div class="hero-media"><figure>
+<div class="project-masthead"><p class="cat hero-eyebrow">Digital Electronics / Circuit Design</p><h1>Sequential Logic Circuit Design</h1><p class="lede">Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p><ul class="tags"><li>NI Multisim</li><li>Digital Logic</li><li>FSM</li><li>Hardware Design</li><li>Karnaugh Maps</li><li>Breadboarding</li></ul></div><div class="project-feature-image"><figure>
 <button data-zoom="" type="button"><img alt="Complete Multisim schematic of the six flip-flop state machine, logic gates, BCD decoder and 7-segment display" height="771" src="fsm-project/fsm-circuit.png" width="1119"/></button>
 <figcaption>Complete sequential logic circuit in NI Multisim. Click to enlarge.</figcaption>
-</figure></div></div></header><section class="project-section" id="overview"><span class="section-index">01 / PROJECT DETAILS</span>
+</figure></div><div aria-label="Project at a glance" class="project-facts"><div><strong>06</strong><span>J-K flip-flops</span></div><div><strong>09</strong><span>Sequence states</span></div><div><strong>NI Multisim</strong><span>Simulation &amp; verification</span></div><div><strong>Hardware</strong><span>Breadboard implementation</span></div></div></header><section class="project-section" id="overview"><span class="section-index">01 / PROJECT DETAILS</span>
 <h2>Project overview</h2>
 <p>I designed and implemented a sequential digital logic circuit that cycles through a predefined nine-digit sequence on a 7-segment display.</p>
 <p>The system uses a finite state machine (FSM) built from J-K flip-flops to control transitions between states. A BCD-to-7-segment decoder converts the four-bit binary output into numerical digits. The project covered analytical logic design, Boolean simplification, circuit simulation, and physical hardware implementation.</p>
@@ -139,4 +172,11 @@ dialog{border:0;background:transparent;padding:0;max-width:96vw;max-height:96vh}
  }
  addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();
 })();
-</script></body></html>
+</script><button aria-label="Back to top" class="back-to-top" title="Back to top" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button><script>(function(){
+  const back=document.querySelector('.back-to-top');
+  function update(){back.classList.toggle('is-visible',window.scrollY>420);}
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  back.addEventListener('click',function(){window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
+  update();
+})();</script></body></html>
