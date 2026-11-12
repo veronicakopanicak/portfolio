@@ -74,6 +74,33 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 .project-hero .project-feature-image img{width:100%;max-height:310px;object-fit:contain}
 @media(min-width:641px) and (max-width:1050px){.project-hero{padding:32px 28px}.project-hero .project-masthead h1{font-size:clamp(2rem,4.5vw,3.3rem)}.project-hero .lede{font-size:1rem}.project-hero .tags li{font-size:.76rem}}
 @media(max-width:640px){.project-hero .project-intro-grid{grid-template-columns:minmax(0,1fr)!important}.project-hero .project-feature-image{max-width:100%}}
+
+/* Definitive side-by-side desktop introduction: override inherited grid styling. */
+.project-hero .intro-side-by-side-v2{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;gap:34px!important;width:100%!important}
+.project-hero .intro-side-by-side-v2>.project-masthead{flex:1 1 56%!important;width:56%!important;min-width:0!important;max-width:none!important}
+.project-hero .intro-side-by-side-v2>.project-feature-image{flex:0 1 44%!important;width:44%!important;min-width:0!important;max-width:none!important;display:block!important}
+.project-hero .intro-side-by-side-v2>.project-feature-image figure{margin:0!important;display:block!important}
+.project-hero .intro-side-by-side-v2>.project-feature-image img{display:block!important;width:100%!important;height:auto!important;max-height:300px!important;object-fit:contain!important}
+@media(max-width:640px){.project-hero .intro-side-by-side-v2{flex-direction:column!important;align-items:stretch!important}.project-hero .intro-side-by-side-v2>.project-masthead,.project-hero .intro-side-by-side-v2>.project-feature-image{width:100%!important;flex:auto!important}}
+
+/* Overview image layout: the image is a sibling of the actual overview text. */
+#overview .overview-two-column {
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);
+  align-items:center;
+  gap:clamp(22px,3.5vw,48px);
+}
+#overview .overview-copy {min-width:0;}
+#overview .overview-copy p:last-child {margin-bottom:0;}
+#overview .project-feature-image {display:block;min-width:0;width:100%;max-width:100%;border:0;padding:0;margin:0;}
+#overview .project-feature-image figure {display:block;margin:0;}
+#overview .project-feature-image figure button {display:block;width:100%;padding:8px;}
+#overview .project-feature-image figure img {display:block;width:100%;height:auto;max-height:260px;object-fit:contain;}
+#overview .project-feature-image figcaption {font-size:.82rem;line-height:1.45;}
+@media(max-width:680px) {
+  #overview .overview-two-column {grid-template-columns:minmax(0,1fr);gap:24px;}
+  #overview .project-feature-image {max-width:480px;}
+}
 </style></head><body>
 <nav aria-label="Project navigation" class="site-nav">
 <div class="nav-inner">
@@ -90,14 +117,14 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 </div>
 </div><div class="site-scroll-track"><div class="site-scroll-progress" id="scroll-progress"></div></div>
 </nav><main><header class="project-hero"><a class="back" href="index.html#projects">← Back to projects</a>
-<div class="project-intro-grid"><div class="project-masthead"><p class="cat hero-eyebrow">Digital Electronics / Circuit Design</p><h1>Sequential Logic Circuit Design</h1><p class="lede">Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p><ul class="tags"><li>NI Multisim</li><li>Digital Logic</li><li>FSM</li><li>Hardware Design</li><li>Karnaugh Maps</li><li>Breadboarding</li></ul></div><div class="project-feature-image"><figure>
+<div class="project-masthead"><p class="cat hero-eyebrow">Digital Electronics / Circuit Design</p><h1>Sequential Logic Circuit Design</h1><p class="lede">Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p><ul class="tags"><li>NI Multisim</li><li>Digital Logic</li><li>FSM</li><li>Hardware Design</li><li>Karnaugh Maps</li><li>Breadboarding</li></ul></div><div aria-label="Project at a glance" class="project-facts"><div><strong>06</strong><span>J-K flip-flops</span></div><div><strong>09</strong><span>Sequence states</span></div><div><strong>NI Multisim</strong><span>Simulation &amp; verification</span></div><div><strong>Hardware</strong><span>Breadboard implementation</span></div></div></header><section class="project-section" id="overview"><span class="section-index">01 / PROJECT DETAILS</span>
+<h2>Project overview</h2>
+
+
+<div class="overview-two-column"><div class="overview-copy"><p>I designed and implemented a sequential digital logic circuit that cycles through a predefined nine-digit sequence on a 7-segment display.</p><p>The system uses a finite state machine (FSM) built from J-K flip-flops to control transitions between states. A BCD-to-7-segment decoder converts the four-bit binary output into numerical digits. The project covered analytical logic design, Boolean simplification, circuit simulation, and physical hardware implementation.</p></div><div class="project-feature-image"><figure>
 <button data-zoom="" type="button"><img alt="Complete Multisim schematic of the six flip-flop state machine, logic gates, BCD decoder and 7-segment display" height="771" src="fsm-project/fsm-circuit.png" width="1119"/></button>
 <figcaption>Complete sequential logic circuit in NI Multisim. Click to enlarge.</figcaption>
-</figure></div></div><div aria-label="Project at a glance" class="project-facts"><div><strong>06</strong><span>J-K flip-flops</span></div><div><strong>09</strong><span>Sequence states</span></div><div><strong>NI Multisim</strong><span>Simulation &amp; verification</span></div><div><strong>Hardware</strong><span>Breadboard implementation</span></div></div></header><section class="project-section" id="overview"><span class="section-index">01 / PROJECT DETAILS</span>
-<h2>Project overview</h2>
-<p>I designed and implemented a sequential digital logic circuit that cycles through a predefined nine-digit sequence on a 7-segment display.</p>
-<p>The system uses a finite state machine (FSM) built from J-K flip-flops to control transitions between states. A BCD-to-7-segment decoder converts the four-bit binary output into numerical digits. The project covered analytical logic design, Boolean simplification, circuit simulation, and physical hardware implementation.</p>
-</section><section class="project-section" id="design"><span class="section-index">02 / PROJECT DETAILS</span>
+</figure></div></div></section><section class="project-section" id="design"><span class="section-index">02 / PROJECT DETAILS</span>
 <h2>Design and methodology</h2>
 <h3>Finite state machine design</h3>
 <p>The circuit uses six J-K flip-flops:</p>
