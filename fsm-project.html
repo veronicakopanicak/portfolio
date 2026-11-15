@@ -88,6 +88,8 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 .project-section:not(#overview) > p,
 .project-section:not(#overview) > ul,
 .project-section:not(#overview) > h3 {max-width:none;width:100%;}
+.project-video{max-width:100%;margin-top:22px}
+.project-video video{display:block;width:100%;height:auto;max-height:640px;background:#15241e;border:1px solid var(--line);border-radius:9px}
 </style></head><body>
 <nav aria-label="Project navigation" class="site-nav">
 <div class="nav-inner">
@@ -145,6 +147,15 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
     <button type="button" data-zoom><img src="fsm-project/breadboard.jpg" alt="Completed breadboard build of the sequential logic circuit"></button> -->
 <div class="ph">[Photo of the completed breadboard goes here. Add breadboard.jpg to the fsm-project folder.]</div>
 <figcaption>Breadboard implementation of the circuit.</figcaption>
+</figure>
+<h3>Project demonstration</h3>
+<p>Watch the final project video for a walkthrough of the sequential logic circuit design and its operation.</p>
+<figure class="project-video">
+<video controls playsinline preload="metadata" aria-label="Sequential Logic Circuit Design final project demonstration">
+<source src="fsm-project/fsm-demo.mp4" type="video/mp4">
+Your browser does not support embedded video playback.
+</video>
+<figcaption>Final project demonstration video. Use the player controls to watch with sound or in full screen.</figcaption>
 </figure>
 </section><section class="project-section" id="challenges"><span class="section-index">06 / DESIGN DECISIONS</span>
 <h2>Engineering challenges and design decisions</h2>
