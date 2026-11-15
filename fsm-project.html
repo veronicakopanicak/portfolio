@@ -90,6 +90,12 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 .project-section:not(#overview) > h3 {max-width:none;width:100%;}
 .project-video{max-width:100%;margin-top:22px}
 .project-video video{display:block;width:100%;height:auto;max-height:640px;background:#15241e;border:1px solid var(--line);border-radius:9px}
+/* Clear, understated return navigation */
+.project-hero .back{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;margin-bottom:34px;border:1.5px solid var(--accent);border-radius:7px;background:transparent;color:var(--accent);font:700 .9rem var(--head);text-decoration:none;transition:background .2s,color .2s}
+.project-hero .back:hover{background:var(--accent);color:var(--surface)}
+footer a{display:inline-flex;align-items:center;gap:7px;color:var(--accent);text-decoration:underline;text-underline-offset:4px}
+footer a:hover{color:var(--ink)}
+@media(prefers-reduced-motion:reduce){.project-hero .back{transition:none}}
 </style></head><body>
 <nav aria-label="Project navigation" class="site-nav">
 <div class="nav-inner">
@@ -105,7 +111,7 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 <a href="#results">Results</a><a href="#implementation">Build</a>
 </div>
 </div><div class="site-scroll-track"><div class="site-scroll-progress" id="scroll-progress"></div></div>
-</nav><main><header class="project-hero"><a class="back" href="index.html#projects">← Back to projects</a>
+</nav><main><header class="project-hero"><a class="back" href="index.html#projects">← Back to Projects</a>
 <div class="project-masthead"><p class="cat hero-eyebrow">Digital Electronics / Circuit Design</p><h1>Sequential Logic Circuit Design</h1><p class="lede">Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p><ul class="tags"><li>NI Multisim</li><li>Digital Logic</li><li>FSM</li><li>Hardware Design</li><li>Karnaugh Maps</li><li>Breadboarding</li></ul></div><div aria-label="Project at a glance" class="project-facts"><div><strong>06</strong><span>J-K flip-flops</span></div><div><strong>09</strong><span>Sequence states</span></div><div><strong>NI Multisim</strong><span>Simulation &amp; verification</span></div><div><strong>Hardware</strong><span>Breadboard implementation</span></div></div></header><section class="project-section" id="overview"><span class="section-index">01 / THE CONCEPT</span>
 <h2>Project overview</h2>
 <div class="overview-two-column"><div class="overview-copy"><p>I designed and implemented a sequential digital logic circuit that cycles through the nine-digit sequence 400556686 on a seven-segment display.</p><p>The circuit uses a finite state machine (FSM) constructed from six J-K flip-flops. Four flip-flops represent the displayed digit in binary-coded decimal (BCD), while two additional flip-flops distinguish repeated digits that require different state transitions.</p><p>A BCD-to-seven-segment decoder converts the binary output into the corresponding numerical digit. The project involved developing excitation tables, simplifying Boolean expressions using Karnaugh maps, verifying circuit behaviour in NI Multisim, and implementing the design on a physical breadboard.</p></div><div class="project-feature-image"><figure>
@@ -132,8 +138,8 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 </figure>
 <h3>Multisim demonstration</h3><p>Watch the circuit simulation and explanation of the sequential logic design.</p><figure class="project-video"><video aria-label="Multisim demonstration" controls="" playsinline="" preload="metadata"><source src="fsm-project/fsm-multisim-demo.mp4" type="video/mp4"/>Your browser does not support embedded video playback.</video><figcaption>Multisim portion of the final project presentation (0:00–1:07).</figcaption></figure></section><section class="project-section" id="results"><span class="section-index">04 / VERIFICATION</span>
 <h2>Simulation results and verification</h2>
-<p>I examined timing diagrams generated in Multisim, reading the four BCD flip-flop outputs at successive rising clock edges. The initial state was set to decimal 4 (BCD 0100).</p><div aria-label="Designed nine-digit output sequence: 4 0 0 5 5 6 6 8 6" class="sequence-display"><div class="sequence-heading"><span>Designed output sequence</span><span>9 states</span></div><ol class="sequence-digits"><li>4</li><li>0</li><li>0</li><li>5</li><li>5</li><li>6</li><li>6</li><li>8</li><li>6</li></ol><p class="sequence-note">Each clock pulse advances the state machine to the next digit; after the ninth state, the sequence repeats.</p></div>
-<p>The timing diagrams confirmed that the circuit advanced through 400556686 in the correct order and returned to the initial state to repeat the sequence.</p>
+<p>The circuit was tested in NI Multisim by examining the BCD outputs at successive rising clock edges. Starting from an initial state of decimal 4 (BCD 0100), the circuit progressed through the intended nine-digit sequence <strong>400556686</strong>.</p><div aria-label="Designed nine-digit output sequence: 4 0 0 5 5 6 6 8 6" class="sequence-display"><div class="sequence-heading"><span>Designed output sequence</span><span>9 states</span></div><ol class="sequence-digits"><li>4</li><li>0</li><li>0</li><li>5</li><li>5</li><li>6</li><li>6</li><li>8</li><li>6</li></ol><p class="sequence-note">Each clock pulse advances the state machine to the next digit; after the ninth state, the sequence repeats.</p></div>
+<p>The timing diagrams confirmed that the state transitions occurred in the correct order and that the sequence repeated after completing all nine states.</p>
 <figure>
 <button data-zoom="" type="button"><img alt="Multisim timing diagram of the four BCD outputs Q1 to Q4 and the clock over two seconds" height="870" src="fsm-project/fsm-timing.png" width="1567"/></button>
 <figcaption>Timing diagram of the BCD output signals and clock, used to verify the nine-state sequence. Click to enlarge.</figcaption>
@@ -142,35 +148,22 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 <h2>Physical implementation</h2>
 <p>After simulation, I assembled the circuit on a breadboard using digital logic components: J-!K flip-flops, logic gates, and a BCD-to-7-segment display system. The build followed the simplified Boolean expressions from the analytical design.</p>
 <p>Because the physical flip-flops have active-low K inputs, the build does not need the extra inverters used in the simulation.</p>
-<figure>
-<!-- When you have a breadboard photo, replace the div below with:
-    <button type="button" data-zoom><img src="fsm-project/breadboard.jpg" alt="Completed breadboard build of the sequential logic circuit"></button> -->
-<div class="ph">[Photo of the completed breadboard goes here. Add breadboard.jpg to the fsm-project folder.]</div>
-<figcaption>Breadboard implementation of the circuit.</figcaption>
-</figure>
-
-
 
 <h3>Physical circuit demonstration</h3><p>The completed breadboard circuit cycles through the nine-digit sequence <strong>400556686</strong> on a seven-segment display. Each clock pulse advances the finite state machine to its next state, demonstrating the successful physical implementation of the sequential logic design.</p><figure class="project-video"><video aria-label="Physical circuit demonstration" controls="" playsinline="" preload="metadata"><source src="fsm-project/fsm-hardware-demo.mp4" type="video/mp4"/>Your browser does not support embedded video playback.</video><figcaption>Silent demonstration of the completed circuit cycling through its programmed sequence.</figcaption></figure></section><section class="project-section" id="challenges"><span class="section-index">06 / DESIGN DECISIONS</span>
 <h2>Engineering challenges and design decisions</h2>
 <h3>Handling repeated states</h3>
-<p>Identical BCD outputs could require different next states, so I added two flip-flops to track the position in the sequence.</p>
+<p>Repeated digits in the sequence could require different next states despite producing the same BCD output. I incorporated two additional flip-flops to distinguish these positions, allowing the finite state machine to select the correct transition.</p>
 <h3>Minimizing hardware complexity</h3>
-<p>I used two counter flip-flops instead of three. This reduced the hardware needed, at the cost of more complex Boolean expressions.</p>
+<p>One design challenge was reducing the number of flip-flops required to distinguish repeated digits in the sequence. I chose to use two additional flip-flops instead of three, reducing the number of components required. This decision introduced more complex Boolean expressions but allowed the circuit to achieve the required state transitions with fewer flip-flops.</p>
 <h3>Simulation and hardware compatibility</h3>
-<p>Multisim used standard J-K flip-flops while the physical circuit used J-!K flip-flops, so I added inverters to the simulation to account for the difference.</p>
+<p>The simulated J-K flip-flops and the physical J-!K components used different K-input conventions. I accounted for this difference using inverters in the Multisim circuit, while the physical implementation followed the active-low K-input configuration.</p>
 </section><section class="project-section" id="takeaways"><span class="section-index">07 / REFLECTION</span>
 <h2>Key takeaways</h2>
-<p>The Multisim simulation demonstrated the intended nine-state sequence, with timing diagrams verifying the transitions. The project gave me practical experience in:</p>
-<ul>
-<li>Sequential digital logic design and FSM implementation</li>
-<li>Boolean simplification and logic optimization</li>
-<li>Circuit modelling and simulation</li>
-<li>Digital hardware implementation and simulation-based verification</li>
-</ul>
+<p>This project strengthened my understanding of sequential digital logic through the complete process of analytical design, simulation, and physical implementation.</p>
+<ul><li><strong>Finite state machine design:</strong> Developed a circuit capable of distinguishing repeated outputs while maintaining the correct state transitions.</li><li><strong>Logic optimization:</strong> Applied Karnaugh maps and don’t-care conditions to simplify Boolean expressions and reduce hardware complexity.</li><li><strong>Simulation and verification:</strong> Used NI Multisim and timing diagrams to evaluate the circuit before physical implementation.</li><li><strong>Hardware implementation:</strong> Translated the simulated design into a functioning breadboard circuit and demonstrated the intended output sequence.</li></ul>
 <!-- Optional: add a redacted copy of the report as fsm-project/report.pdf, then remove these comment marks
   <a class="cta" href="fsm-project/report.pdf">Read the full technical report (PDF)</a> -->
-</section></main><footer><span>Curious by nature. Engineer by design.</span><a href="index.html#projects">← Back to portfolio</a></footer><dialog aria-label="Enlarged image" id="zoom"><button id="close" type="button">Close</button><img alt="" id="big"/></dialog><script>
+</section></main><footer><span>Curious by nature. Engineer by design.</span><a href="index.html#projects">Explore More Projects →</a></footer><dialog aria-label="Enlarged image" id="zoom"><button id="close" type="button">Close</button><img alt="" id="big"/></dialog><script>
 (function(){
   var d=document.getElementById('zoom'),big=document.getElementById('big');
   document.querySelectorAll('[data-zoom]').forEach(function(b){
