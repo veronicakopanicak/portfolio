@@ -56,51 +56,38 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 .back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
 .back-to-top:hover,.back-to-top:focus-visible{background:var(--ink);transform:translateY(-3px)}
 .back-to-top svg{width:23px;height:23px}
-@media(prefers-reduced-motion:reduce){.timeline-reveal-content,.timeline-item,.back-to-top,.site-scroll-progress{transition:none!important}
-/* Intro: compact circuit figure to the right of the introductory copy. */
-.project-intro-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:36px;align-items:center}
-.project-intro-grid .project-masthead{max-width:none;padding:0;min-width:0}
-.project-intro-grid .project-masthead h1{font-size:clamp(2.5rem,4.4vw,4.25rem);max-width:14ch}
-.project-intro-grid .project-masthead .lede{font-size:clamp(1.05rem,1.5vw,1.25rem)}
-.project-intro-grid .project-feature-image{border-top:0;padding-top:0;min-width:0}
-.project-intro-grid .project-feature-image figure img{max-height:340px;object-fit:contain}
-.project-intro-grid .project-feature-image figcaption{font-size:.84rem;line-height:1.45}
-@media(max-width:850px){.project-intro-grid{grid-template-columns:1fr;gap:25px}.project-intro-grid .project-masthead h1{max-width:100%}.project-intro-grid .project-feature-image{max-width:650px}.project-intro-grid .project-feature-image figure img{max-height:420px}}
-
-/* Keep the introduction genuinely side-by-side on laptop/tablet widths. */
-.project-hero .project-intro-grid{display:grid!important;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)!important;align-items:center;gap:clamp(16px,3vw,38px)}
-.project-hero .project-intro-grid>.project-masthead,.project-hero .project-intro-grid>.project-feature-image{grid-column:auto!important;grid-row:auto!important;width:auto!important;min-width:0;max-width:none}
-.project-hero .project-feature-image figure{margin:0}
-.project-hero .project-feature-image img{width:100%;max-height:310px;object-fit:contain}
-@media(min-width:641px) and (max-width:1050px){.project-hero{padding:32px 28px}.project-hero .project-masthead h1{font-size:clamp(2rem,4.5vw,3.3rem)}.project-hero .lede{font-size:1rem}.project-hero .tags li{font-size:.76rem}}
-@media(max-width:640px){.project-hero .project-intro-grid{grid-template-columns:minmax(0,1fr)!important}.project-hero .project-feature-image{max-width:100%}}
-
-/* Definitive side-by-side desktop introduction: override inherited grid styling. */
-.project-hero .intro-side-by-side-v2{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;gap:34px!important;width:100%!important}
-.project-hero .intro-side-by-side-v2>.project-masthead{flex:1 1 56%!important;width:56%!important;min-width:0!important;max-width:none!important}
-.project-hero .intro-side-by-side-v2>.project-feature-image{flex:0 1 44%!important;width:44%!important;min-width:0!important;max-width:none!important;display:block!important}
-.project-hero .intro-side-by-side-v2>.project-feature-image figure{margin:0!important;display:block!important}
-.project-hero .intro-side-by-side-v2>.project-feature-image img{display:block!important;width:100%!important;height:auto!important;max-height:300px!important;object-fit:contain!important}
-@media(max-width:640px){.project-hero .intro-side-by-side-v2{flex-direction:column!important;align-items:stretch!important}.project-hero .intro-side-by-side-v2>.project-masthead,.project-hero .intro-side-by-side-v2>.project-feature-image{width:100%!important;flex:auto!important}}
+@media(prefers-reduced-motion:reduce){.back-to-top,.site-scroll-progress{transition:none!important}}
 
 /* Overview image layout: the image is a sibling of the actual overview text. */
 #overview .overview-two-column {
   display:grid;
-  grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
   align-items:center;
-  gap:clamp(22px,3.5vw,48px);
+  gap:clamp(18px,3vw,36px);
 }
 #overview .overview-copy {min-width:0;}
 #overview .overview-copy p:last-child {margin-bottom:0;}
 #overview .project-feature-image {display:block;min-width:0;width:100%;max-width:100%;border:0;padding:0;margin:0;}
 #overview .project-feature-image figure {display:block;margin:0;}
 #overview .project-feature-image figure button {display:block;width:100%;padding:8px;}
-#overview .project-feature-image figure img {display:block;width:100%;height:auto;max-height:260px;object-fit:contain;}
+#overview .project-feature-image figure img {display:block;width:100%;height:auto;max-height:300px;object-fit:contain;}
 #overview .project-feature-image figcaption {font-size:.82rem;line-height:1.45;}
-@media(max-width:680px) {
+@media(max-width:559px) {
   #overview .overview-two-column {grid-template-columns:minmax(0,1fr);gap:24px;}
   #overview .project-feature-image {max-width:480px;}
 }
+
+/* Output sequence: readable, responsive and consistent with the portfolio palette. */
+.sequence-display{margin:24px 0 28px;padding:22px 24px;background:var(--warm);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px}
+.sequence-heading{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:700 .75rem var(--head);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:15px}
+.sequence-digits{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:7px;list-style:none;padding:0;margin:0 0 13px}
+.sequence-digits li{display:grid;place-items:center;min-width:0;padding:10px 0;border:1px solid var(--line);border-radius:5px;background:var(--surface);font:700 clamp(1.2rem,3vw,2rem)/1.3 var(--head);color:var(--ink)}
+.sequence-note{margin:0;color:var(--muted);font-size:.94rem}
+@media(max-width:560px){.sequence-display{padding:16px 12px}.sequence-digits{gap:3px}.sequence-digits li{padding:8px 0;font-size:clamp(1rem,5vw,1.5rem)}}
+/* Allow section text and lists to use the full available panel width. */
+.project-section:not(#overview) > p,
+.project-section:not(#overview) > ul,
+.project-section:not(#overview) > h3 {max-width:none;width:100%;}
 </style></head><body>
 <nav aria-label="Project navigation" class="site-nav">
 <div class="nav-inner">
@@ -117,34 +104,18 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 </div>
 </div><div class="site-scroll-track"><div class="site-scroll-progress" id="scroll-progress"></div></div>
 </nav><main><header class="project-hero"><a class="back" href="index.html#projects">← Back to projects</a>
-<div class="project-masthead"><p class="cat hero-eyebrow">Digital Electronics / Circuit Design</p><h1>Sequential Logic Circuit Design</h1><p class="lede">Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p><ul class="tags"><li>NI Multisim</li><li>Digital Logic</li><li>FSM</li><li>Hardware Design</li><li>Karnaugh Maps</li><li>Breadboarding</li></ul></div><div aria-label="Project at a glance" class="project-facts"><div><strong>06</strong><span>J-K flip-flops</span></div><div><strong>09</strong><span>Sequence states</span></div><div><strong>NI Multisim</strong><span>Simulation &amp; verification</span></div><div><strong>Hardware</strong><span>Breadboard implementation</span></div></div></header><section class="project-section" id="overview"><span class="section-index">01 / PROJECT DETAILS</span>
+<div class="project-masthead"><p class="cat hero-eyebrow">Digital Electronics / Circuit Design</p><h1>Sequential Logic Circuit Design</h1><p class="lede">Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p><ul class="tags"><li>NI Multisim</li><li>Digital Logic</li><li>FSM</li><li>Hardware Design</li><li>Karnaugh Maps</li><li>Breadboarding</li></ul></div><div aria-label="Project at a glance" class="project-facts"><div><strong>06</strong><span>J-K flip-flops</span></div><div><strong>09</strong><span>Sequence states</span></div><div><strong>NI Multisim</strong><span>Simulation &amp; verification</span></div><div><strong>Hardware</strong><span>Breadboard implementation</span></div></div></header><section class="project-section" id="overview"><span class="section-index">01 / THE CONCEPT</span>
 <h2>Project overview</h2>
-
-
-<div class="overview-two-column"><div class="overview-copy"><p>I designed and implemented a sequential digital logic circuit that cycles through a predefined nine-digit sequence on a 7-segment display.</p><p>The system uses a finite state machine (FSM) built from J-K flip-flops to control transitions between states. A BCD-to-7-segment decoder converts the four-bit binary output into numerical digits. The project covered analytical logic design, Boolean simplification, circuit simulation, and physical hardware implementation.</p></div><div class="project-feature-image"><figure>
+<div class="overview-two-column"><div class="overview-copy"><p>I designed and implemented a sequential digital logic circuit that cycles through the nine-digit sequence 400556686 on a seven-segment display.</p><p>The circuit uses a finite state machine (FSM) constructed from six J-K flip-flops. Four flip-flops represent the displayed digit in binary-coded decimal (BCD), while two additional flip-flops distinguish repeated digits that require different state transitions.</p><p>A BCD-to-seven-segment decoder converts the binary output into the corresponding numerical digit. The project involved developing excitation tables, simplifying Boolean expressions using Karnaugh maps, verifying circuit behaviour in NI Multisim, and implementing the design on a physical breadboard.</p></div><div class="project-feature-image"><figure>
 <button data-zoom="" type="button"><img alt="Complete Multisim schematic of the six flip-flop state machine, logic gates, BCD decoder and 7-segment display" height="771" src="fsm-project/fsm-circuit.png" width="1119"/></button>
 <figcaption>Complete sequential logic circuit in NI Multisim. Click to enlarge.</figcaption>
-</figure></div></div></section><section class="project-section" id="design"><span class="section-index">02 / PROJECT DETAILS</span>
+</figure></div></div></section><section class="project-section" id="design"><span class="section-index">02 / THE DESIGN</span>
 <h2>Design and methodology</h2>
-<h3>Finite state machine design</h3>
-<p>The circuit uses six J-K flip-flops:</p>
-<ul>
-<li>Four flip-flops (Q1–Q4) hold the BCD-encoded digit shown on the display.</li>
-<li>Two additional flip-flops (C5 and C6) distinguish repeated digits within the sequence.</li>
-</ul>
-<p>The counter flip-flops are necessary because identical digits appear at several positions and need different next states.</p>
-<h3>Excitation table and Boolean simplification</h3>
-<p>I built a complete excitation table to find the J and active-low K inputs each flip-flop needs for every transition. Six-variable Karnaugh maps then simplified the Boolean expression for each input, and the results were implemented directly with AND and OR gates.</p>
-<ul>
-<li>Sum-of-products (SOP) simplification, since the maps had far fewer 1s than 0s.</li>
-<li>Don’t-care conditions to reduce the logic.</li>
-<li>Two counter flip-flops instead of three, to reduce hardware.</li>
-</ul>
-<figure>
+<h3>Finite state machine design</h3><p>The circuit was designed as a finite state machine (FSM) using six J-K flip-flops to control the sequence of digits displayed on a seven-segment display.</p><p>Four flip-flops (Q1–Q4) represent the current digit in binary-coded decimal (BCD), while two additional flip-flops (C5 and C6) distinguish between repeated digits in the sequence.</p><p>Since the sequence 400556686 contains repeated digits, the same BCD output can require different transitions depending on its position in the sequence. The two additional flip-flops provide the information needed to distinguish these states and ensure the circuit advances through the correct sequence with each clock pulse.</p><h3>Excitation table and Boolean simplification</h3><p>After defining the state transitions, I developed an excitation table to determine the required J and K inputs for each flip-flop. I then used six-variable Karnaugh maps to simplify the Boolean expressions needed to implement the circuit.</p><p><strong>Key design decisions included:</strong></p><ul><li><strong>Sum-of-products (SOP) simplification:</strong> Selected because the Karnaugh maps contained fewer 1s than 0s.</li><li><strong>Don’t-care conditions:</strong> Used to simplify Boolean expressions and reduce the required logic.</li><li><strong>Hardware optimization:</strong> Used two additional flip-flops instead of three to reduce the number of components while maintaining the correct sequence.</li></ul><p>The resulting Boolean expressions were implemented using AND and OR gates to control the state transitions.</p><figure>
 <button data-zoom="" type="button"><img alt="Six-variable Karnaugh map for the J1 flip-flop input with the grouping that gives J1 equals C6 AND Q3" height="400" src="fsm-project/fsm-kmap-j1.png" width="1025"/></button>
 <figcaption>Boolean simplification using a six-variable Karnaugh map to derive the logic for flip-flop state transitions (J1 shown). Click to enlarge.</figcaption>
 </figure>
-</section><section class="project-section" id="simulation"><span class="section-index">03 / PROJECT DETAILS</span>
+</section><section class="project-section" id="simulation"><span class="section-index">03 / THE SIMULATION</span>
 <h2>Circuit simulation</h2>
 <p>I modelled and simulated the circuit in NI Multisim to verify it before building it. The simulated circuit included:</p>
 <ul>
@@ -157,15 +128,15 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 <button data-zoom="" type="button"><img alt="Labelled Multisim schematic marking the flip-flops, OR, AND and NOT gates, clock and BCD decoder" height="640" src="fsm-project/fsm-schematic-labelled.png" width="1220"/></button>
 <figcaption>Labelled schematic showing the flip-flops, logic gates, clock, decoder, and 7-segment display. Click to enlarge.</figcaption>
 </figure>
-</section><section class="project-section" id="results"><span class="section-index">04 / PROJECT DETAILS</span>
+</section><section class="project-section" id="results"><span class="section-index">04 / VERIFICATION</span>
 <h2>Simulation results and verification</h2>
-<p>I examined timing diagrams generated in Multisim, reading the four BCD flip-flop outputs at successive rising clock edges. The initial state was set to decimal 4 (BCD 0100).</p>
-<p>The timing diagrams confirmed that the circuit moved through all nine states in the correct order and then repeated the sequence.</p>
+<p>I examined timing diagrams generated in Multisim, reading the four BCD flip-flop outputs at successive rising clock edges. The initial state was set to decimal 4 (BCD 0100).</p><div aria-label="Designed nine-digit output sequence: 4 0 0 5 5 6 6 8 6" class="sequence-display"><div class="sequence-heading"><span>Designed output sequence</span><span>9 states</span></div><ol class="sequence-digits"><li>4</li><li>0</li><li>0</li><li>5</li><li>5</li><li>6</li><li>6</li><li>8</li><li>6</li></ol><p class="sequence-note">Each clock pulse advances the state machine to the next digit; after the ninth state, the sequence repeats.</p></div>
+<p>The timing diagrams confirmed that the circuit advanced through 400556686 in the correct order and returned to the initial state to repeat the sequence.</p>
 <figure>
 <button data-zoom="" type="button"><img alt="Multisim timing diagram of the four BCD outputs Q1 to Q4 and the clock over two seconds" height="870" src="fsm-project/fsm-timing.png" width="1567"/></button>
 <figcaption>Timing diagram of the BCD output signals and clock, used to verify the nine-state sequence. Click to enlarge.</figcaption>
 </figure>
-</section><section class="project-section" id="implementation"><span class="section-index">05 / PROJECT DETAILS</span>
+</section><section class="project-section" id="implementation"><span class="section-index">05 / HARDWARE BUILD</span>
 <h2>Physical implementation</h2>
 <p>After simulation, I assembled the circuit on a breadboard using digital logic components: J-!K flip-flops, logic gates, and a BCD-to-7-segment display system. The build followed the simplified Boolean expressions from the analytical design.</p>
 <p>Because the physical flip-flops have active-low K inputs, the build does not need the extra inverters used in the simulation.</p>
@@ -175,7 +146,7 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 <div class="ph">[Photo of the completed breadboard goes here. Add breadboard.jpg to the fsm-project folder.]</div>
 <figcaption>Breadboard implementation of the circuit.</figcaption>
 </figure>
-</section><section class="project-section" id="challenges"><span class="section-index">06 / PROJECT DETAILS</span>
+</section><section class="project-section" id="challenges"><span class="section-index">06 / DESIGN DECISIONS</span>
 <h2>Engineering challenges and design decisions</h2>
 <h3>Handling repeated states</h3>
 <p>Identical BCD outputs could require different next states, so I added two flip-flops to track the position in the sequence.</p>
@@ -183,7 +154,7 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 <p>I used two counter flip-flops instead of three. This reduced the hardware needed, at the cost of more complex Boolean expressions.</p>
 <h3>Simulation and hardware compatibility</h3>
 <p>Multisim used standard J-K flip-flops while the physical circuit used J-!K flip-flops, so I added inverters to the simulation to account for the difference.</p>
-</section><section class="project-section" id="takeaways"><span class="section-index">07 / PROJECT DETAILS</span>
+</section><section class="project-section" id="takeaways"><span class="section-index">07 / REFLECTION</span>
 <h2>Key takeaways</h2>
 <p>The Multisim simulation demonstrated the intended nine-state sequence, with timing diagrams verifying the transitions. The project gave me practical experience in:</p>
 <ul>
