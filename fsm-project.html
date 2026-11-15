@@ -130,7 +130,7 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 <button data-zoom="" type="button"><img alt="Labelled Multisim schematic marking the flip-flops, OR, AND and NOT gates, clock and BCD decoder" height="640" src="fsm-project/fsm-schematic-labelled.png" width="1220"/></button>
 <figcaption>Labelled schematic showing the flip-flops, logic gates, clock, decoder, and 7-segment display. Click to enlarge.</figcaption>
 </figure>
-</section><section class="project-section" id="results"><span class="section-index">04 / VERIFICATION</span>
+<h3>Multisim demonstration</h3><p>Watch the circuit simulation and explanation of the sequential logic design.</p><figure class="project-video"><video aria-label="Multisim demonstration" controls="" playsinline="" preload="metadata"><source src="fsm-project/fsm-multisim-demo.mp4" type="video/mp4"/>Your browser does not support embedded video playback.</video><figcaption>Multisim portion of the final project presentation (0:00–1:07).</figcaption></figure></section><section class="project-section" id="results"><span class="section-index">04 / VERIFICATION</span>
 <h2>Simulation results and verification</h2>
 <p>I examined timing diagrams generated in Multisim, reading the four BCD flip-flop outputs at successive rising clock edges. The initial state was set to decimal 4 (BCD 0100).</p><div aria-label="Designed nine-digit output sequence: 4 0 0 5 5 6 6 8 6" class="sequence-display"><div class="sequence-heading"><span>Designed output sequence</span><span>9 states</span></div><ol class="sequence-digits"><li>4</li><li>0</li><li>0</li><li>5</li><li>5</li><li>6</li><li>6</li><li>8</li><li>6</li></ol><p class="sequence-note">Each clock pulse advances the state machine to the next digit; after the ninth state, the sequence repeats.</p></div>
 <p>The timing diagrams confirmed that the circuit advanced through 400556686 in the correct order and returned to the initial state to repeat the sequence.</p>
@@ -148,16 +148,10 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 <div class="ph">[Photo of the completed breadboard goes here. Add breadboard.jpg to the fsm-project folder.]</div>
 <figcaption>Breadboard implementation of the circuit.</figcaption>
 </figure>
-<h3>Project demonstration</h3>
-<p>Watch the final project video for a walkthrough of the sequential logic circuit design and its operation.</p>
-<figure class="project-video">
-<video controls playsinline preload="metadata" aria-label="Sequential Logic Circuit Design final project demonstration">
-<source src="fsm-project/fsm-demo.mp4" type="video/mp4">
-Your browser does not support embedded video playback.
-</video>
-<figcaption>Final project demonstration video. Use the player controls to watch with sound or in full screen.</figcaption>
-</figure>
-</section><section class="project-section" id="challenges"><span class="section-index">06 / DESIGN DECISIONS</span>
+
+
+
+<h3>Physical circuit demonstration</h3><p>Watch the breadboard implementation operating and the accompanying explanation.</p><figure class="project-video"><video aria-label="Physical circuit demonstration" controls="" playsinline="" preload="metadata"><source src="fsm-project/fsm-hardware-demo.mp4" type="video/mp4"/>Your browser does not support embedded video playback.</video><figcaption>Physical hardware portion of the final project presentation (1:07–2:52).</figcaption></figure></section><section class="project-section" id="challenges"><span class="section-index">06 / DESIGN DECISIONS</span>
 <h2>Engineering challenges and design decisions</h2>
 <h3>Handling repeated states</h3>
 <p>Identical BCD outputs could require different next states, so I added two flip-flops to track the position in the sequence.</p>
