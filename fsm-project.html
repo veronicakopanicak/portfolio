@@ -151,7 +151,7 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 
 
 
-<h3>Physical circuit demonstration</h3><p>Watch the breadboard implementation operating and the accompanying explanation.</p><figure class="project-video"><video aria-label="Physical circuit demonstration" controls="" playsinline="" preload="metadata"><source src="fsm-project/fsm-hardware-demo.mp4" type="video/mp4"/>Your browser does not support embedded video playback.</video><figcaption>Physical hardware portion of the final project presentation (1:07–2:52).</figcaption></figure></section><section class="project-section" id="challenges"><span class="section-index">06 / DESIGN DECISIONS</span>
+<h3>Physical circuit demonstration</h3><p>The completed breadboard circuit cycles through the nine-digit sequence <strong>400556686</strong> on a seven-segment display. Each clock pulse advances the finite state machine to its next state, demonstrating the successful physical implementation of the sequential logic design.</p><figure class="project-video"><video aria-label="Physical circuit demonstration" controls="" playsinline="" preload="metadata"><source src="fsm-project/fsm-hardware-demo.mp4" type="video/mp4"/>Your browser does not support embedded video playback.</video><figcaption>Silent demonstration of the completed circuit cycling through its programmed sequence.</figcaption></figure></section><section class="project-section" id="challenges"><span class="section-index">06 / DESIGN DECISIONS</span>
 <h2>Engineering challenges and design decisions</h2>
 <h3>Handling repeated states</h3>
 <p>Identical BCD outputs could require different next states, so I added two flip-flops to track the position in the sequence.</p>
