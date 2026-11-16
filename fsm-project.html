@@ -96,25 +96,6 @@ footer{max-width:1108px;background:var(--surface);padding:25px 34px;margin-botto
 footer a{display:inline-flex;align-items:center;gap:7px;color:var(--accent);text-decoration:underline;text-underline-offset:4px}
 footer a:hover{color:var(--ink)}
 @media(prefers-reduced-motion:reduce){.project-hero .back{transition:none}}
-</style><script>(function(){try{var t=localStorage.getItem('vk-portfolio-theme');document.documentElement.setAttribute('data-theme',t==='light'||t==='dark'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));}catch(e){document.documentElement.setAttribute('data-theme',matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}})();</script><style>
-/* Shared portfolio theme switcher */
-.nav-inner .theme-toggle{margin-left:8px}@media(max-width:650px){.nav-inner{flex-wrap:wrap}.nav-inner .site-nav-links{order:3;width:100%;justify-content:flex-start}.nav-inner .theme-toggle{margin-left:auto}}
-:root[data-theme="light"] {color-scheme:light;--bg:#f7f5ee;--surface:#fffefa;--ink:#252d29;--muted:#596760;--line:#d8ded5;--accent:#245a4b;--sage:#e9efe7;--warm:#f0eee5;--hl:rgba(194,215,191,.72);--trace-detail:rgba(36,90,75,.35);--trace-soft:rgba(36,90,75,.16)}
-:root[data-theme="dark"] {color-scheme:dark;--bg:#111d1a;--surface:#1c2b26;--ink:#edf0e8;--muted:#adbbb2;--line:#374a40;--accent:#9bd4b6;--sage:#1c3128;--warm:#242e27;--hl:rgba(117,174,138,.32);--trace-detail:rgba(155,212,182,.44);--trace-soft:rgba(155,212,182,.2)}
-.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex-shrink:0;min-width:43px;min-height:43px;padding:8px 12px;border:1.5px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font:700 .78rem var(--head);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
-.theme-toggle:hover{border-color:var(--accent);background:var(--sage)}
-.theme-toggle svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.theme-toggle .theme-moon{display:block}.theme-toggle .theme-sun{display:none}
-:root[data-theme="dark"] .theme-toggle .theme-moon{display:none}
-:root[data-theme="dark"] .theme-toggle .theme-sun{display:block}
-:root[data-theme="dark"] .site-nav-links a:hover,:root[data-theme="dark"] .site-nav-links a.active,:root[data-theme="dark"] .site-nav-links a[aria-current="location"]{color:#111d1a}
-:root[data-theme="dark"] .cta:not(.alt){color:#111d1a}
-:root[data-theme="dark"] .back-to-top{color:#111d1a}
-:root[data-theme="dark"] figure button{border-color:var(--line)}
-:root[data-theme="dark"] .project-media{background:var(--warm)}
-:root[data-theme="dark"] .project-highlight{background:var(--sage)}
-@media(max-width:650px){.theme-toggle{min-width:39px;min-height:39px;padding:7px 9px}.theme-toggle .theme-label{display:none}}
-@media(prefers-reduced-motion:reduce){.theme-toggle{transition:none}}
 </style></head><body>
 <nav aria-label="Project navigation" class="site-nav">
 <div class="nav-inner">
@@ -129,7 +110,7 @@ footer a:hover{color:var(--ink)}
 <a href="#overview">Overview</a><a href="#design">Design</a><a href="#simulation">Simulation</a>
 <a href="#results">Results</a><a href="#implementation">Build</a>
 </div>
-<button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle light and dark mode"><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.6 8.6 0 0 1 9.7 3.5 8.6 8.6 0 1 0 20.5 14.3Z"/></svg><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg><span class="theme-label">Theme</span></button></div><div class="site-scroll-track"><div class="site-scroll-progress" id="scroll-progress"></div></div>
+</div><div class="site-scroll-track"><div class="site-scroll-progress" id="scroll-progress"></div></div>
 </nav><main><header class="project-hero"><a class="back" href="index.html#projects">← Back to Projects</a>
 <div class="project-masthead"><p class="cat hero-eyebrow">Digital Electronics / Circuit Design</p><h1>Sequential Logic Circuit Design</h1><p class="lede">Designed, simulated, and physically implemented a sequential digital logic circuit using J-K flip-flops and a finite state machine to display a predefined numerical sequence on a 7-segment display.</p><ul class="tags"><li>NI Multisim</li><li>Digital Logic</li><li>FSM</li><li>Hardware Design</li><li>Karnaugh Maps</li><li>Breadboarding</li></ul></div><div aria-label="Project at a glance" class="project-facts"><div><strong>06</strong><span>J-K flip-flops</span></div><div><strong>09</strong><span>Sequence states</span></div><div><strong>NI Multisim</strong><span>Simulation &amp; verification</span></div><div><strong>Hardware</strong><span>Breadboard implementation</span></div></div></header><section class="project-section" id="overview"><span class="section-index">01 / THE CONCEPT</span>
 <h2>Project overview</h2>
@@ -212,4 +193,4 @@ footer a:hover{color:var(--ink)}
   window.addEventListener('resize',update);
   back.addEventListener('click',function(){window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
   update();
-})();</script><script>(function(){var root=document.documentElement;var btn=document.querySelector('.theme-toggle');if(!btn)return;function sync(){var dark=root.getAttribute('data-theme')==='dark';btn.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');btn.setAttribute('title',dark?'Switch to light mode':'Switch to dark mode');btn.setAttribute('aria-pressed',String(dark));}btn.addEventListener('click',function(){var next=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('vk-portfolio-theme',next)}catch(e){}sync();});sync();})();</script></body></html>
+})();</script></body></html>
