@@ -695,13 +695,32 @@ section#projects .projects-cards-grid > .project {grid-column:auto;grid-row:auto
  section#projects .projects-cards-grid {grid-template-columns:minmax(0,1fr);}
  .site-nav-links a {font-size:.88rem;padding:9px 11px;}
 }
+</style><script>(function(){try{var t=localStorage.getItem('vk-portfolio-theme');document.documentElement.setAttribute('data-theme',t==='light'||t==='dark'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));}catch(e){document.documentElement.setAttribute('data-theme',matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}})();</script><style>
+/* Shared portfolio theme switcher */
+.site-nav{flex-wrap:wrap}.site-nav .theme-toggle{margin-left:8px}@media(max-width:980px){.site-nav .theme-toggle{position:absolute;right:22px;top:9px}.site-nav .site-nav-links{padding-right:55px}}
+:root[data-theme="light"] {color-scheme:light;--bg:#f7f5ee;--surface:#fffefa;--ink:#252d29;--muted:#596760;--line:#d8ded5;--accent:#245a4b;--sage:#e9efe7;--warm:#f0eee5;--hl:rgba(194,215,191,.72);--trace-detail:rgba(36,90,75,.35);--trace-soft:rgba(36,90,75,.16)}
+:root[data-theme="dark"] {color-scheme:dark;--bg:#111d1a;--surface:#1c2b26;--ink:#edf0e8;--muted:#adbbb2;--line:#374a40;--accent:#9bd4b6;--sage:#1c3128;--warm:#242e27;--hl:rgba(117,174,138,.32);--trace-detail:rgba(155,212,182,.44);--trace-soft:rgba(155,212,182,.2)}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex-shrink:0;min-width:43px;min-height:43px;padding:8px 12px;border:1.5px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font:700 .78rem var(--head);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.theme-toggle:hover{border-color:var(--accent);background:var(--sage)}
+.theme-toggle svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.theme-toggle .theme-moon{display:block}.theme-toggle .theme-sun{display:none}
+:root[data-theme="dark"] .theme-toggle .theme-moon{display:none}
+:root[data-theme="dark"] .theme-toggle .theme-sun{display:block}
+:root[data-theme="dark"] .site-nav-links a:hover,:root[data-theme="dark"] .site-nav-links a.active,:root[data-theme="dark"] .site-nav-links a[aria-current="location"]{color:#111d1a}
+:root[data-theme="dark"] .cta:not(.alt){color:#111d1a}
+:root[data-theme="dark"] .back-to-top{color:#111d1a}
+:root[data-theme="dark"] figure button{border-color:var(--line)}
+:root[data-theme="dark"] .project-media{background:var(--warm)}
+:root[data-theme="dark"] .project-highlight{background:var(--sage)}
+@media(max-width:650px){.theme-toggle{min-width:39px;min-height:39px;padding:7px 9px}.theme-toggle .theme-label{display:none}}
+@media(prefers-reduced-motion:reduce){.theme-toggle{transition:none}}
 </style></head>
 <body>
 <main>
-<nav aria-label="Sticky section navigation" class="site-nav"><a aria-label="Back to top" class="brand circuit-brand" href="#top" title="Back to top"><svg aria-hidden="true" fill="none" height="38" viewbox="0 0 76 38" width="76" xmlns="http://www.w3.org/2000/svg"><path d="M4 19H19L29 9H45L53 19H72M29 9V3M29 29V19H45L53 29H72" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path><circle cx="4" cy="19" fill="currentColor" r="3.4"></circle><circle cx="29" cy="3" fill="currentColor" r="3"></circle><circle cx="72" cy="19" fill="currentColor" r="3.4"></circle><circle cx="72" cy="29" fill="currentColor" r="3"></circle></svg></a><div class="site-nav-links"><a href="#about">About</a><a href="#beyond-engineering">Beyond Engineering</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div><div aria-hidden="true" class="site-scroll-progress"></div></nav>
+<nav aria-label="Sticky section navigation" class="site-nav"><a aria-label="Back to top" class="brand circuit-brand" href="#top" title="Back to top"><svg aria-hidden="true" fill="none" height="38" viewbox="0 0 76 38" width="76" xmlns="http://www.w3.org/2000/svg"><path d="M4 19H19L29 9H45L53 19H72M29 9V3M29 29V19H45L53 29H72" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path><circle cx="4" cy="19" fill="currentColor" r="3.4"></circle><circle cx="29" cy="3" fill="currentColor" r="3"></circle><circle cx="72" cy="19" fill="currentColor" r="3.4"></circle><circle cx="72" cy="29" fill="currentColor" r="3"></circle></svg></a><div class="site-nav-links"><a href="#about">About</a><a href="#beyond-engineering">Beyond Engineering</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div><button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle light and dark mode"><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.3A8.6 8.6 0 0 1 9.7 3.5 8.6 8.6 0 1 0 20.5 14.3Z"/></svg><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg><span class="theme-label">Theme</span></button><div aria-hidden="true" class="site-scroll-progress"></div></nav>
 <header id="top">
 <p class="hero-eyebrow">ENGINEERING PHYSICS  /  MCMASTER UNIVERSITY</p><h1>Veronica Kopanicak</h1>
-<p class="lede">Curious by nature. Engineer by design.</p><p class="hero-subtitle">Somewhere between asking why and figuring out how. Exploring electronics, computational modelling, and creative engineering solutions.</p>
+<p class="lede">Curious by nature. Engineer by design.</p><p class="hero-subtitle">Exploring electronics, computational modelling, and creative engineering solutions.</p>
 <svg aria-label="Decorative circuit trace" class="trace" role="img" viewbox="0 0 1040 60">
 <path d="M6 30 H240 L260 10 L290 50 L320 10 L350 50 L370 30 H670 M670 30 V12 H770 M670 30 V48 H770 M770 12 H900 M770 48 H900 M900 12 V48 M900 30 H1034"></path>
 <circle cx="6" cy="30" r="5"></circle><circle cx="670" cy="30" r="5"></circle><circle cx="1034" cy="30" r="5"></circle>
@@ -712,7 +731,7 @@ section#projects .projects-cards-grid > .project {grid-column:auto;grid-row:auto
 <div class="photo-stack"><figure class="ab-photo reveal editorial-photo">
 <span>Your photo here</span>
 <img alt="Photo of Veronica" onerror="this.remove()" src="about-photo.jpg"/>
-</figure><figcaption>Meet the engineer (in progress)</figcaption></div>
+</figure><figcaption>A little introduction</figcaption></div>
 <div class="ab-text reveal">
 <div class="editorial-heading"><span class="section-index">01 / THE PERSON BEHIND THE PROJECTS</span><h2>Hi, I’m Veronica! 👋</h2></div>
 <p>I’m a third-year <span class="hl">Engineering Physics</span> student at McMaster University, also pursuing a minor in <span class="hl">Nuclear Studies and Society: Nuclear Engineering</span>.</p>
@@ -726,17 +745,17 @@ section#projects .projects-cards-grid > .project {grid-column:auto;grid-row:auto
 <div class="editorial-heading beyond-heading"><span class="section-index">02 / OUTSIDE THE LAB</span><h3>Beyond Engineering 🌿</h3></div>
 <p>When I’m not studying or working on engineering projects, you’ll probably find me with a book, out for a run, or planning my next adventure.</p>
 <p>I enjoy running half-marathons, journalling, and getting completely absorbed in whatever project has caught my attention (like building this portfolio and website, haha!).</p>
-<p>But one of my absolute favourite things is hiking, especially in the mountains. Always such a fresh breath of air (literally and figuratively) when I get to spend hours on a hiking trail!</p>
+<p>But one of my absolute favourite things is hiking, especially in the mountains. There’s something about being surrounded by mountains, exploring new trails, and spending time outdoors that I absolutely love.</p>
 </div>
 <div class="photo-stack"><figure class="ab-photo ab-beyond-photo editorial-photo">
 <span>Your hiking photo here</span>
 <img alt="Veronica enjoying the outdoors" loading="lazy" onerror="this.remove()" src="beyond-engineering.jpg"/>
-</figure><figcaption>Not all who wander are lost</figcaption></div>
+</figure><figcaption>Beyond the lab</figcaption></div>
 </div>
 <h3 class="sub">Hobbies and interests</h3>
 <ul class="ab-cards">
-<li class="ab-card"><span aria-hidden="true" class="ic">📚</span><b>Reading</b><span class="d">Always looking for my next good book, hopefully not a reread again haha!</span></li>
-<li class="ab-card"><span aria-hidden="true" class="ic">🏃‍♀️</span><b>Running</b><span class="d">Half-marathons and chasing new personal goals, hopefully a triathlon one day! Although I don't own a proper bike yet and can't swim very far...</span></li>
+<li class="ab-card"><span aria-hidden="true" class="ic">📚</span><b>Reading</b><span class="d">Always looking for my next good book.</span></li>
+<li class="ab-card"><span aria-hidden="true" class="ic">🏃‍♀️</span><b>Running</b><span class="d">Half-marathons and chasing new personal goals.</span></li>
 <li class="ab-card"><span aria-hidden="true" class="ic">💻</span><b>Creative Projects</b><span class="d">I have a habit of hyperfocusing on things I’m excited about (this website is a perfect example!).</span></li>
 <li class="ab-card"><span aria-hidden="true" class="ic">📓</span><b>Journalling</b><span class="d">A little time to reflect, organize my thoughts, and get creative.</span></li>
 <li class="ab-card ab-hike">
@@ -895,5 +914,5 @@ section#projects .projects-cards-grid > .project {grid-column:auto;grid-row:auto
     });
   });
 })();
-</script></body>
+</script><script>(function(){var root=document.documentElement;var btn=document.querySelector('.theme-toggle');if(!btn)return;function sync(){var dark=root.getAttribute('data-theme')==='dark';btn.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');btn.setAttribute('title',dark?'Switch to light mode':'Switch to dark mode');btn.setAttribute('aria-pressed',String(dark));}btn.addEventListener('click',function(){var next=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('vk-portfolio-theme',next)}catch(e){}sync();});sync();})();</script></body>
 </html>
