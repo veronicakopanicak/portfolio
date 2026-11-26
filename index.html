@@ -724,7 +724,85 @@ header#top::before{content:"";position:absolute;inset:0;z-index:-1;background:ra
 .timeline-item::before{box-shadow:0 0 10px var(--trace-soft)}
 #skills .ledger-row:hover{box-shadow:inset 3px 0 var(--accent)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style><style>:root{color-scheme:dark}.theme-toggle{display:none!important}</style><style>html,body{background-color:#060d09!important;color:#e7f6ed;color-scheme:dark!important}</style></head>
+</style><style>:root{color-scheme:dark}.theme-toggle{display:none!important}</style><style>html,body{background-color:#060d09!important;color:#e7f6ed;color-scheme:dark!important}</style><style>
+body{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201440%20600%22%20preserveAspectRatio%3D%22none%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2339ff88%22%20stroke-opacity%3D%22.12%22%20stroke-width%3D%221.2%22%3E%3Cpath%20d%3D%22M0%2018%20H90%20l24%2018%20H720%20l24%20-18%20H1440%22%2F%3E%3Cpath%20d%3D%22M0%2066%20H161%20l24%20-18%20H773%20l24%2018%20H1440%22%2F%3E%3Cpath%20d%3D%22M0%20114%20H232%20l24%2018%20H826%20l24%20-18%20H1440%22%2F%3E%3Cpath%20d%3D%22M0%20162%20H303%20l24%20-18%20H879%20l24%2018%20H1440%22%2F%3E%3Cpath%20d%3D%22M0%20210%20H374%20l24%2018%20H932%20l24%20-18%20H1440%22%2F%3E%3Cpath%20d%3D%22M0%20258%20H445%20l24%20-18%20H985%20l24%2018%20H1440%22%2F%3E%3Cpath%20d%3D%22M0%20306%20H156%20l24%2018%20H1038%20l24%20-18%20H1440%22%2F%3E%3Cpath%20d%3D%22M0%20354%20H227%20l24%20-18%20H1091%20l24%2018%20H1440%22%2F%3E%3Cpath%20d%3D%22M0%20402%20H298%20l24%2018%20H724%20l24%20-18%20H1440%22%2F%3E%3Cpath%20d%3D%22M0%20450%20H369%20l24%20-18%20H777%20l24%2018%20H1440%22%2F%3E%3Cpath%20d%3D%22M0%20498%20H440%20l24%2018%20H830%20l24%20-18%20H1440%22%2F%3E%3Cpath%20d%3D%22M0%20546%20H151%20l24%20-18%20H883%20l24%2018%20H1440%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")!important;background-size:100% 600px!important;background-repeat:repeat-y!important;background-attachment:scroll}
+header#top{overflow:visible;background:none!important}
+#pcb{left:50%;right:auto;width:100vw;max-width:none;transform:translateX(-50%)}
+header#top::before{background:linear-gradient(90deg,transparent,rgba(6,13,9,.65) 20%,rgba(6,13,9,.65) 70%,transparent);left:50%;width:100vw;transform:translateX(-50%)}
+</style><style>
+header#top{align-items:center;text-align:center;min-height:clamp(440px,48vw,650px);padding:72px 16px;box-sizing:border-box}
+header#top::before{background:radial-gradient(ellipse at center,rgba(6,13,9,.98) 0%,rgba(6,13,9,.92) 25%,rgba(6,13,9,.45) 53%,transparent 78%)}
+#top .hero-eyebrow{justify-content:center;margin:0 auto 24px;letter-spacing:.18em;font-size:clamp(.62rem,1.1vw,.83rem);color:#39ff88}
+#top .hero-eyebrow:before,#top .hero-eyebrow:after{content:"";display:block;width:clamp(12px,4vw,56px);height:1px;background:#39ff88;box-shadow:0 0 8px #39ff88}
+#top h1{width:100%;max-width:none;margin:0 auto;font-size:clamp(2.3rem,7.2vw,6.6rem);line-height:1.04;letter-spacing:-.055em;color:#e7f6ed;text-shadow:0 0 34px #39ff8833;white-space:normal;text-wrap:balance}
+#top .lede{margin:24px auto 0;color:#39ff88;font-size:clamp(1.05rem,2.3vw,1.65rem);font-weight:600;text-wrap:balance}
+#top .lede::after{content:"";display:block;width:96px;height:2px;margin:22px auto;background:linear-gradient(90deg,transparent,#39ff88,transparent);box-shadow:0 0 12px #39ff88;animation:activate 1.2s ease-out both}
+#top .hero-subtitle{margin:0 auto;max-width:54ch;text-wrap:balance;color:#a0b9aa}
+#top .trace{display:none}
+#top h1,#top .hero-eyebrow,#top .lede,#top .hero-subtitle{animation:hero-in .85s ease-out both}
+#top .lede{animation-delay:.12s}#top .hero-subtitle{animation-delay:.24s}
+@keyframes hero-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes activate{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){#top h1,#top .hero-eyebrow,#top .lede,#top .hero-subtitle,#top .lede::after{animation:none}}
+</style><style>
+.site-nav{background:rgba(6,13,9,.89);backdrop-filter:blur(18px);border-bottom:1px solid #285b3c;box-shadow:0 8px 28px #0006;box-sizing:border-box;gap:24px}
+.site-nav::after{background:#39ff88;opacity:.25;height:1px;bottom:0}
+.site-nav .circuit-brand{color:#39ff88;min-width:56px}.site-nav .circuit-brand:hover,.site-nav .circuit-brand:focus-visible{color:#aaffc9;filter:drop-shadow(0 0 8px #39ff88)}
+.site-nav-links{position:relative;gap:clamp(5px,1.2vw,18px);padding-bottom:7px}
+.site-nav-links a{position:relative;isolation:isolate;flex-shrink:0;font:600 clamp(.69rem,1.05vw,.91rem) ui-monospace,Consolas,monospace;letter-spacing:.055em;text-transform:uppercase;color:#a0b9aa;border-radius:0;padding:12px 10px;background:transparent!important}
+.site-nav-links a:hover,.site-nav-links a:focus-visible,.site-nav-links a[aria-current="location"]{color:#39ff88;background:transparent}
+.site-nav-links a::before{content:"";position:absolute;bottom:1px;left:10%;width:80%;height:2px;background:linear-gradient(90deg,transparent,#39ff88,transparent);transform:scaleX(0);opacity:0;transition:transform .25s,opacity .25s}
+.site-nav-links a:hover::before,.site-nav-links a:focus-visible::before{transform:scaleX(1);opacity:1;animation:nav-pulse .65s ease-out}
+@keyframes nav-pulse{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.nav-trace{position:absolute;bottom:0;left:0;width:0;height:9px;pointer-events:none;transition:transform .28s ease,width .28s ease;filter:drop-shadow(0 0 4px #39ff88)}
+.nav-trace svg{width:100%;height:100%;display:block;overflow:visible}
+.site-scroll-progress{height:2px;box-shadow:0 0 8px #39ff88}
+@media(max-width:980px){.site-nav{gap:3px}.site-nav-links{max-width:100%;flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start}.site-nav-links a{font-size:.75rem;white-space:nowrap;padding:10px 9px}}
+@media(prefers-reduced-motion:reduce){.nav-trace,.site-nav-links a::before{transition:none;animation:none!important}}
+</style><style>section[id],#beyond-engineering{scroll-margin-top:var(--actual-nav-height,90px)!important}</style><style>
+#about > .ab-grid{gap:clamp(30px,6vw,80px);align-items:center;padding-block:32px;overflow:visible}
+#about .profile-stack{position:relative;isolation:isolate}
+#about .profile-stack::before,#about .profile-stack::after{content:"";position:absolute;z-index:-1;width:100px;height:48px;border-top:1px solid #39ff88;border-bottom:1px solid #24633d;transform:skewY(-28deg);opacity:.6;transition:filter .3s,opacity .3s;pointer-events:none}
+#about .profile-stack::before{left:-65px;top:22%}#about .profile-stack::after{right:-65px;bottom:25%;transform:skewY(28deg)}
+#about .profile-stack:hover::before,#about .profile-stack:hover::after{opacity:1;filter:drop-shadow(0 0 6px #39ff88)}
+#about .profile-stack .ab-photo{border:1px solid #39ff88;border-radius:0;clip-path:polygon(0 0,92% 0,100% 8%,100% 100%,8% 100%,0 92%);transition:filter .3s,box-shadow .3s;box-shadow:inset 0 0 20px #164d2c}
+#about .profile-stack:hover .ab-photo{filter:brightness(1.08);box-shadow:inset 0 0 30px #39ff88}
+#about .profile-stack figcaption{display:flex;justify-content:space-between;gap:8px;font:11px monospace;color:#a0b9aa;margin-top:12px}#about .profile-stack figcaption span:first-child{color:#39ff88}
+#about .ab-grid .ab-text{text-align:left}#about .ab-grid .ab-text p{margin-left:0;margin-right:0;line-height:1.75}#about .ab-grid .editorial-heading{text-align:left}#about .ab-grid .section-index{color:#39ff88;font-family:monospace;letter-spacing:.12em}#about .ab-grid .hl,#about .profile-key{color:#39ff88;box-shadow:none;font-weight:600}
+.profile-education{display:grid;grid-template-columns:1fr 1fr;gap:18px;border-top:1px solid #24633d;padding-top:18px;margin-top:24px}.profile-education div{display:flex;flex-direction:column;gap:5px;border-left:2px solid #24633d;padding-left:12px}.profile-education small{font:11px monospace;color:#39ff88;letter-spacing:.1em}.profile-education strong{font-size:.95rem;color:#e7f6ed}.profile-education span{font-size:.85rem;color:#a0b9aa}
+.js #about .profile-stack .reveal:not(.in){transform:translateX(-24px)}.js #about .ab-grid .ab-text.reveal:not(.in){transform:translateX(24px)}
+@media(max-width:760px){#about .profile-stack{max-width:300px;margin:auto;width:100%}#about .profile-stack::before,#about .profile-stack::after{width:45px}#about .profile-stack::before{left:-20px}#about .profile-stack::after{right:-20px}#about > .ab-grid{overflow:hidden}.profile-education{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.js #about .profile-stack .reveal:not(.in),.js #about .ab-grid .ab-text.reveal:not(.in){transform:none;opacity:1}}
+</style><style>
+#about #beyond-engineering .ab-beyond-grid{gap:clamp(30px,6vw,80px);align-items:center;padding-block:32px;overflow:visible}
+#about #beyond-engineering .section-index{color:#39ff88;font-family:monospace;letter-spacing:.12em}
+#about #beyond-engineering .ab-beyond-text,#about #beyond-engineering .editorial-heading{text-align:left}
+#about #beyond-engineering .ab-beyond-text p{margin-left:0;margin-right:0;line-height:1.75}
+.js #about .beyond-profile .reveal:not(.in){transform:translateX(24px)}
+.js #about .ab-beyond-text.reveal:not(.in){transform:translateX(-24px)}
+#about #beyond-engineering .ab-card{border:1px solid #24633d;border-radius:0;transition:border-color .25s,box-shadow .25s,transform .25s}
+#about #beyond-engineering .ab-card:hover{border-color:#39ff88;box-shadow:0 0 18px #39ff8822;transform:translateY(-3px)}
+#about #beyond-engineering .ab-card b{color:#39ff88}
+@media(max-width:760px){#about #beyond-engineering .ab-beyond-grid{grid-template-columns:1fr;overflow:hidden}#about #beyond-engineering .beyond-profile{justify-self:center}}
+@media(prefers-reduced-motion:reduce){.js #about .beyond-profile .reveal:not(.in),.js #about .ab-beyond-text.reveal:not(.in){transform:none;opacity:1}}
+</style><style>
+#about .hobby-heading{font:600 .82rem monospace;letter-spacing:.14em;color:#39ff88;margin:40px 0 0;text-align:left}
+#about #beyond-engineering .ab-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;position:relative;padding:34px 0 0;margin-top:12px;list-style:none;background:linear-gradient(#28603e,#28603e) center 10px / 80% 2px no-repeat}
+#about #beyond-engineering .ab-card{position:relative;overflow:visible;min-width:0;grid-column:auto;background:#0c1912;padding:20px 14px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;min-height:0;border:1px solid #28603e;border-radius:0;transform:none}
+#about #beyond-engineering .ab-card::before{content:'';position:absolute;left:50%;top:-25px;height:24px;width:2px;background:#28603e;transition:background .25s,box-shadow .25s}
+#about #beyond-engineering .ab-card::after{content:'';position:absolute;left:calc(50% - 4px);top:-28px;width:8px;height:8px;border:1px solid #39ff88;border-radius:50%;background:#060d09;transition:background .25s,box-shadow .25s}
+#about #beyond-engineering .ab-card:hover::before,#about #beyond-engineering .ab-card:hover::after{background:#39ff88;box-shadow:0 0 12px #39ff88}
+#about #beyond-engineering .ab-card .ic{color:#39ff88;width:32px;height:32px;margin:0 0 14px;background:none;padding:0;display:block}
+#about #beyond-engineering .ab-card .ic svg{position:static;width:32px;height:32px;opacity:1;display:block}
+#about #beyond-engineering .ab-card .hobby-number{position:absolute;right:12px;top:12px;font:12px monospace;color:#7da88c}
+#about #beyond-engineering .ab-card b{color:#39ff88;margin-bottom:8px}
+#about #beyond-engineering .ab-card .d{font-size:.88rem;line-height:1.55}
+#about #beyond-engineering .ab-card.hobby-activate{animation:hobby-on .55s both;animation-delay:calc(var(--i)*100ms)}
+@keyframes hobby-on{from{opacity:.25;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:950px){#about #beyond-engineering .ab-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 14px;background:none;padding-left:14px;border-left:2px solid #28603e}#about #beyond-engineering .ab-card::before{left:-15px;top:24px;width:14px;height:2px}#about #beyond-engineering .ab-card::after{left:-19px;top:21px}}
+@media(max-width:480px){#about #beyond-engineering .ab-cards{grid-template-columns:1fr;gap:14px}}
+@media(prefers-reduced-motion:reduce){#about #beyond-engineering .ab-card.hobby-activate{animation:none}}
+</style><style>.early-gallery{margin:48px 0;text-align:left}.early-gallery h3{color:#edf8f0;font-size:clamp(1.5rem,3vw,2.3rem);margin:10px 0}.early-gallery>p{color:#a0b9aa}.early-toggle>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;border:1px solid #39ff88;padding:16px 20px;color:#39ff88;background:#0c1912;font:600 1rem monospace;list-style:none}.early-toggle>summary::-webkit-details-marker{display:none}.early-toggle>summary:hover{box-shadow:0 0 18px #39ff8840}.early-count:after{content:'  +'} .early-toggle[open] .early-count:after{content:'  −'}.early-count{font-size:.75rem}.early-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:24px 16px;padding-top:30px;background:linear-gradient(#28603e,#28603e) center 12px/85% 2px no-repeat}.early-card{position:relative;flex:0 0 calc((100% - 32px)/3);min-width:0;box-sizing:border-box;border:1px solid #28603e;background:#0c1912;transition:border-color .2s,box-shadow .2s}.early-card:before{content:'';position:absolute;left:50%;top:-19px;width:1px;height:18px;background:#28603e}.early-card:hover{border-color:#39ff88;box-shadow:0 0 18px #39ff8820}.early-card:hover:before{background:#39ff88}.early-media{aspect-ratio:4/3;background:#050a07;display:flex;align-items:center;justify-content:center;overflow:hidden}.early-media a{display:block;width:100%;height:100%}.early-media img,.early-media video{width:100%;height:100%;object-fit:contain;display:block}.early-copy{padding:16px}.early-copy h4{color:#edf8f0;font-size:1.05rem;margin:8px 0 12px}.early-info summary{color:#39ff88;cursor:pointer;font-size:.85rem}.early-info p{color:#b6c9bc;font-size:.88rem;line-height:1.6}.early-tags{display:flex;flex-wrap:wrap;gap:6px;padding:0;list-style:none}.early-tags li{font: .7rem monospace;color:#a0b9aa;border:1px solid #28603e;padding:4px 6px}@media(max-width:850px){.early-card{flex-basis:calc((100% - 16px)/2)}}@media(max-width:540px){.early-card{flex-basis:100%}.early-toggle>summary{font-size:.85rem}}</style></head>
 <body>
 <main>
 <nav aria-label="Sticky section navigation" class="site-nav"><a aria-label="Back to top" class="brand circuit-brand" href="#top" title="Back to top"><svg aria-hidden="true" fill="none" height="38" viewbox="0 0 76 38" width="76" xmlns="http://www.w3.org/2000/svg"><path d="M4 19H19L29 9H45L53 19H72M29 9V3M29 29V19H45L53 29H72" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path><circle cx="4" cy="19" fill="currentColor" r="3.4"></circle><circle cx="29" cy="3" fill="currentColor" r="3"></circle><circle cx="72" cy="19" fill="currentColor" r="3.4"></circle><circle cx="72" cy="29" fill="currentColor" r="3"></circle></svg></a><div class="site-nav-links"><a href="#about">About</a><a href="#beyond-engineering">Beyond Engineering</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div><div aria-hidden="true" class="site-scroll-progress"></div></nav>
@@ -738,39 +816,40 @@ header#top::before{content:"";position:absolute;inset:0;z-index:-1;background:ra
 </header>
 <section id="about">
 <div class="ab-grid">
-<div class="photo-stack"><figure class="ab-photo reveal editorial-photo">
+<div class="photo-stack profile-stack"><figure class="ab-photo reveal editorial-photo">
 <span>Your photo here</span>
 <img alt="Photo of Veronica" onerror="this.remove()" src="about-photo.jpg"/>
-</figure><figcaption>The Engineer (in progress)</figcaption></div>
+</figure><figcaption><span>PROFILE_01</span><span>The Engineer (in progress)</span></figcaption></div>
 <div class="ab-text reveal">
-<div class="editorial-heading"><span class="section-index">01 / THE PERSON BEHIND THE PROJECTS</span><h2>Hi, I’m Veronica! 👋</h2></div>
+<div class="editorial-heading"><span class="section-index">01 // ABOUT ME</span><h2>Hi, I’m Veronica!</h2></div>
 <p>I’m a third-year <span class="hl">Engineering Physics</span> student at McMaster University, also pursuing a minor in <span class="hl">Nuclear Studies and Society: Nuclear Engineering</span>.</p>
-<p>I’ve always been curious about how things work, and I love finding creative ways to solve problems. Whether I’m designing circuits, exploring computational models, or learning something completely new, I enjoy the challenge of figuring things out and turning ideas into something meaningful.</p>
+<p>I’ve always been curious about how things work, and I love finding creative ways to solve problems. Whether I’m designing <span class="profile-key">circuits</span>, exploring <span class="profile-key">computational models</span>, or learning something completely new, I enjoy the challenge of figuring things out and turning ideas into something meaningful.</p>
 <p>One of my favourite things about engineering is that there’s always something new to discover. I love getting involved in projects, collaborating with others, and occasionally getting a little too invested in solving a problem!</p>
+<div class="profile-education"><div><small>EDUCATION</small><strong>McMaster University</strong><span>Engineering Physics · Third Year</span></div><div><small>MINOR</small><strong>Nuclear Studies and Society: Nuclear Engineering</strong></div></div>
 </div>
 </div>
-<div class="ab-more reveal" id="beyond-engineering">
+<div class="ab-more" id="beyond-engineering">
 <div class="ab-beyond-grid">
-<div class="ab-beyond-text">
-<div class="editorial-heading beyond-heading"><span class="section-index">02 / OUTSIDE THE LAB</span><h3>Beyond Engineering 🌿</h3></div>
-<p>When I’m not studying or working on engineering projects, you’ll probably find me with a book, out for a run, or planning my next adventure.</p>
-<p>I enjoy running half-marathons, journalling, and getting completely absorbed in whatever project has caught my attention (like building this portfolio and website, haha!).</p>
-<p>But one of my absolute favourite things is hiking, especially in the mountains. There’s something about being surrounded by mountains, exploring new trails, and spending time outdoors that I absolutely love.</p>
+<div class="ab-beyond-text reveal">
+<div class="editorial-heading beyond-heading"><span class="section-index">02 // BEYOND ENGINEERING</span><h3>Beyond Engineering</h3></div>
+<p>My love for building things started long before I knew what engineering was. Growing up, I was obsessed with <span class="profile-key">LEGO</span>, not just because I enjoyed building the sets, but because I could take them apart and build something entirely different over and over again. I spent much of my free time crafting unconventional little machines out of whatever materials I could find. Admittedly, most of them didn't work, but I'd like to give my eight-year-old self some credit for trying.</p>
+<p>In high school, that curiosity evolved into a fascination with <span class="profile-key">electronics and circuitry</span>. I loved discovering how individual components could work together to create something functional, and I became increasingly interested in designing and building circuits of my own.</p>
+<p>Looking back, not much has changed. I'm still someone who loves to experiment, take things apart, figure out how they work, and create something new. The machines just work a little more often now.</p>
 </div>
-<div class="photo-stack"><figure class="ab-photo ab-beyond-photo editorial-photo">
+<div class="photo-stack profile-stack beyond-profile"><figure class="ab-photo ab-beyond-photo editorial-photo reveal">
 <span>Your hiking photo here</span>
 <img alt="Veronica enjoying the outdoors" loading="lazy" onerror="this.remove()" src="beyond-engineering.jpg"/>
-</figure><figcaption>Not all those who wander are lost</figcaption></div>
+</figure><figcaption><span>PROFILE_02</span><span>Not all those who wander are lost</span></figcaption></div>
 </div>
-<h3 class="sub">Hobbies and interests</h3>
+<div class="early-gallery"><span class="section-index">02.1 // THE EARLY BUILDS</span><h3>Before the Engineering Degree.</h3><p>A glimpse into some of my earliest electronics and mechanical projects, back when curiosity was my only prerequisite.</p><div class="early-grid"><article class="early-card"><div class="early-media"><a href="early-builds/safe.jpg" target="_blank" rel="noopener" aria-label="Open full-size safe photograph"><img src="early-builds/safe.jpg" alt="Hand-built electronic combination safe" loading="lazy"></a></div><div class="early-copy"><span class="section-index">BUILD_01</span><h4>Automated Electronic Safe</h4><details class="early-info"><summary>Project details</summary><p>An electronic combination safe integrating a Raspberry Pi and Arduino. The two combination dials were controlled through keyboard inputs using the Raspberry Pi. When the correct combination was entered, an Arduino-connected motorized mechanism automatically opened the safe’s lid.</p><ul class="early-tags"><li>Raspberry Pi</li><li>Arduino</li><li>Programming</li><li>Electronics</li><li>Motor Control</li><li>Mechanical Design</li></ul></details></div></article><article class="early-card"><div class="early-media"><video controls playsinline preload="metadata" aria-label="Keypad-Controlled Home Security System demonstration"><source src="early-builds/keypad.mp4" type="video/mp4"></video></div><div class="early-copy"><span class="section-index">BUILD_02</span><h4>Keypad-Controlled Home Security System</h4><details class="early-info"><summary>Project details</summary><p>A keypad-controlled security system that integrated a BCD decoder and seven-segment display to visualize numerical inputs. The circuit was later incorporated into a model home security system, featuring a door that would only open when the correct passcode was entered.</p><ul class="early-tags"><li>Digital Logic</li><li>BCD Decoder</li><li>Seven-Segment Display</li><li>Circuit Design</li><li>Access Control</li></ul></details></div></article><article class="early-card"><div class="early-media"><video controls playsinline preload="metadata" aria-label="Light-Responsive Automated Mechanism demonstration"><source src="early-builds/light.mp4" type="video/mp4"></video></div><div class="early-copy"><span class="section-index">BUILD_03</span><h4>Light-Responsive Automated Mechanism</h4><details class="early-info"><summary>Project details</summary><p>An automated mechanical system that responded to changes in ambient light intensity. The device used a light detector to control a motorized opening and closing mechanism, demonstrating the integration of environmental sensing, electronics and mechanical actuation.</p><ul class="early-tags"><li>Light Sensing</li><li>Motor Control</li><li>Automation</li><li>Circuit Design</li></ul></details></div></article><article class="early-card"><div class="early-media"><video controls playsinline preload="metadata" aria-label="Autonomous Line-Following Robot demonstration"><source src="early-builds/robot.mp4" type="video/mp4"></video></div><div class="early-copy"><span class="section-index">BUILD_04</span><h4>Autonomous Line-Following Robot</h4><details class="early-info"><summary>Project details</summary><p>An autonomous Arduino-based robot designed to follow a black line using sensors. The robot operated independently through a preprogrammed control system, eliminating the need for a wired computer connection during operation. A custom mechanical mechanism was also developed to enable the robot to pick up a golf ball.</p><ul class="early-tags"><li>Arduino</li><li>Robotics</li><li>Sensor Integration</li><li>Embedded Programming</li><li>Autonomous Control</li></ul></details></div></article><article class="early-card"><div class="early-media"><video controls playsinline preload="metadata" aria-label="Automated Model Elevator demonstration"><source src="early-builds/elevator.mp4" type="video/mp4"></video></div><div class="early-copy"><span class="section-index">BUILD_05</span><h4>Automated Model Elevator</h4><details class="early-info"><summary>Project details</summary><p>A fully hand-built model elevator featuring external call buttons, an internal floor selection panel and an automated door mechanism. The system was designed to respond to user inputs, travel to the requested floor and open its door upon arrival, replicating the functionality of a real elevator on a smaller scale.</p><ul class="early-tags"><li>Electromechanical Systems</li><li>Control Logic</li><li>Motor Control</li><li>Mechanical Fabrication</li><li>Automation</li></ul></details></div></article></div></div><h3 class="sub hobby-heading">02.2 // HOBBIES &amp; INTERESTS</h3>
 <ul class="ab-cards">
-<li class="ab-card"><span aria-hidden="true" class="ic">📚</span><b>Reading</b><span class="d">Always looking for my next good book, hopefully not a reread again...</span></li>
-<li class="ab-card"><span aria-hidden="true" class="ic">🏃‍♀️</span><b>Running</b><span class="d">Half-marathons and chasing new personal goals. Hoping to do a triathlon one day (not that I own a bike or can swim very well at the moment haha)</span></li>
-<li class="ab-card"><span aria-hidden="true" class="ic">💻</span><b>Creative Projects</b><span class="d">I have a habit of hyperfocusing on things I’m excited about (this website is a perfect example!).</span></li>
-<li class="ab-card"><span aria-hidden="true" class="ic">📓</span><b>Journalling</b><span class="d">A little time to reflect, organize my thoughts, and get creative.</span></li>
+<li class="ab-card"><span class="hobby-number">01</span><span aria-hidden="true" class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h7l2 2 2-2h7v15h-7l-2 2-2-2H3z M12 6v15"/></svg></span><b>Reading</b><span class="d">Always looking for my next good book, hopefully not a reread again...</span></li>
+<li class="ab-card"><span class="hobby-number">02</span><span aria-hidden="true" class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3a2 2 0 1 0 0 4a2 2 0 1 0 0-4 M5 11l5-3 4 5 5 1 M10 8l-2 7-5 5 M8 15l6 2 2 5"/></svg></span><b>Running</b><span class="d">Half-marathons and chasing new personal goals. Hoping to do a triathlon one day (not that I own a bike or can swim very well at the moment haha)</span></li>
+<li class="ab-card"><span class="hobby-number">03</span><span aria-hidden="true" class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z M2 20h20 M9 8l-2 2 2 2 M15 8l2 2-2 2"/></svg></span><b>Creative Projects</b><span class="d">I have a habit of hyperfocusing on things I’m excited about (this website is a perfect example!).</span></li>
+<li class="ab-card"><span class="hobby-number">04</span><span aria-hidden="true" class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h12v18H5z M8 3v18 M11 8h3 M11 12h3 M15 17l6-6 2 2-6 6-3 1z"/></svg></span><b>Journalling</b><span class="d">A little time to reflect, organize my thoughts, and get creative.</span></li>
 <li class="ab-card ab-hike">
-<span aria-hidden="true" class="ic">🏔️</span><b>Hiking</b><span class="d">My favourite kind of adventure, especially when mountains are involved!</span>
-<svg aria-hidden="true" viewbox="0 0 130 70"><path d="M2 68 L38 24 L58 46 L92 6 L128 68" fill="none" stroke="var(--accent)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+<span class="hobby-number">05</span><span aria-hidden="true" class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20L9 7l4 7 3-5 6 11z M7 11l2 2 2-2"/></svg></span><b>Hiking</b><span class="d">My favourite kind of adventure, especially when mountains are involved!</span>
+
 </li>
 </ul>
 </div>
@@ -884,14 +963,15 @@ header#top::before{content:"";position:absolute;inset:0;z-index:-1;background:ra
   function updateActiveSection(){
     ticking=false;
     var navBottom=nav.getBoundingClientRect().bottom;
-    var trigger=navBottom+12;
+    document.documentElement.style.setProperty("--actual-nav-height",nav.offsetHeight+16+"px");
+    var trigger=Math.max(0,navBottom)+Math.max(20,(window.innerHeight-Math.max(0,navBottom))*.28);
     // Keep About active through the hero and introduction, until Beyond Engineering begins.
     var current=sections.length ? sections[0] : null;
     sections.forEach(function(item){
       if(item.element.getBoundingClientRect().top<=trigger){current=item;}
     });
     // At the very end, Contact should be selectable even on short screens.
-    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-3){
+    if(window.scrollY>0 && window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-3){
       current=sections[sections.length-1];
     }
     navLinks.forEach(function(link){
@@ -905,6 +985,7 @@ header#top::before{content:"";position:absolute;inset:0;z-index:-1;background:ra
   window.addEventListener('scroll',scheduleUpdate,{passive:true});
   window.addEventListener('resize',scheduleUpdate);
   window.addEventListener('load',scheduleUpdate);
+  if(window.ResizeObserver){var sectionObserver=new ResizeObserver(scheduleUpdate);sections.forEach(function(item){sectionObserver.observe(item.element);});sectionObserver.observe(nav);}
   scheduleUpdate();
 })();
 </script><button aria-label="Back to top" class="back-to-top" title="Back to top" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button><script>
@@ -939,9 +1020,9 @@ header#top::before{content:"";position:absolute;inset:0;z-index:-1;background:ra
 })();
 </script><script>
 (()=>{const c=document.getElementById('pcb'),ctx=c.getContext('2d'),hero=c.parentElement;if(!ctx)return;let w,h,paths=[],mouse=[-999,-999],raf=0,visible=true;const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-function resize(){w=c.clientWidth;h=c.clientHeight;let d=Math.min(devicePixelRatio||1,2);c.width=w*d;c.height=h*d;ctx.setTransform(d,0,0,d,0,0);paths=[];for(let i=0;i<42;i++){let right=i%3!==0,x=right?w:0,dir=right?-1:1,y=12+(i*41.7)%Math.max(1,h-24),a=25+(i*31)%Math.max(30,w*.16),b=16+(i*13)%64,dy=i%2?b:-b;paths.push([[x,y],[x+dir*a,y],[x+dir*(a+b),y+dy],[x+dir*(a+b+22+(i*17)%Math.max(30,w*.15)),y+dy]])}draw(0)}
-function draw(t){ctx.clearRect(0,0,w,h);let dark=document.documentElement.dataset.theme==='dark',accent=dark?'#39ff88':'#08783d';paths.forEach((p,i)=>{let end=p[3],near=Math.hypot(mouse[0]-end[0],mouse[1]-end[1])<110;ctx.beginPath();p.forEach((v,j)=>j?ctx.lineTo(...v):ctx.moveTo(...v));ctx.strokeStyle=near?accent:dark?'#235b38':'#a2c9ac';ctx.lineWidth=near?1.8:1.1;ctx.stroke();ctx.beginPath();ctx.arc(...end,4,0,Math.PI*2);ctx.stroke();if(!reduced.matches){let f=(t*.00022+i*.137)%1,k=Math.floor(f*3),u=f*3-k,a=p[k],b=p[k+1];ctx.beginPath();ctx.arc(a[0]+(b[0]-a[0])*u,a[1]+(b[1]-a[1])*u,2.3,0,Math.PI*2);ctx.fillStyle=accent;ctx.shadowColor=accent;ctx.shadowBlur=dark?12:3;ctx.fill();ctx.shadowBlur=0}})}
+function resize(){w=c.clientWidth;h=c.clientHeight;let d=Math.min(devicePixelRatio||1,2);c.width=w*d;c.height=h*d;ctx.setTransform(d,0,0,d,0,0);paths=[];for(let i=0;i<14;i++){let y=18+i*Math.max(1,h-36)/14,a=w*(.12+(i* .071)% .24),b=w*(.60+(i*.053)% .25),dy=(i%2?1:-1)*Math.min(24,h/30);paths.push([[0,y],[a,y],[a+24,y+dy],[b,y+dy],[b+24,y],[w,y]])}draw(0)}
+function draw(t){ctx.clearRect(0,0,w,h);let dark=true,accent=dark?'#39ff88':'#08783d';paths.forEach((p,i)=>{let near=p.some(v=>Math.hypot(mouse[0]-v[0],mouse[1]-v[1])<110);ctx.beginPath();p.forEach((v,j)=>j?ctx.lineTo(...v):ctx.moveTo(...v));ctx.strokeStyle=near?accent:dark?'#235b38':'#a2c9ac';ctx.lineWidth=near?1.8:1.1;ctx.stroke();if(!reduced.matches){let f=(t*.00022+i*.137)%1,k=Math.floor(f*(p.length-1)),u=f*(p.length-1)-k,a=p[k],b=p[k+1];ctx.beginPath();ctx.moveTo(a[0]+(b[0]-a[0])*u,a[1]+(b[1]-a[1])*u);ctx.lineTo(a[0]+(b[0]-a[0])*Math.min(1,u+.12),a[1]+(b[1]-a[1])*Math.min(1,u+.12));ctx.strokeStyle=accent;ctx.lineWidth=2;ctx.shadowColor=accent;ctx.shadowBlur=dark?12:3;ctx.stroke();ctx.shadowBlur=0}})}
 function tick(t){raf=0;draw(t);if(visible&&!reduced.matches&&!document.hidden)raf=requestAnimationFrame(tick)}function start(){if(!raf&&visible&&!reduced.matches&&!document.hidden)raf=requestAnimationFrame(tick);else draw(0)}
 hero.addEventListener('pointermove',e=>{let r=c.getBoundingClientRect();mouse=[e.clientX-r.left,e.clientY-r.top];if(reduced.matches)draw(0)});hero.addEventListener('pointerleave',()=>{mouse=[-999,-999];if(reduced.matches)draw(0)});new ResizeObserver(resize).observe(hero);new IntersectionObserver(e=>{visible=e[0].isIntersecting;if(visible)start();else if(raf){cancelAnimationFrame(raf);raf=0}}).observe(hero);new MutationObserver(()=>draw(0)).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});reduced.addEventListener('change',()=>{if(raf)cancelAnimationFrame(raf);raf=0;start()});document.addEventListener('visibilitychange',start);resize();start()})();
-</script></body>
+</script><script>(()=>{const links=document.querySelector('.site-nav-links');if(!links)return;const trace=document.createElement('span');trace.className='nav-trace';trace.setAttribute('aria-hidden','true');trace.innerHTML='<svg viewBox="0 0 100 9" preserveAspectRatio="none"><path d="M0 2H30L36 7H96" fill="none" stroke="#39ff88" stroke-width="1.5" vector-effect="non-scaling-stroke"/><circle cx="96" cy="7" r="2" fill="#39ff88"/></svg>';links.append(trace);function update(){const a=links.querySelector('[aria-current="location"]');if(!a)return;trace.style.width=a.offsetWidth+'px';trace.style.transform='translateX('+a.offsetLeft+'px)';if(a.offsetLeft<links.scrollLeft||a.offsetLeft+a.offsetWidth>links.scrollLeft+links.clientWidth){links.scrollLeft=a.offsetLeft-(links.clientWidth-a.offsetWidth)/2;}}new MutationObserver(update).observe(links,{subtree:true,attributes:true,attributeFilter:['aria-current']});new ResizeObserver(update).observe(links);update();})();</script><script>(()=>{const cards=document.querySelectorAll('#beyond-engineering .ab-card');if(!('IntersectionObserver' in window))return;const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('hobby-activate');observer.unobserve(e.target)}}),{threshold:.15});cards.forEach((c,i)=>{c.style.setProperty('--i',i);observer.observe(c)})})();</script><script>document.querySelector('.early-toggle').addEventListener('toggle',function(){if(!this.open)this.querySelectorAll('video').forEach(v=>v.pause());});</script></body>
 </html>
