@@ -1058,6 +1058,50 @@ section#contact.contact-finale.contact-editorial{background:#0b1811;border:1px s
 @media(max-width:600px){#contact .final-contact-links{grid-template-columns:1fr;gap:18px}#contact .final-contact-wires{display:none}#contact .final-contact-link{padding:20px}#contact .final-contact-top{justify-content:center}#contact .final-contact-copy{padding-bottom:30px}}
 @media(prefers-reduced-motion:reduce){#contact *{animation:none!important;transition:none!important}}
 </style>
+<style id="experience-two-columns">
+@media(min-width:850px){
+#experience .timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:52px;row-gap:22px;align-items:start;background:linear-gradient(#28603e,#28603e) calc(50% - 8px) 0 / 3px 100% no-repeat}
+#experience .timeline-item{min-width:0;overflow-wrap:anywhere}
+#experience .timeline-item:nth-child(even)::before{left:-40px}
+#experience .timeline-item:nth-child(even)::after{left:-26px;width:26px}
+#experience .timeline-top{align-items:flex-start;flex-direction:column;gap:8px}
+#experience .timeline-item:nth-child(even){--bus:40px}
+}
+#experience .timeline-hover-preview>p{padding-bottom:0!important}
+</style>
+<style id="clean-projects-banner-circuits">
+#projects .clean-projects{gap:26px;align-items:stretch}
+#projects .clean-projects>.project{border-radius:9px;padding:0;box-shadow:0 8px 24px #0004;min-height:0}
+#projects .clean-projects .project-media img{height:clamp(200px,30vw,340px);aspect-ratio:auto;object-fit:contain;padding:10px;box-sizing:border-box}
+#projects .clean-projects .project-kicker{margin:22px 22px 8px}
+#projects .clean-projects h3{margin:0 22px 14px;font-size:clamp(1.2rem,2vw,1.65rem);line-height:1.25}
+#projects .clean-projects .showcase-tags{margin:0 22px 18px}
+#projects .clean-projects .project-highlight{margin:0 22px 18px;padding:15px 16px;background:#10251a;border:1px solid #326448;border-radius:5px;line-height:1.55}
+#projects .clean-projects .project>p:last-child{margin:auto 22px 22px!important;padding-top:12px}
+#projects .clean-projects .project>p:last-child a{display:inline-block;background:#39ff88;color:#07140b;padding:11px 16px;border-radius:4px;font-weight:700}
+.professional-transition .banner-circuit{height:52px;filter:none;overflow:visible}
+.banner-trace,.banner-signal{fill:none;stroke:#39ff88;stroke-width:1.5;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.banner-trace{opacity:.48}.banner-node{fill:#39ff88;opacity:.75}
+.banner-signal{stroke:#c9ffda;stroke-width:2.5;stroke-dasharray:7 93;stroke-dashoffset:100;filter:drop-shadow(0 0 4px #39ff88);animation:banner-flow 4s linear infinite}
+@keyframes banner-flow{to{stroke-dashoffset:0}}
+@media(max-width:720px){#projects .clean-projects{grid-template-columns:minmax(0,1fr)}.professional-transition .banner-circuit{height:32px}}
+@media(prefers-reduced-motion:reduce){.banner-signal{animation:none;display:none}}
+</style>
+<style id="alternating-project-showcase">
+#projects .clean-projects{display:flex;flex-direction:column;gap:0}
+#projects .clean-projects>.project{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(24px,5vw,70px);background:transparent;border:0;border-radius:0;box-shadow:none;padding:36px 0;transform:none;overflow:visible}
+#projects .clean-projects>.project+ .project{border-top:1px solid #326448}
+#projects .clean-projects>.project:nth-child(even) .project-media{grid-column:2;grid-row:1}
+#projects .clean-projects>.project:nth-child(even) .project-showcase-details{grid-column:1;grid-row:1}
+#projects .clean-projects .project-media{display:block;width:100%;border:1px solid #326448;border-radius:8px;overflow:hidden;background:#0c1912}
+#projects .clean-projects .project-media img{display:block;width:100%;height:clamp(240px,32vw,410px);object-fit:contain;padding:12px}
+#projects .clean-projects .project-showcase-details{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+#projects .clean-projects .project-showcase-details>*{margin:0!important}
+#projects .clean-projects h3{font-size:clamp(1.45rem,2.8vw,2.2rem);line-height:1.2}
+#projects .clean-projects .project-highlight{width:100%;box-sizing:border-box}
+#projects .clean-projects .project-showcase-details>p:last-child a{display:inline-block;background:#39ff88;color:#07140b;padding:12px 18px;border-radius:4px;font-weight:700}
+@media(max-width:760px){#projects .clean-projects>.project{grid-template-columns:minmax(0,1fr);gap:22px;padding:26px 0}#projects .clean-projects>.project:nth-child(even) .project-media,#projects .clean-projects>.project:nth-child(even) .project-showcase-details{grid-column:auto;grid-row:auto}#projects .clean-projects .project-media img{height:clamp(200px,60vw,340px)}}
+</style>
 </head>
 <body><canvas id="ambient-pcb" aria-hidden="true"></canvas>
 <main>
@@ -1070,7 +1114,7 @@ section#contact.contact-finale.contact-editorial{background:#0b1811;border:1px s
 <circle cx="6" cy="30" r="5"></circle><circle cx="670" cy="30" r="5"></circle><circle cx="1034" cy="30" r="5"></circle>
 </svg>
 <a class="scroll-explore" href="#personal-title">SCROLL TO EXPLORE<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v16m-6-6 6 6 6-6"/></svg></a></header>
-<div aria-labelledby="personal-title" class="professional-transition"><svg aria-hidden="true" preserveaspectratio="none" viewbox="0 0 1000 48"><g fill="none" stroke="currentColor" stroke-width="1.3" vector-effect="non-scaling-stroke"><path d="M0 8H260L300 32H700L740 8H1000"></path><path d="M0 22H240L280 46H720L760 22H1000" opacity=".45"></path></g><g fill="currentColor"><circle cx="300" cy="32" r="3"></circle><circle cx="700" cy="32" r="3"></circle></g></svg><div class="system-label">SYSTEM_01 // PERSONAL INTRODUCTION</div><h2 id="personal-title">The Mind Behind the Circuits.</h2><p>Who I am. What drives me. Where it all began.</p><svg aria-hidden="true" preserveaspectratio="none" viewbox="0 0 1000 48"><path d="M0 40H360L400 12H600L640 40H1000" fill="none" stroke="currentColor" stroke-width="1.3" vector-effect="non-scaling-stroke"></path><circle cx="500" cy="12" fill="currentColor" r="3"></circle></svg></div>
+<div aria-labelledby="personal-title" class="professional-transition"><svg class="banner-circuit" aria-hidden="true" viewBox="0 0 1000 52" preserveAspectRatio="none"><g><path class="banner-trace" d="M0 8 H180 L215 34 H320 L350 8 H450"/><path class="banner-signal" pathLength="100" d="M0 8 H180 L215 34 H320 L350 8 H450" style="animation-delay:0.0s"/><path class="banner-trace" d="M1000 8 H820 L785 34 H680 L650 8 H550"/><path class="banner-signal" pathLength="100" d="M1000 8 H820 L785 34 H680 L650 8 H550" style="animation-delay:0.7s"/><path class="banner-trace" d="M0 25 H110 L140 46 H260"/><path class="banner-signal" pathLength="100" d="M0 25 H110 L140 46 H260" style="animation-delay:1.4s"/><path class="banner-trace" d="M1000 25 H890 L860 46 H740"/><path class="banner-signal" pathLength="100" d="M1000 25 H890 L860 46 H740" style="animation-delay:2.0999999999999996s"/><circle class="banner-node" cx="450" cy="8" r="3"/><circle class="banner-node" cx="550" cy="8" r="3"/><circle class="banner-node" cx="260" cy="46" r="3"/><circle class="banner-node" cx="740" cy="46" r="3"/></g></svg><div class="system-label">SYSTEM_01 // PERSONAL INTRODUCTION</div><h2 id="personal-title">The Mind Behind the Circuits.</h2><p>Who I am. What drives me. Where it all began.</p><svg class="banner-circuit" aria-hidden="true" viewBox="0 0 1000 52" preserveAspectRatio="none"><g transform="translate(0 52) scale(1 -1)"><path class="banner-trace" d="M0 8 H180 L215 34 H320 L350 8 H450"/><path class="banner-signal" pathLength="100" d="M0 8 H180 L215 34 H320 L350 8 H450" style="animation-delay:0.0s"/><path class="banner-trace" d="M1000 8 H820 L785 34 H680 L650 8 H550"/><path class="banner-signal" pathLength="100" d="M1000 8 H820 L785 34 H680 L650 8 H550" style="animation-delay:0.7s"/><path class="banner-trace" d="M0 25 H110 L140 46 H260"/><path class="banner-signal" pathLength="100" d="M0 25 H110 L140 46 H260" style="animation-delay:1.4s"/><path class="banner-trace" d="M1000 25 H890 L860 46 H740"/><path class="banner-signal" pathLength="100" d="M1000 25 H890 L860 46 H740" style="animation-delay:2.0999999999999996s"/><circle class="banner-node" cx="450" cy="8" r="3"/><circle class="banner-node" cx="550" cy="8" r="3"/><circle class="banner-node" cx="260" cy="46" r="3"/><circle class="banner-node" cx="740" cy="46" r="3"/></g></svg></div>
 <section id="about">
 <div class="ab-grid">
 <div class="photo-stack profile-stack"><figure class="ab-photo reveal editorial-photo">
@@ -1087,24 +1131,27 @@ section#contact.contact-finale.contact-editorial{background:#0b1811;border:1px s
 </div>
 
 <a class="personal-link" href="beyond-engineering.html"><span class="section-index">UNLOCK_MORE // BEYOND ENGINEERING</span><strong>There's more to my story.</strong><span class="personal-description">From my earliest creations to the things that make me who I am, discover the person behind the circuits.</span><span class="personal-cta">Explore Beyond Engineering <span aria-hidden="true">→</span></span><span class="personal-topics">My story · Early builds · Hobbies &amp; interests</span></a></section>
-<div aria-labelledby="professional-title" class="professional-transition"><svg aria-hidden="true" preserveaspectratio="none" viewbox="0 0 1000 48"><g fill="none" stroke="currentColor" stroke-width="1.3" vector-effect="non-scaling-stroke"><path d="M0 8H260L300 32H700L740 8H1000"></path><path d="M0 22H240L280 46H720L760 22H1000" opacity=".45"></path></g><g fill="currentColor"><circle cx="300" cy="32" r="3"></circle><circle cx="700" cy="32" r="3"></circle></g></svg><div class="system-label">SYSTEM_02 // PROFESSIONAL PORTFOLIO</div><h2 id="professional-title">Curiosity in Action.</h2><p>What I've built. What I've learned. What I'm working towards.</p><svg aria-hidden="true" preserveaspectratio="none" viewbox="0 0 1000 48"><path d="M0 40H360L400 12H600L640 40H1000" fill="none" stroke="currentColor" stroke-width="1.3" vector-effect="non-scaling-stroke"></path><circle cx="500" cy="12" fill="currentColor" r="3"></circle></svg></div>
+<div aria-labelledby="professional-title" class="professional-transition"><svg class="banner-circuit" aria-hidden="true" viewBox="0 0 1000 52" preserveAspectRatio="none"><g><path class="banner-trace" d="M0 8 H180 L215 34 H320 L350 8 H450"/><path class="banner-signal" pathLength="100" d="M0 8 H180 L215 34 H320 L350 8 H450" style="animation-delay:0.0s"/><path class="banner-trace" d="M1000 8 H820 L785 34 H680 L650 8 H550"/><path class="banner-signal" pathLength="100" d="M1000 8 H820 L785 34 H680 L650 8 H550" style="animation-delay:0.7s"/><path class="banner-trace" d="M0 25 H110 L140 46 H260"/><path class="banner-signal" pathLength="100" d="M0 25 H110 L140 46 H260" style="animation-delay:1.4s"/><path class="banner-trace" d="M1000 25 H890 L860 46 H740"/><path class="banner-signal" pathLength="100" d="M1000 25 H890 L860 46 H740" style="animation-delay:2.0999999999999996s"/><circle class="banner-node" cx="450" cy="8" r="3"/><circle class="banner-node" cx="550" cy="8" r="3"/><circle class="banner-node" cx="260" cy="46" r="3"/><circle class="banner-node" cx="740" cy="46" r="3"/></g></svg><div class="system-label">SYSTEM_02 // PROFESSIONAL PORTFOLIO</div><h2 id="professional-title">Curiosity in Action.</h2><p>What I've built. What I've learned. What I'm working towards.</p><svg class="banner-circuit" aria-hidden="true" viewBox="0 0 1000 52" preserveAspectRatio="none"><g transform="translate(0 52) scale(1 -1)"><path class="banner-trace" d="M0 8 H180 L215 34 H320 L350 8 H450"/><path class="banner-signal" pathLength="100" d="M0 8 H180 L215 34 H320 L350 8 H450" style="animation-delay:0.0s"/><path class="banner-trace" d="M1000 8 H820 L785 34 H680 L650 8 H550"/><path class="banner-signal" pathLength="100" d="M1000 8 H820 L785 34 H680 L650 8 H550" style="animation-delay:0.7s"/><path class="banner-trace" d="M0 25 H110 L140 46 H260"/><path class="banner-signal" pathLength="100" d="M0 25 H110 L140 46 H260" style="animation-delay:1.4s"/><path class="banner-trace" d="M1000 25 H890 L860 46 H740"/><path class="banner-signal" pathLength="100" d="M1000 25 H890 L860 46 H740" style="animation-delay:2.0999999999999996s"/><circle class="banner-node" cx="450" cy="8" r="3"/><circle class="banner-node" cx="550" cy="8" r="3"/><circle class="banner-node" cx="260" cy="46" r="3"/><circle class="banner-node" cx="740" cy="46" r="3"/></g></svg></div>
 <section id="projects">
 <div class="editorial-heading"><span class="section-index">03 // ENGINEERING PROJECTS</span><h2>From Theory to Reality.</h2><p class="showcase-intro">A collection of projects exploring electronics, computational modelling and applied engineering.</p></div>
-<div class="projects-cards-grid separate-boards"><div class="breadboard individual-board"><div class="board-label"><span>PROTOTYPE BOARD // 01</span><span>IC_01</span></div><div class="board-rail" aria-hidden="true"></div><div class="chip-slot"><svg class="chip-wire" viewBox="0 0 200 54" preserveAspectRatio="none" aria-hidden="true"><path class="wire" d="M25 0 V16 Q25 22 31 22 H94 Q100 22 100 28 V54"/><path class="pulse" d="M25 0 V16 Q25 22 31 22 H94 Q100 22 100 28 V54"/></svg><div class="chip-pins" aria-hidden="true"></div><article aria-label="Open project: Sequential Logic Circuit Design" class="project editorial-project" data-project-href="fsm-project.html" role="link" tabindex="0">
-<div class="chip-status"><span>IC_01 // PROJECT MODULE</span><span class="chip-led" aria-hidden="true"></span></div>
+<div class="projects-cards-grid clean-projects">
+<article aria-label="Open project: Sequential Logic Circuit Design" class="project editorial-project" data-project-href="fsm-project.html" role="link" tabindex="0">
 <a class="project-media" href="fsm-project.html"><img alt="Multisim schematic of the sequential logic circuit" src="fsm-project/fsm-circuit.png"/></a>
-<span class="project-kicker">PROJECT 01  /  DIGITAL ELECTRONICS</span><h3>Sequential Logic Circuit Design</h3>
+<div class="project-showcase-details"><span class="project-kicker">PROJECT 01  /  DIGITAL ELECTRONICS</span><h3>Sequential Logic Circuit Design</h3>
 <div class="showcase-tags"><span>NI Multisim</span><span>Digital Logic</span><span>FSM</span><span>Hardware Design</span></div>
 <p class="project-highlight"><strong>Project highlight</strong> Designed and tested a J-K flip-flop sequential circuit that drives a seven-segment display.</p>
 <p style="margin:16px 0 0"><a href="fsm-project.html"><b>Explore project <span aria-hidden="true">↗</span></b></a></p>
-</article><div class="chip-pins" aria-hidden="true"></div><svg class="chip-wire" viewBox="0 0 200 54" preserveAspectRatio="none" aria-hidden="true"><path d="M100 0 V23 H175 V54" fill="none" stroke="#719abf" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="board-rail" aria-hidden="true"></div></div><div class="breadboard individual-board"><div class="board-label"><span>PROTOTYPE BOARD // 02</span><span>IC_02</span></div><div class="board-rail" aria-hidden="true"></div><div class="chip-slot"><svg class="chip-wire" viewBox="0 0 200 54" preserveAspectRatio="none" aria-hidden="true"><path class="wire" d="M25 0 V16 Q25 22 31 22 H94 Q100 22 100 28 V54"/><path class="pulse" d="M25 0 V16 Q25 22 31 22 H94 Q100 22 100 28 V54"/></svg><div class="chip-pins" aria-hidden="true"></div><article aria-label="Open project: Electrical Impedance Tomography Sensor Simulation" class="project editorial-project" data-project-href="eit-project.html" role="link" tabindex="0">
-<div class="chip-status"><span>IC_02 // PROJECT MODULE</span><span class="chip-led" aria-hidden="true"></span></div>
+</div>
+</article>
+<article aria-label="Open project: Electrical Impedance Tomography Sensor Simulation" class="project editorial-project" data-project-href="eit-project.html" role="link" tabindex="0">
 <a class="project-media" href="eit-project.html"><img alt="COMSOL electric potential distribution for the eight-electrode cylindrical wearable EIT sensor model" src="eit-project/eit-cylinder-potential.png"/></a>
-<span class="project-kicker">PROJECT 02  /  COMPUTATIONAL MODELLING</span><h3>Electrical Impedance Tomography Sensor Simulation</h3>
+<div class="project-showcase-details"><span class="project-kicker">PROJECT 02  /  COMPUTATIONAL MODELLING</span><h3>Electrical Impedance Tomography Sensor Simulation</h3>
 <div class="showcase-tags"><span>COMSOL Multiphysics</span><span>EIT</span><span>Simulation</span><span>Data Analysis</span></div>
 <p class="project-highlight"><strong>Project highlight</strong> Modelled four-electrode and eight-electrode EIT sensor configurations in COMSOL to investigate electrical potential distributions.</p>
 <p style="margin:16px 0 0"><a href="eit-project.html"><b>Explore project <span aria-hidden="true">↗</span></b></a></p>
-</article><div class="chip-pins" aria-hidden="true"></div><svg class="chip-wire" viewBox="0 0 200 54" preserveAspectRatio="none" aria-hidden="true"><path d="M100 0 V23 H175 V54" fill="none" stroke="#719abf" stroke-width="3" stroke-linejoin="round"/></svg></div><div class="board-rail" aria-hidden="true"></div></div></div>
+</div>
+</article>
+</div>
 </section>
 <section aria-labelledby="experience-heading" id="experience">
 <div class="editorial-heading"><span class="section-index">04 // EXPERIENCE &amp; LEADERSHIP</span><h2 id="experience-heading">Building More Than Circuits.</h2></div>
