@@ -1102,6 +1102,54 @@ section#contact.contact-finale.contact-editorial{background:#0b1811;border:1px s
 #projects .clean-projects .project-showcase-details>p:last-child a{display:inline-block;background:#39ff88;color:#07140b;padding:12px 18px;border-radius:4px;font-weight:700}
 @media(max-width:760px){#projects .clean-projects>.project{grid-template-columns:minmax(0,1fr);gap:22px;padding:26px 0}#projects .clean-projects>.project:nth-child(even) .project-media,#projects .clean-projects>.project:nth-child(even) .project-showcase-details{grid-column:auto;grid-row:auto}#projects .clean-projects .project-media img{height:clamp(200px,60vw,340px)}}
 </style>
+<style id="showcase-layout-correction">
+section#projects .projects-cards-grid.clean-projects{display:grid;grid-template-columns:minmax(0,1fr);gap:0;align-items:start}
+section#projects .projects-cards-grid.clean-projects>.project{height:auto;min-height:0;grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:36px 0;align-items:center}
+section#projects .clean-projects .project-media{height:auto;min-height:0;aspect-ratio:auto;align-self:center;padding:12px;box-sizing:border-box}
+section#projects .clean-projects .project-media img{height:auto;max-height:420px;object-fit:contain;padding:0;aspect-ratio:auto}
+section#projects .clean-projects>.project::before,section#projects .clean-projects>.project::after{display:none}
+section#projects .clean-projects .project-showcase-details a{text-decoration:none}
+@media(max-width:760px){section#projects .projects-cards-grid.clean-projects>.project{grid-template-columns:minmax(0,1fr);padding:26px 0}section#projects .clean-projects .project-media img{max-height:340px}}
+</style>
+<style id="technical-case-study">
+section#projects .clean-projects>.project{position:relative;isolation:isolate;padding:44px 0;gap:clamp(28px,5vw,76px)}
+#projects .project-media{position:relative;transition:border-color .3s,box-shadow .3s;background:linear-gradient(145deg,#13271c,#09130e)}
+section#projects .clean-projects .project-media{padding:48px 18px 38px;border-radius:5px}
+#projects .project-media::before{content:attr(data-figure);position:absolute;top:15px;left:18px;color:#a0b9aa;font:600 .72rem monospace;letter-spacing:.09em;z-index:2}
+#projects .project-media .figure-footer{position:absolute;bottom:12px;left:18px;right:18px;display:flex;justify-content:space-between;color:#a0b9aa;font:600 .65rem monospace;letter-spacing:.08em}
+#projects .figure-footer::after{content:'●';color:#39ff88}
+#projects .project:hover .project-media,#projects .project:focus-within .project-media{border-color:#39ff88;box-shadow:0 0 24px #39ff8818}
+#projects .case-number{font:700 clamp(2.6rem,5vw,4.5rem)/1 monospace;color:#39ff88;letter-spacing:-.08em;opacity:.65}
+#projects .case-id{display:flex;align-items:center;gap:15px;width:100%}
+#projects .case-id .project-kicker{margin:0!important;max-width:none}
+#projects .case-id::after{content:'';height:1px;flex:1;background:linear-gradient(90deg,#39ff88,#32644833)}
+#projects .case-wire{position:absolute;top:50%;left:50%;width:clamp(22px,4vw,58px);height:18px;transform:translate(-50%,-50%);pointer-events:none;overflow:visible}
+#projects .case-wire path{stroke:#326448;fill:none;stroke-width:1.5}
+#projects .case-wire circle{fill:#39ff88;opacity:.5}
+#projects .case-wire .signal{stroke:#39ff88;stroke-dasharray:9 100;opacity:0}
+#projects .project:is(:hover,:focus-within) .case-wire .signal{opacity:1;animation:case-signal 1.2s linear infinite}
+#projects .project:nth-child(even) .case-wire .signal{animation-direction:reverse}
+@keyframes case-signal{from{stroke-dashoffset:10}to{stroke-dashoffset:-100}}
+#projects .clean-projects .project-highlight{border-left:3px solid #39ff88;background:linear-gradient(110deg,#153323,#0c1912);padding:16px 20px}
+#projects .clean-projects .project-highlight strong{display:block;color:#39ff88;font:600 .75rem monospace;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+#projects .project-showcase-details>p:last-child a{transition:background .2s,box-shadow .2s,transform .2s}
+#projects .project-showcase-details>p:last-child a:hover{background:#a2ffc4;box-shadow:0 0 18px #39ff8840;transform:translateY(-2px)}
+@media(max-width:760px){section#projects .clean-projects>.project{padding:30px 0}.case-wire{display:none!important}}
+@media(prefers-reduced-motion:reduce){#projects .case-wire .signal{animation:none!important}#projects .project-media,#projects .project-showcase-details a{transition:none!important}}
+</style>
+<style id="engineering-archive">
+#projects .archive-shell{display:grid;grid-template-columns:minmax(220px,30%) minmax(0,1fr);border:1px solid #326448;background:#09130e;min-width:0;margin-top:32px}
+#projects .archive-directory{border-right:1px solid #326448;background:#0c1912;min-width:0}
+#projects .archive-label,#projects .archive-toolbar{display:flex;justify-content:space-between;gap:10px;padding:15px 20px;border-bottom:1px solid #326448;color:#a0b9aa;font:600 .72rem monospace;letter-spacing:.08em}
+#projects .archive-tabs button{display:grid;grid-template-columns:32px minmax(0,1fr) 12px;align-items:center;gap:12px;text-align:left;width:100%;border:0;border-bottom:1px solid #294735;border-left:3px solid transparent;border-radius:0;background:transparent;color:#e7f6ed;padding:22px 15px;cursor:pointer;font:inherit}
+#projects .archive-tabs button[aria-selected=true]{background:#163522;border-left-color:#39ff88}
+#projects .archive-tabs button:hover{background:#12291b}#projects .archive-tabs button:focus-visible{outline:2px solid #39ff88;outline-offset:-3px}
+#projects .archive-tabs small{display:block;color:#39ff88;font:600 .65rem monospace;margin-bottom:8px}#projects .archive-tabs strong{display:block;font-size:1rem;line-height:1.4}#projects .archive-num{font:600 1.4rem monospace;color:#39ff88}#projects .archive-hint{padding:18px;color:#a0b9aa;font-size:.8rem}
+#projects .archive-view{min-width:0}#projects .archive-toolbar{color:#39ff88}#projects .archive-panel{padding:24px;animation:archive-in .3s ease-out}#projects .archive-panel[hidden]{display:none!important}
+#projects .archive-media{display:block;background:#07100b;border:1px solid #294735;padding:14px;text-decoration:none}#projects .archive-media img{display:block;width:100%;height:clamp(200px,30vw,420px);object-fit:contain}#projects .archive-media .figure-footer{display:block;position:static;margin-top:12px;color:#a0b9aa;font:600 .7rem monospace}
+#projects .archive-details h3{font-size:clamp(1.4rem,2.7vw,2.2rem);line-height:1.2;margin:22px 0 14px}#projects .archive-details .showcase-tags{display:flex;flex-wrap:wrap;gap:8px}#projects .archive-details .showcase-tags span{color:#39ff88;font:600 .75rem monospace;border:1px solid #326448;padding:6px 9px}#projects .archive-details .project-highlight{margin:18px 0;padding:14px 0;border:0;border-top:1px solid #326448;background:none}#projects .archive-details .project-highlight strong{display:block;color:#39ff88;margin-bottom:6px}#projects .archive-details>p:last-child a{display:inline-block;color:#06140b;background:#39ff88;padding:12px 18px;border-radius:3px;text-decoration:none}#projects .archive-details>p:last-child a:hover{background:#a2ffc4}
+@keyframes archive-in{from{opacity:.3;transform:translateY(5px)}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){#projects .archive-panel{animation:none}}@media(max-width:760px){#projects .archive-shell{grid-template-columns:1fr}#projects .archive-directory{border-right:0;border-bottom:1px solid #326448}#projects .archive-panel{padding:16px}#projects .archive-tabs button{padding:14px}}
+</style>
 </head>
 <body><canvas id="ambient-pcb" aria-hidden="true"></canvas>
 <main>
@@ -1134,24 +1182,21 @@ section#contact.contact-finale.contact-editorial{background:#0b1811;border:1px s
 <div aria-labelledby="professional-title" class="professional-transition"><svg class="banner-circuit" aria-hidden="true" viewBox="0 0 1000 52" preserveAspectRatio="none"><g><path class="banner-trace" d="M0 8 H180 L215 34 H320 L350 8 H450"/><path class="banner-signal" pathLength="100" d="M0 8 H180 L215 34 H320 L350 8 H450" style="animation-delay:0.0s"/><path class="banner-trace" d="M1000 8 H820 L785 34 H680 L650 8 H550"/><path class="banner-signal" pathLength="100" d="M1000 8 H820 L785 34 H680 L650 8 H550" style="animation-delay:0.7s"/><path class="banner-trace" d="M0 25 H110 L140 46 H260"/><path class="banner-signal" pathLength="100" d="M0 25 H110 L140 46 H260" style="animation-delay:1.4s"/><path class="banner-trace" d="M1000 25 H890 L860 46 H740"/><path class="banner-signal" pathLength="100" d="M1000 25 H890 L860 46 H740" style="animation-delay:2.0999999999999996s"/><circle class="banner-node" cx="450" cy="8" r="3"/><circle class="banner-node" cx="550" cy="8" r="3"/><circle class="banner-node" cx="260" cy="46" r="3"/><circle class="banner-node" cx="740" cy="46" r="3"/></g></svg><div class="system-label">SYSTEM_02 // PROFESSIONAL PORTFOLIO</div><h2 id="professional-title">Curiosity in Action.</h2><p>What I've built. What I've learned. What I'm working towards.</p><svg class="banner-circuit" aria-hidden="true" viewBox="0 0 1000 52" preserveAspectRatio="none"><g transform="translate(0 52) scale(1 -1)"><path class="banner-trace" d="M0 8 H180 L215 34 H320 L350 8 H450"/><path class="banner-signal" pathLength="100" d="M0 8 H180 L215 34 H320 L350 8 H450" style="animation-delay:0.0s"/><path class="banner-trace" d="M1000 8 H820 L785 34 H680 L650 8 H550"/><path class="banner-signal" pathLength="100" d="M1000 8 H820 L785 34 H680 L650 8 H550" style="animation-delay:0.7s"/><path class="banner-trace" d="M0 25 H110 L140 46 H260"/><path class="banner-signal" pathLength="100" d="M0 25 H110 L140 46 H260" style="animation-delay:1.4s"/><path class="banner-trace" d="M1000 25 H890 L860 46 H740"/><path class="banner-signal" pathLength="100" d="M1000 25 H890 L860 46 H740" style="animation-delay:2.0999999999999996s"/><circle class="banner-node" cx="450" cy="8" r="3"/><circle class="banner-node" cx="550" cy="8" r="3"/><circle class="banner-node" cx="260" cy="46" r="3"/><circle class="banner-node" cx="740" cy="46" r="3"/></g></svg></div>
 <section id="projects">
 <div class="editorial-heading"><span class="section-index">03 // ENGINEERING PROJECTS</span><h2>From Theory to Reality.</h2><p class="showcase-intro">A collection of projects exploring electronics, computational modelling and applied engineering.</p></div>
-<div class="projects-cards-grid clean-projects">
-<article aria-label="Open project: Sequential Logic Circuit Design" class="project editorial-project" data-project-href="fsm-project.html" role="link" tabindex="0">
-<a class="project-media" href="fsm-project.html"><img alt="Multisim schematic of the sequential logic circuit" src="fsm-project/fsm-circuit.png"/></a>
-<div class="project-showcase-details"><span class="project-kicker">PROJECT 01  /  DIGITAL ELECTRONICS</span><h3>Sequential Logic Circuit Design</h3>
+<div class="archive-shell"><div class="archive-directory"><div class="archive-label">PROJECT DIRECTORY <span>02 FILES</span></div><div class="archive-tabs" role="tablist" aria-label="Engineering projects"><button type="button" role="tab" id="archive-tab-0" aria-controls="archive-panel-0" aria-selected="true"><span class="archive-num">01</span><span><small>DIGITAL ELECTRONICS</small><strong>Sequential Logic Circuit Design</strong></span><span aria-hidden="true">›</span></button><button type="button" role="tab" id="archive-tab-1" aria-controls="archive-panel-1" aria-selected="false" tabindex="-1"><span class="archive-num">02</span><span><small>COMPUTATIONAL MODELLING</small><strong>Electrical Impedance Tomography Sensor Simulation</strong></span><span aria-hidden="true">›</span></button></div><p class="archive-hint">Select a project to inspect its details.</p></div><div class="archive-view"><div class="archive-toolbar"><span>● &nbsp; PROJECT VIEWER</span><span id="archive-counter">01 / 02</span></div><article class="archive-panel" id="archive-panel-0" role="tabpanel" aria-labelledby="archive-tab-0">
+<a class="archive-media" data-figure="FIG 01 / CIRCUIT SCHEMATIC" href="fsm-project.html"><img alt="Multisim schematic of the sequential logic circuit" src="fsm-project/fsm-circuit.png"/><span class="figure-footer" aria-hidden="true">NI MULTISIM</span></a>
+<div class="archive-details"><h3>Sequential Logic Circuit Design</h3>
 <div class="showcase-tags"><span>NI Multisim</span><span>Digital Logic</span><span>FSM</span><span>Hardware Design</span></div>
 <p class="project-highlight"><strong>Project highlight</strong> Designed and tested a J-K flip-flop sequential circuit that drives a seven-segment display.</p>
 <p style="margin:16px 0 0"><a href="fsm-project.html"><b>Explore project <span aria-hidden="true">↗</span></b></a></p>
 </div>
-</article>
-<article aria-label="Open project: Electrical Impedance Tomography Sensor Simulation" class="project editorial-project" data-project-href="eit-project.html" role="link" tabindex="0">
-<a class="project-media" href="eit-project.html"><img alt="COMSOL electric potential distribution for the eight-electrode cylindrical wearable EIT sensor model" src="eit-project/eit-cylinder-potential.png"/></a>
-<div class="project-showcase-details"><span class="project-kicker">PROJECT 02  /  COMPUTATIONAL MODELLING</span><h3>Electrical Impedance Tomography Sensor Simulation</h3>
+</article><article class="archive-panel" id="archive-panel-1" role="tabpanel" aria-labelledby="archive-tab-1">
+<a class="archive-media" data-figure="FIG 02 / SENSOR MODEL" href="eit-project.html"><img alt="COMSOL electric potential distribution for the eight-electrode cylindrical wearable EIT sensor model" src="eit-project/eit-cylinder-potential.png"/><span class="figure-footer" aria-hidden="true">COMSOL MULTIPHYSICS</span></a>
+<div class="archive-details"><h3>Electrical Impedance Tomography Sensor Simulation</h3>
 <div class="showcase-tags"><span>COMSOL Multiphysics</span><span>EIT</span><span>Simulation</span><span>Data Analysis</span></div>
 <p class="project-highlight"><strong>Project highlight</strong> Modelled four-electrode and eight-electrode EIT sensor configurations in COMSOL to investigate electrical potential distributions.</p>
 <p style="margin:16px 0 0"><a href="eit-project.html"><b>Explore project <span aria-hidden="true">↗</span></b></a></p>
 </div>
-</article>
-</div>
+</article></div></div><script>(()=>{const root=document.querySelector('#projects .archive-shell'),tabs=[...root.querySelectorAll('[role=tab]')],panels=[...root.querySelectorAll('[role=tabpanel]')];function select(i,focus=false){tabs.forEach((t,j)=>{t.setAttribute('aria-selected',String(i===j));t.tabIndex=i===j?0:-1;panels[j].hidden=i!==j;});root.querySelector('#archive-counter').textContent=`0${i+1} / 02`;if(focus)tabs[i].focus();}tabs.forEach((t,i)=>{t.addEventListener('click',()=>select(i));t.addEventListener('keydown',e=>{let n;if(['ArrowDown','ArrowRight'].includes(e.key))n=(i+1)%tabs.length;else if(['ArrowUp','ArrowLeft'].includes(e.key))n=(i+tabs.length-1)%tabs.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;else return;e.preventDefault();select(n,true);});});select(0);})();</script>
 </section>
 <section aria-labelledby="experience-heading" id="experience">
 <div class="editorial-heading"><span class="section-index">04 // EXPERIENCE &amp; LEADERSHIP</span><h2 id="experience-heading">Building More Than Circuits.</h2></div>
